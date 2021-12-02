@@ -79,10 +79,43 @@
 
 // d. 
 
-const frase = function (texto){
-let nome = ("Bom dia meus amigos!")
-let nomeMaiusculo = nome.length().toUpperCase()
-console.log(nomeMaiusculo)    
-}
+// function formatar(texto){
 
-frase()
+// texto = texto.toUpperCase()
+// console.log("Tamanho da mensagem",texto.length)
+
+// return texto
+
+// }
+
+// let frase = formatar("Consegui fazer o exercício")
+// console.log(frase)
+
+//3.
+
+// let calculadora = function( ){
+
+//   let numero1 = Number(prompt("Digite um número:"))
+//   let numero2 = Number(prompt("Digite outro um número:"))
+
+//   console.log("Números Inseridos", numero1, numero2)
+
+//   let soma = Number(numero1 + numero2)
+//   let resultadoSoma = soma
+//   console.log("Soma",resultadoSoma)
+
+//   let subtracao = Number(numero1 - numero2)
+//   let resultadoSubtracao = subtracao
+//   console.log("subtração",resultadoSubtracao)
+
+//   let multiplicacao = Number(numero1 * numero2)
+//   let resultadoMultiplicacao = multiplicacao
+//   console.log("Multiplicação",resultadoMultiplicacao)
+
+//   let divisao = Number(numero1 / numero2)
+//   let resultadoDivisao = divisao
+//   console.log("Divisão",resultadoDivisao)
+
+// }
+
+// calculadora()
