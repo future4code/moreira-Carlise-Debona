@@ -123,7 +123,7 @@ function trocaPrimeiroEUltimo(array) {
   array[0] = retorna
 
   return array
-
+ 
 }
 
 // EXERCÍCIO 12
