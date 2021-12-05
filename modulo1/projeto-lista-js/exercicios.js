@@ -148,5 +148,13 @@ function checaAnoBissexto(ano) {
 // EXERCÍCIO 15
 function checaValidadeInscricaoLabenu() {
   // implemente sua lógica aqui
+   let idade = (prompt("Você tem mais de 18 anos? Digite(Sim ou Não)"))
+  let ensinoMedio = (prompt("Você possui ensino médio completo? Digite(Sim ou Não)"))
+  let disponibilidade = (prompt("Você possui disponibilidade exclusiva durante os horários do curso? Digite(Sim ou Não)"))
+
+  let resultado = idade === "sim" && ensinoMedio === "sim" && disponibilidade === "sim"
+
+  console.log(resultado)
+
 
 }
