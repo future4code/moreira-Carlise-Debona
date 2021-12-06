@@ -82,4 +82,4 @@
 // }
 
 // listaDeFrutas(tiposDeFrutas)
-// console.log(carrinho)
+// console.log(carrinho) 
