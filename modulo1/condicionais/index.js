@@ -117,46 +117,351 @@
 
 //2.
 
-const nomeUsuario= (prompt("Digite seu nome completo:"))
-const tipoDeJogo = (prompt("Digite IN indica internacional; e DO indica doméstico:"))
-const etapaDoJogo = (prompt("Digite SF indica semi-final; DT indica decisão de terceiro lugar; e FI indica final:"))
-const categoriaDoJogo= (prompt("Digite a opção 1, 2, 3 ou 4:"))
-const quantidadeDeIngressos= Number(prompt("Digite a quantidade de ingressos:"))
-
-
-
-
-const ingresosDomesticosSemifinais = {
-valorIngressoSemifinaisCategoria1: 1.320,
-valorIngressoSemifinaisCatgoria2: 880,
-valorIngressoSemifinaisCategoria3: 550,
-valorIngressoSemifinaisCategoria4: 220
+const nomeCliente = prompt("Digite seu nome completo:")
+const tipoDeJogo = prompt("Digite o tipo de jogo(IN indica Internacional e DO indica Doméstico):")
+const etapaDoJogo = prompt("Digite etapaga do jogo (SF indica Semi-final, DT indica Decisão do 3º lugar, e FI indica Final:)")
+const categoriaDoJogo = Number(prompt("Digite a opção de categoria 1, 2, 3 ou 4:"))
+const quantidadeDeIngressos = Number(prompt("Digite a quantidade de ingressos:"))
+ 
+const ingressosDomesticosSemifinais = {
+  categoria1: 1, valorCategoria1: 1320, jogo: "SF - Semifinais", publico: "Doméstico", publicoInternacional: "Internacional",
+  categoria2: 2, valorCategoria2: 880, jogo: "SF - Semifinais", publico: "Doméstico", publicoInternacional: "Internacional",
+  categoria3: 3, valorCategoria3: 550, jogo: "SF - Semifinais", publico: "Doméstico", publicoInternacional: "Internacional",
+  categoria4: 4, valorCategoria4: 220, jogo: "SF - Semifinais", publico: "Doméstico", publicoInternacional: "Internacional"
 }
 
-const ingresosDomesticosDecisaoTerceiroLugar = {
-valorIngressoDesisaoTerceiroLugarCategoria1: 660,
-valorIngressoDesisaoTerceiroLugarCategoria2: 440,
-valorIngressoDesisaoTerceiroLugarCategoria3: 330,
-valorIngressoDesisaoTerceiroLugarCategoria4: 170
+const ingressosDomesticosDecisaoTerceiroLugar = {
+  categoria1: 1, valorCategoria1: 660, jogo: "DT - Decisão do 3º lugar", publico: "Doméstico", publicoInternacional: "Internacional",
+  categoria2: 2, valorCategoria2: 440, jogo: "DT - Decisão do 3º lugar", publico: "Doméstico", publicoInternacional: "Internacional",
+  categoria3: 3, valorCategoria3: 330, jogo: "DT - Decisão do 3º lugar", publico: "Doméstico", publicoInternacional: "Internacional",
+  categoria4: 4, valorCategoria4: 170, jogo: "DT - Decisão do 3º lugar", publico: "Doméstico", publicoInternacional: "Internacional"
 }
 
-const ingresosDomesticoFinal = {
-valorIngressoFinalCategoria1: 1.980,
-valorIngressoFinalCategoria2: 1.320,
-valorIngressoFinalCategoria3: 880,
-valorIngressoFinalCategoria4: 330
+const ingressosDomesticoFinal = {
+  categoria1: 1, valorCategoria1: 1980, jogo: "FI - Final", publico: "Doméstico", publicoInternacional: "Internacional",
+  categoria2: 2, valorCategoria2: 1320, jogo: "FI - Final", publico: "Doméstico", publicoInternacional: "Internacional",
+  categoria3: 3, valorCategoria3: 880, jogo: "FI - Final", publico: "Doméstico", publicoInternacional: "Internacional",
+  categoria4: 4, valorCategoria4: 330, jogo: "FI - Final", publico: "Doméstico", publicoInternacional: "Internacional"
 }
 
 
+      if (tipoDeJogo === "DO" && etapaDoJogo === "SF" && categoriaDoJogo === 1) {
+          console.log("---> Dados da compra <---")
+          console.log(`Nome do cliente: ${nomeCliente}`)
+          console.log("Tipo de Jogo:", ingressosDomesticosSemifinais.publico)
+          console.log("Etapa do Jogo:", ingressosDomesticosSemifinais.jogo)
+          console.log("Categoria:", ingressosDomesticosSemifinais.categoria1)
+          console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
 
-function totalDeIngresosNacionais(){
+          console.log("---> Valores <---")
 
-return valorDoIngressoNacional * quantidadeDeIngressos
+          console.log("Valor do ingresso: R$",ingressosDomesticosSemifinais.valorCategoria1)
+          console.log("Valor Total: R$", quantidadeDeIngressos * ingressosDomesticosSemifinais.valorCategoria1)
+      }
+      else if (tipoDeJogo === "DO" && etapaDoJogo === "SF" && categoriaDoJogo === 2){
+          console.log("---> Dados da compra <---")
+          console.log(`Nome do cliente: ${nomeCliente}`)
+          console.log("Tipo de Jogo:", ingressosDomesticosSemifinais.publico)
+          console.log("Etapa do Jogo:", ingressosDomesticosSemifinais.jogo)
+          console.log("Categoria:", ingressosDomesticosSemifinais.categoria2)
+          console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
 
-}
+          console.log("---> Valores <---")
 
-function totalDeIngresosInternacional(){
+          console.log("Valor do ingresso: R$", ingressosDomesticosSemifinais.valorCategoria2)
+          console.log("Valor Total: R$", quantidadeDeIngressos * ingressosDomesticosSemifinais.valorCategoria2)
+      }
+      else if (tipoDeJogo === "DO" && etapaDoJogo === "SF" && categoriaDoJogo === 3){
+          console.log("---> Dados da compra <---")
+          console.log(`Nome do cliente: ${nomeCliente}`)
+          console.log("Tipo de Jogo:", ingressosDomesticosSemifinais.publico)
+          console.log("Etapa do Jogo:", ingressosDomesticosSemifinais.jogo)
+          console.log("Categoria:", ingressosDomesticosSemifinais.categoria3 )
+          console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
 
-return valorDoIngressoInternacional * quantidadeDeIngressos
+          console.log("---> Valores <---")
+
+          console.log("Valor do ingresso: R$",ingressosDomesticosSemifinais.valorCategoria3)
+          console.log("Valor Total: R$", quantidadeDeIngressos * ingressosDomesticosSemifinais.valorCategoria3)
+      }
+      else if(tipoDeJogo === "DO" && etapaDoJogo === "SF" && categoriaDoJogo === 4) {
+          console.log("---> Dados da compra <---")
+          console.log(`Nome do cliente: ${nomeCliente}`)
+          console.log("Tipo de Jogo:", ingressosDomesticosSemifinais.publico)
+          console.log("Etapa do Jogo:", ingressosDomesticosSemifinais.jogo)
+          console.log("Categoria:", ingressosDomesticosSemifinais.categoria4)
+          console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+    
+          console.log("---> Valores <---")
+    
+          console.log("Valor do ingresso: R$",ingressosDomesticosSemifinais.valorCategoria4)
+          console.log("Valor Total: R$", quantidadeDeIngressos * ingressosDomesticosSemifinais.valorCategoria4)
+      }
+      else if (tipoDeJogo === "DO" && etapaDoJogo === "DT" && categoriaDoJogo === 1) {
+        console.log("---> Dados da compra <---")
+        console.log(`Nome do cliente: ${nomeCliente}`)
+        console.log("Tipo de Jogo:", ingressosDomesticosDecisaoTerceiroLugar.publico)
+        console.log("Etapa do Jogo:", ingressosDomesticosDecisaoTerceiroLugar.jogo)
+        console.log("Categoria:", ingressosDomesticosDecisaoTerceiroLugar.categoria1)
+        console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+
+        console.log("---> Valores <---")
+
+        console.log("Valor do ingresso: R$",ingressosDomesticosDecisaoTerceiroLugar)
+        console.log("Valor Total: R$", quantidadeDeIngressos * ingressosDomesticosDecisaoTerceiroLugar.valorCategoria1)
+      }
+      else if (tipoDeJogo === "DO" && etapaDoJogo === "DT" && categoriaDoJogo === 2){
+        console.log("---> Dados da compra <---")
+        console.log(`Nome do cliente: ${nomeCliente}`)
+        console.log("Tipo de Jogo:", ingressosDomesticosDecisaoTerceiroLugar.publico)
+        console.log("Etapa do Jogo:", ingressosDomesticosDecisaoTerceiroLugar.jogo)
+        console.log("Categoria:", ingressosDomesticosDecisaoTerceiroLugar.categoria2)
+        console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+
+        console.log("---> Valores <---")
+
+        console.log("Valor do ingresso: R$",ingressosDomesticosDecisaoTerceiroLugar.valorCategoria2)
+        console.log("Valor Total: R$", quantidadeDeIngressos * ingressosDomesticosDecisaoTerceiroLugar.valorCategoria2)
+      }
+      else if (tipoDeJogo === "DO" && etapaDoJogo === "DT" && categoriaDoJogo === 3)
+      {
+        console.log("---> Dados da compra <---")
+        console.log(`Nome do cliente: ${nomeCliente}`)
+        console.log("Tipo de Jogo:", ingressosDomesticosDecisaoTerceiroLugar.publico)
+        console.log("Etapa do Jogo:", ingressosDomesticosDecisaoTerceiroLugar.jogo)
+        console.log("Categoria:", ingressosDomesticosDecisaoTerceiroLugar.categoria3)
+        console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+
+        console.log("---> Valores <---")
+
+        console.log("Valor do ingresso: R$", ingressosDomesticosDecisaoTerceiroLugar.valorCategoria3)
+        console.log("Valor Total: R$", quantidadeDeIngressos * ingressosDomesticosDecisaoTerceiroLugar.valorCategoria3)
+      }
+      else if (tipoDeJogo === "DO" && etapaDoJogo === "DT" && categoriaDoJogo === 4) {
+        console.log("---> Dados da compra <---")
+        console.log(`Nome do cliente: ${nomeCliente}`)
+        console.log("Tipo de Jogo:", ingressosDomesticosDecisaoTerceiroLugar.publico)
+        console.log("Etapa do Jogo:", ingresosDomesticosDecisaoTerceiroLugar.jogo)
+        console.log("Categoria:", ingressosDomesticosDecisaoTerceiroLugar.categoria4)
+        console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+  
+        console.log("---> Valores <---")
+  
+        console.log("Valor do ingresso: R$", ingressosDomesticosDecisaoTerceiroLugar.valorCategoria4)
+        console.log("Valor Total: R$", quantidadeDeIngressos * ingressosDomesticosDecisaoTerceiroLugar.valorCategoria4)
+      }
+      else if (tipoDeJogo === "DO" && etapaDoJogo === "FI" && categoriaDoJogo === 1) {
+          console.log("---> Dados da compra <---")
+          console.log(`Nome do cliente: ${nomeCliente}`)
+          console.log("Tipo de Jogo:", ingressosDomesticoFinal.publico)
+          console.log("Etapa do Jogo:", ingressosDomesticoFinal.jogo)
+          console.log("Categoria:", ingressosDomesticoFinal.categoria1)
+          console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+  
+          console.log("---> Valores <---")
+  
+          console.log("Valor do ingresso: R$", ingressosDomesticoFinal.valorCategoria1)
+          console.log("Valor Total: R$", quantidadeDeIngressos * ingressosDomesticoFinal.valorCategoria1)
+      }
+      else if (tipoDeJogo === "DO" && etapaDoJogo === "FI" && categoriaDoJogo === 2){
+          console.log("---> Dados da compra <---")
+          console.log(`Nome do cliente: ${nomeCliente}`)
+          console.log("Tipo de Jogo:", ingressosDomesticoFinal.publico)
+          console.log("Etapa do Jogo:", ingressosDomesticoFinal.jogo)
+          console.log("Categoria:", ingressosDomesticoFinal.categoria2)
+          console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+  
+          console.log("---> Valores <---")
+  
+          console.log("Valor do ingresso: R$", ingressosDomesticoFinal.valorCategoria2)
+          console.log("Valor Total: R$", quantidadeDeIngressos * ingressosDomesticoFinal.valorCategoria2)
+      }
+      else if (tipoDeJogo === "DO" && etapaDoJogo === "FI" && categoriaDoJogo === 3){
+          console.log("---> Dados da compra <---")
+          console.log(`Nome do cliente: ${nomeCliente}`)
+          console.log("Tipo de Jogo:", ingressosDomesticoFinal.publico)
+          console.log("Etapa do Jogo:", ingressosDomesticoFinal.jogo)
+          console.log("Categoria:", ingressosDomesticoFinal.categoria3)
+          console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+  
+          console.log("---> Valores <---")
+  
+          console.log("Valor do ingresso: R$", ingressosDomesticoFinal.valorCategoria3)
+          console.log("Valor Total: R$", quantidadeDeIngressos * ingressosDomesticoFinal.valorCategoria3)
+      }
+      else if (tipoDeJogo === "DO" && etapaDoJogo === "FI" && categoriaDoJogo === 4) {
+          console.log("---> Dados da compra <---")
+          console.log(`Nome do cliente: ${nomeCliente}`)
+          console.log("Tipo de Jogo:", ingressosDomesticoFinal.publico)
+          console.log("Etapa do Jogo:", ingressosDomesticoFinal.jogo)
+          console.log("Categoria:", ingressosDomesticoFinal.categoria4)
+          console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+    
+          console.log("---> Valores <---")
+    
+          console.log("Valor do ingresso: R$", ingressosDomesticoFinal.valorCategoria4)
+          console.log("Valor Total: R$", quantidadeDeIngressos * ingressosDomesticoFinal.valorCategoria4)
+      }
+
+      else if (tipoDeJogo === "IN" && etapaDoJogo === "SF" && categoriaDoJogo === 1) {
+            console.log("---> Dados da compra <---")
+            console.log(`Nome do cliente: ${nomeCliente}`)
+            console.log("Tipo de Jogo:", ingressosDomesticosSemifinais.publico)
+            console.log("Etapa do Jogo:", ingressosDomesticosSemifinais.jogo)
+            console.log("Categoria:", ingressosDomesticosSemifinais.categoria1)
+            console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+  
+            console.log("---> Valores <---")
+  
+            console.log("Valor do ingresso: U$",ingressosDomesticosSemifinais.valorCategoria1)
+            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosSemifinais.valorCategoria1)*4.10)
+        }
+        else if (tipoDeJogo === "IN" && etapaDoJogo === "SF" && categoriaDoJogo === 2){
+            console.log("---> Dados da compra <---")
+            console.log(`Nome do cliente: ${nomeCliente}`)
+            console.log("Tipo de Jogo:", ingressosDomesticosSemifinais.publico)
+            console.log("Etapa do Jogo:", ingressosDomesticosSemifinais.jogo)
+            console.log("Categoria:", ingressosDomesticosSemifinais.categoria2)
+            console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+  
+            console.log("---> Valores <---")
+  
+            console.log("Valor do ingresso: U$", ingressosDomesticosSemifinais.valorCategoria2)
+            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosSemifinais.valorCategoria2)*4.10)
+        }
+        else if (tipoDeJogo === "IN" && etapaDoJogo === "SF" && categoriaDoJogo === 3){
+            console.log("---> Dados da compra <---")
+            console.log(`Nome do cliente: ${nomeCliente}`)
+            console.log("Tipo de Jogo:", ingressosDomesticosSemifinais.publico)
+            console.log("Etapa do Jogo:", ingressosDomesticosSemifinais.jogo)
+            console.log("Categoria:", ingressosDomesticosSemifinais.categoria3 )
+            console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+  
+            console.log("---> Valores <---")
+  
+            console.log("Valor do ingresso: U$",ingressosDomesticosSemifinais.valorCategoria3)
+            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosSemifinais.valorCategoria3)*4.10)
+        }
+        else if(tipoDeJogo === "IN" && etapaDoJogo === "SF" && categoriaDoJogo === 4) {
+            console.log("---> Dados da compra <---")
+            console.log(`Nome do cliente: ${nomeCliente}`)
+            console.log("Tipo de Jogo:", ingressosDomesticosSemifinais.publico)
+            console.log("Etapa do Jogo:", ingressosDomesticosSemifinais.jogo)
+            console.log("Categoria:", ingressosDomesticosSemifinais.categoria4)
+            console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+      
+            console.log("---> Valores <---")
+      
+            console.log("Valor do ingresso: U$",ingressosDomesticosSemifinais.valorCategoria4,)
+            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosSemifinais.valorCategoria4)*4.10)
+        }
+        else if (tipoDeJogo === "IN" && etapaDoJogo === "DT" && categoriaDoJogo === 1) {
+          console.log("---> Dados da compra <---")
+          console.log(`Nome do cliente: ${nomeCliente}`)
+          console.log("Tipo de Jogo:", ingressosDomesticosDecisaoTerceiroLugar.publico)
+          console.log("Etapa do Jogo:", ingressosDomesticosDecisaoTerceiroLugar.jogo)
+          console.log("Categoria:", ingressosDomesticosDecisaoTerceiroLugar.categoria1)
+          console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+  
+          console.log("---> Valores <---")
+  
+          console.log("Valor do ingresso: U$",ingressosDomesticosDecisaoTerceiroLugar)
+          console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosDecisaoTerceiroLugar.valorCategoria1)*4.10)
+        }
+        else if (tipoDeJogo === "IN" && etapaDoJogo === "DT" && categoriaDoJogo === 2){
+          console.log("---> Dados da compra <---")
+          console.log(`Nome do cliente: ${nomeCliente}`)
+          console.log("Tipo de Jogo:", ingressosDomesticosDecisaoTerceiroLugar.publico)
+          console.log("Etapa do Jogo:", ingressosDomesticosDecisaoTerceiroLugar.jogo)
+          console.log("Categoria:", ingressosDomesticosDecisaoTerceiroLugar.categoria2)
+          console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+  
+          console.log("---> Valores <---")
+  
+          console.log("Valor do ingresso: U$",ingressosDomesticosDecisaoTerceiroLugar.valorCategoria2)
+          console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosDecisaoTerceiroLugar.valorCategoria2)*4.10)
+        }
+        else if (tipoDeJogo === "IN" && etapaDoJogo === "DT" && categoriaDoJogo === 3)
+        {
+          console.log("---> Dados da compra <---")
+          console.log(`Nome do cliente: ${nomeCliente}`)
+          console.log("Tipo de Jogo:", ingressosDomesticosDecisaoTerceiroLugar.publico)
+          console.log("Etapa do Jogo:", ingressosDomesticosDecisaoTerceiroLugar.jogo)
+          console.log("Categoria:", ingressosDomesticosDecisaoTerceiroLugar.categoria3)
+          console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+  
+          console.log("---> Valores <---")
+  
+          console.log("Valor do ingresso: U$", ingressosDomesticosDecisaoTerceiroLugar.valorCategoria3)
+          console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosDecisaoTerceiroLugar.valorCategoria3)*4.10)
+        }
+        else if (tipoDeJogo === "IN" && etapaDoJogo === "DT" && categoriaDoJogo === 4) {
+          console.log("---> Dados da compra <---")
+          console.log(`Nome do cliente: ${nomeCliente}`)
+          console.log("Tipo de Jogo:", ingressosDomesticosDecisaoTerceiroLugar.publico)
+          console.log("Etapa do Jogo:", ingresosDomesticosDecisaoTerceiroLugar.jogo)
+          console.log("Categoria:", ingressosDomesticosDecisaoTerceiroLugar.categoria4)
+          console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+    
+          console.log("---> Valores <---")
+    
+          console.log("Valor do ingresso: U$", ingressosDomesticosDecisaoTerceiroLugar.valorCategoria4)
+          console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosDecisaoTerceiroLugar.valorCategoria4)*4.10)
+        }
+        else if (tipoDeJogo === "IN" && etapaDoJogo === "FI" && categoriaDoJogo === 1) {
+            console.log("---> Dados da compra <---")
+            console.log(`Nome do cliente: ${nomeCliente}`)
+            console.log("Tipo de Jogo:", ingressosDomesticoFinal.publico)
+            console.log("Etapa do Jogo:", ingressosDomesticoFinal.jogo)
+            console.log("Categoria:", ingressosDomesticoFinal.categoria1)
+            console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+    
+            console.log("---> Valores <---")
+    
+            console.log("Valor do ingresso: U$", ingressosDomesticoFinal.valorCategoria1)
+            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticoFinal.valorCategoria1)*4.10)
+        }
+        else if (tipoDeJogo === "IN" && etapaDoJogo === "FI" && categoriaDoJogo === 2){
+            console.log("---> Dados da compra <---")
+            console.log(`Nome do cliente: ${nomeCliente}`)
+            console.log("Tipo de Jogo:", ingressosDomesticoFinal.publico)
+            console.log("Etapa do Jogo:", ingressosDomesticoFinal.jogo)
+            console.log("Categoria:", ingressosDomesticoFinal.categoria2)
+            console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+    
+            console.log("---> Valores <---")
+    
+            console.log("Valor do ingresso: U$", ingressosDomesticoFinal.valorCategoria2)
+            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticoFinal.valorCategoria2)*4.10)
+        }
+        else if (tipoDeJogo === "IN" && etapaDoJogo === "FI" && categoriaDoJogo === 3){
+            console.log("---> Dados da compra <---")
+            console.log(`Nome do cliente: ${nomeCliente}`)
+            console.log("Tipo de Jogo:", ingressosDomesticoFinal.publico)
+            console.log("Etapa do Jogo:", ingressosDomesticoFinal.jogo)
+            console.log("Categoria:", ingressosDomesticoFinal.categoria3)
+            console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+    
+            console.log("---> Valores <---")
+    
+            console.log("Valor do ingresso: U$", ingressosDomesticoFinal.valorCategoria3)
+            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticoFinal.valorCategoria3)*4.10)
+        }
+        else if (tipoDeJogo === "IN" && etapaDoJogo === "FI" && categoriaDoJogo === 4) {
+            console.log("---> Dados da compra <---")
+            console.log(`Nome do cliente: ${nomeCliente}`)
+            console.log("Tipo de Jogo:", ingressosDomesticoFinal.publico)
+            console.log("Etapa do Jogo:", ingressosDomesticoFinal.jogo)
+            console.log("Categoria:", ingressosDomesticoFinal.categoria4)
+            console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+      
+            console.log("---> Valores <---")
+      
+            console.log("Valor do ingresso: U$", ingressosDomesticoFinal.valorCategoria4)
+            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticoFinal.valorCategoria4)*4.10)
+       }
+       else{ 
+          console.log("Opções invalidas, tente novamente!")
+       }
   
   }
