@@ -122,26 +122,36 @@ const tipoDeJogo = prompt("Digite o tipo de jogo(IN indica Internacional e DO in
 const etapaDoJogo = prompt("Digite etapaga do jogo (SF indica Semi-final, DT indica Decisão do 3º lugar, e FI indica Final:)")
 const categoriaDoJogo = Number(prompt("Digite a opção de categoria 1, 2, 3 ou 4:"))
 const quantidadeDeIngressos = Number(prompt("Digite a quantidade de ingressos:"))
+let valorDolar = 4.10
  
 const ingressosDomesticosSemifinais = {
-  categoria1: 1, valorCategoria1: 1320, jogo: "SF - Semifinais", publico: "Doméstico", publicoInternacional: "Internacional",
-  categoria2: 2, valorCategoria2: 880, jogo: "SF - Semifinais", publico: "Doméstico", publicoInternacional: "Internacional",
-  categoria3: 3, valorCategoria3: 550, jogo: "SF - Semifinais", publico: "Doméstico", publicoInternacional: "Internacional",
-  categoria4: 4, valorCategoria4: 220, jogo: "SF - Semifinais", publico: "Doméstico", publicoInternacional: "Internacional"
+  categoria1: 1, valorCategoria1: 1320,
+  categoria2: 2, valorCategoria2: 880,  
+  categoria3: 3, valorCategoria3: 550, 
+  categoria4: 4, valorCategoria4: 220,
+  publico: "Doméstico",
+  jogo: "SF - Semifinais",
+  publicoInternacional: "Internacional"
 }
 
 const ingressosDomesticosDecisaoTerceiroLugar = {
-  categoria1: 1, valorCategoria1: 660, jogo: "DT - Decisão do 3º lugar", publico: "Doméstico", publicoInternacional: "Internacional",
-  categoria2: 2, valorCategoria2: 440, jogo: "DT - Decisão do 3º lugar", publico: "Doméstico", publicoInternacional: "Internacional",
-  categoria3: 3, valorCategoria3: 330, jogo: "DT - Decisão do 3º lugar", publico: "Doméstico", publicoInternacional: "Internacional",
-  categoria4: 4, valorCategoria4: 170, jogo: "DT - Decisão do 3º lugar", publico: "Doméstico", publicoInternacional: "Internacional"
+  categoria1: 1, valorCategoria1: 660, 
+  categoria2: 2, valorCategoria2: 440, 
+  categoria3: 3, valorCategoria3: 330, 
+  categoria4: 4, valorCategoria4: 170,
+  publico: "Doméstico",
+  jogo: "DT - Decisão do 3º lugar",
+  publicoInternacional: "Internacional" 
 }
 
 const ingressosDomesticoFinal = {
-  categoria1: 1, valorCategoria1: 1980, jogo: "FI - Final", publico: "Doméstico", publicoInternacional: "Internacional",
-  categoria2: 2, valorCategoria2: 1320, jogo: "FI - Final", publico: "Doméstico", publicoInternacional: "Internacional",
-  categoria3: 3, valorCategoria3: 880, jogo: "FI - Final", publico: "Doméstico", publicoInternacional: "Internacional",
-  categoria4: 4, valorCategoria4: 330, jogo: "FI - Final", publico: "Doméstico", publicoInternacional: "Internacional"
+  categoria1: 1, valorCategoria1: 1980,
+  categoria2: 2, valorCategoria2: 1320,
+  categoria3: 3, valorCategoria3: 880,
+  categoria4: 4, valorCategoria4: 330, 
+  publico: "Doméstico",
+  jogo: "FI - Final",
+  publicoInternacional: "Internacional"
 }
 
 
@@ -314,7 +324,7 @@ const ingressosDomesticoFinal = {
             console.log("---> Valores <---")
   
             console.log("Valor do ingresso: U$",ingressosDomesticosSemifinais.valorCategoria1)
-            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosSemifinais.valorCategoria1)*4.10)
+            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosSemifinais.valorCategoria1) * valorDolar)
         }
         else if (tipoDeJogo === "IN" && etapaDoJogo === "SF" && categoriaDoJogo === 2){
             console.log("---> Dados da compra <---")
@@ -327,7 +337,7 @@ const ingressosDomesticoFinal = {
             console.log("---> Valores <---")
   
             console.log("Valor do ingresso: U$", ingressosDomesticosSemifinais.valorCategoria2)
-            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosSemifinais.valorCategoria2)*4.10)
+            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosSemifinais.valorCategoria2) * valorDolar)
         }
         else if (tipoDeJogo === "IN" && etapaDoJogo === "SF" && categoriaDoJogo === 3){
             console.log("---> Dados da compra <---")
@@ -340,7 +350,7 @@ const ingressosDomesticoFinal = {
             console.log("---> Valores <---")
   
             console.log("Valor do ingresso: U$",ingressosDomesticosSemifinais.valorCategoria3)
-            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosSemifinais.valorCategoria3)*4.10)
+            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosSemifinais.valorCategoria3) * valorDolar)
         }
         else if(tipoDeJogo === "IN" && etapaDoJogo === "SF" && categoriaDoJogo === 4) {
             console.log("---> Dados da compra <---")
@@ -353,7 +363,7 @@ const ingressosDomesticoFinal = {
             console.log("---> Valores <---")
       
             console.log("Valor do ingresso: U$",ingressosDomesticosSemifinais.valorCategoria4,)
-            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosSemifinais.valorCategoria4)*4.10)
+            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosSemifinais.valorCategoria4) * valorDolar)
         }
         else if (tipoDeJogo === "IN" && etapaDoJogo === "DT" && categoriaDoJogo === 1) {
             console.log("---> Dados da compra <---")
@@ -366,7 +376,7 @@ const ingressosDomesticoFinal = {
             console.log("---> Valores <---")
     
             console.log("Valor do ingresso: U$",ingressosDomesticosDecisaoTerceiroLugar)
-            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosDecisaoTerceiroLugar.valorCategoria1)*4.10)
+            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosDecisaoTerceiroLugar.valorCategoria1) * valorDolar)
         }
         else if (tipoDeJogo === "IN" && etapaDoJogo === "DT" && categoriaDoJogo === 2){
             console.log("---> Dados da compra <---")
@@ -379,7 +389,7 @@ const ingressosDomesticoFinal = {
             console.log("---> Valores <---")
     
             console.log("Valor do ingresso: U$",ingressosDomesticosDecisaoTerceiroLugar.valorCategoria2)
-            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosDecisaoTerceiroLugar.valorCategoria2)*4.10)
+            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosDecisaoTerceiroLugar.valorCategoria2) * valorDolar)
         }
         else if (tipoDeJogo === "IN" && etapaDoJogo === "DT" && categoriaDoJogo === 3)
         {
@@ -393,20 +403,20 @@ const ingressosDomesticoFinal = {
             console.log("---> Valores <---")
     
             console.log("Valor do ingresso: U$", ingressosDomesticosDecisaoTerceiroLugar.valorCategoria3)
-            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosDecisaoTerceiroLugar.valorCategoria3)*4.10)
+            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosDecisaoTerceiroLugar.valorCategoria3) * valorDolar)
         }
         else if (tipoDeJogo === "IN" && etapaDoJogo === "DT" && categoriaDoJogo === 4) {
             console.log("---> Dados da compra <---")
             console.log(`Nome do cliente: ${nomeCliente}`)
             console.log("Tipo de Jogo:", ingressosDomesticosDecisaoTerceiroLugar.publicoInternacional)
-            console.log("Etapa do Jogo:", ingresosDomesticosDecisaoTerceiroLugar.jogo)
+            console.log("Etapa do Jogo:", ingressosDomesticosDecisaoTerceiroLugar.jogo)
             console.log("Categoria:", ingressosDomesticosDecisaoTerceiroLugar.categoria4)
             console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
       
             console.log("---> Valores <---")
       
             console.log("Valor do ingresso: U$", ingressosDomesticosDecisaoTerceiroLugar.valorCategoria4)
-            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosDecisaoTerceiroLugar.valorCategoria4)*4.10)
+            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticosDecisaoTerceiroLugar.valorCategoria4) * valorDolar)
         }
         else if (tipoDeJogo === "IN" && etapaDoJogo === "FI" && categoriaDoJogo === 1) {
             console.log("---> Dados da compra <---")
@@ -419,7 +429,7 @@ const ingressosDomesticoFinal = {
             console.log("---> Valores <---")
     
             console.log("Valor do ingresso: U$", ingressosDomesticoFinal.valorCategoria1)
-            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticoFinal.valorCategoria1)*4.10)
+            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticoFinal.valorCategoria1) * valorDolar)
         }
         else if (tipoDeJogo === "IN" && etapaDoJogo === "FI" && categoriaDoJogo === 2){
             console.log("---> Dados da compra <---")
@@ -432,7 +442,7 @@ const ingressosDomesticoFinal = {
             console.log("---> Valores <---")
     
             console.log("Valor do ingresso: U$", ingressosDomesticoFinal.valorCategoria2)
-            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticoFinal.valorCategoria2)*4.10)
+            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticoFinal.valorCategoria2) * valorDolar)
         }
         else if (tipoDeJogo === "IN" && etapaDoJogo === "FI" && categoriaDoJogo === 3){
             console.log("---> Dados da compra <---")
@@ -445,24 +455,9 @@ const ingressosDomesticoFinal = {
             console.log("---> Valores <---")
     
             console.log("Valor do ingresso: U$", ingressosDomesticoFinal.valorCategoria3)
-            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticoFinal.valorCategoria3)*4.10)
-        }
-        else if (tipoDeJogo === "IN" && etapaDoJogo === "FI" && categoriaDoJogo === 4) {
-            console.log("---> Dados da compra <---")
-            console.log(`Nome do cliente: ${nomeCliente}`)
-            console.log("Tipo de Jogo:", ingressosDomesticoFinal.publicoInternacional)
-            console.log("Etapa do Jogo:", ingressosDomesticoFinal.jogo)
-            console.log("Categoria:", ingressosDomesticoFinal.categoria4)
-            console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
-      
-            console.log("---> Valores <---")
-      
-            console.log("Valor do ingresso: U$", ingressosDomesticoFinal.valorCategoria4)
-            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticoFinal.valorCategoria4)*4.10)
+            console.log("Valor Total: U$", (quantidadeDeIngressos * ingressosDomesticoFinal.valorCategoria3) * valorDolar)
        }
        else{ 
             console.log("Opções invalidas, tente novamente!")
        }
-
-
 
