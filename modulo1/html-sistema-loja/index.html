@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="index.css">
     <title>Delume</title>
 </head>
 <body>
-    <div>
-        <h1>Bem-vind@ ao <em>Delume</em>!</h1>
-        <p>Aqui você encontra os melhores preços!</p>
-        <audio src="./music/ikson.mp3" controls loop></audio>
+    <div id="cabecalho">
+    <h1 class="titulo1">  Bem-vind@ ao <em>Delume</em>!</h1>
     </div>
+    <p class="tituloDechamada">Aqui você encontra os melhores preços!</p>
+        
+   
 
-    <div>
-        <a href="http://127.0.0.1:5500/index.html">Página Inicial</a>
-        <a href="http://127.0.0.1:5500/ctrl-estoque.html">Controle de Estoque</a>
-        <a href="http://127.0.0.1:5500/add-produto.html">Adicionar Produto</a>
-        <a href="http://127.0.0.1:5500/funcionarios.html">Funcionários</a>
+    <div class="menuContainer">
+      <a class="menu" href="http://127.0.0.1:5500/index.html">Página Inicial</a>
+      <a class="menu" href="http://127.0.0.1:5500/ctrl-estoque.html">Controle de Estoque</a>
+      <a class="menu" href="http://127.0.0.1:5500/add-produto.html">Adicionar Produto</a>
+      <a class="menu" href="http://127.0.0.1:5500/funcionarios.html">Funcionários</a>
     </div>
 
     <div>
@@ -25,13 +27,20 @@
     </div>
 
     <div>
-        <p>Siga-nos nas redes sociais!</p>
-
-        <div>
+        <audio class="musica"src="./music/ikson.mp3" controls loop></audio>
+        <div class="container">
+        <p class="chamadaRedesSociais">Siga-nos nas redes sociais!</p>  
+        </div>
+        
+        <footer id="rodape">
+            <div class="container">
             <img src="https://image.flaticon.com/icons/png/512/25/25305.png"/>
             <img src="https://image.flaticon.com/icons/png/512/25/25425.png"/>
             <img src="https://image.flaticon.com/icons/png/512/8/8800.png"/>
+        </footer>
+
         </div>
+        
     </div>
 </body>
 </html>

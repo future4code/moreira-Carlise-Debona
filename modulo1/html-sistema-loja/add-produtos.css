@@ -1,0 +1,55 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#rodape {
+  position: fixed;
+  bottom: 0;
+  background-color:greenyellow;
+  color: #FFF;
+  width: 100%;
+  height: 50px;    
+  text-align: center;
+  line-height: 65px;
+}
+
+.menuContainer{
+  text-align: center;
+  background-color: black;
+  
+}
+
+.menu{
+  color:white;
+  background-color: black;
+  width: 80px;
+  line-height:2;
+  width: 100%;
+  text-decoration: none;
+  padding: 5px;
+  margin: 30px;
+  
+}
+
+.container img{
+ 
+  width: 100px;
+  height: 20px;
+  object-fit: contain;
+
+}
+
+.formularioContainer{
+  
+  margin-left:200px;
+
+}
+
+#nomeLoja{  
+  
+  margin-left:50px;
+
+}
