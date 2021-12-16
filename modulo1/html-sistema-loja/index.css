@@ -2,7 +2,7 @@
   
   background-color: black;
   width: 100%;
-  margin-left:50px;
+  margin-left: 50px; 
 }
 
 #cabecalho{
@@ -39,26 +39,40 @@ font-weight: bold;
 
 .container img{
  
-  width: 100px;
-  height: 20px;
+  width: 50px;
+  height: 12px;
   object-fit: contain;
-
+  position: relative;
+  margin-top: 2px;
 }
 
 .chamadaRedesSociais{
+  background-color:greenyellow;
   font-weight: bold;
   text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+ 
+
 }
 
 #rodape {
   position: fixed;
-  bottom: 0;
   background-color:greenyellow;
-  color: #FFF;
+  color: black;
   width: 100%;
-  height: 50px;    
+  height: 40px;    
   text-align: center;
-  line-height: 65px;
+  line-height:22px;
+  font-weight: bold;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  font-size: 14px;
+  
+
 }
 
 html, body {
