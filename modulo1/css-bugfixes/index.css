@@ -18,25 +18,25 @@ h2 {
 }
 
 input {
-    height: 20px;
-    width: 500px;
+    height: 10px;
+    width: 400px;
+    border:none;
+    border-bottom: 1px solid black;
+    margin-left: 20px;
 }
 
 button:focus {
     color: white;
 }
 
-img {
-    width: 100px;
+.fotosRoupas {
+    width: 40px;
 }
 
 div>p:first-child {
     display: inline;
 }
 
-div img {
-    background: black;
-}
 
 .botao-amarelo {
   
@@ -65,7 +65,9 @@ div img {
 
 
 .icone {
-    height: 15px;
+  object-fit: contain;
+  height: 15px;
+  
 }
 
 
@@ -140,16 +142,34 @@ div:last-child {
     text-align: center;
 }
 
-table {
+table{
     width: 60%;
+    margin-left: 20%;
+    text-align: center;
+    font-weight: bold;
+    font-size:13px;
 }
+
+td {
+  border-collapse:separate;
+
+}
+
 
 td button {
     background-color: #fadf63;
-    width: 150px;
-    height: 30px;
+    width: 100px;
+    height: 22px;
     border-radius: 5px;
     color: black;
+    border: none;
+    font-size: 13px;
+    font-weight: bold;
+    
+    
+    
+    
+    
     
 }
 
@@ -167,6 +187,8 @@ td button {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    margin-left: 45%;
+    margin-top: 100px;
 }
 
 #back-button:hover {
