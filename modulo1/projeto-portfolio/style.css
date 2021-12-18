@@ -1,0 +1,151 @@
+/** 
+  *
+  *  ESTILOS GERAIS 
+  *
+  **/
+* {
+margin: 0;
+padding: 0;
+font-family:monospace;
+
+}
+
+body {
+  padding-top: 100px;
+}
+
+.containerMenu{
+text-align: center;
+width: 100%;
+background:black;
+position: fixed;
+top: 0;
+z-index:100;
+ 
+}
+
+.containerMenu, li {
+
+  display: inline-block;
+}
+
+.containerMenu, li, .menu {
+  display: inline-block;
+	padding: 10px 20px;
+	color: white;
+	font-size: 20px;
+	text-decoration: none;
+	font-family: monospace;
+}
+
+/* .containerMenu, li, .menu:hover {
+	background: rgba(0,0,0,.2);
+	border-radius: 4px;
+} */
+
+.containerFrases{
+  background-image: url(imagens-portfolio/10.png);
+ 
+    
+}
+
+.nomeNoHead{
+margin-left: 50px;
+color: white;
+margin-top: 0px;
+text-align: center;
+padding-top:50px;
+}
+
+.profissao{
+margin-left: 50px;
+padding-bottom: 50px;
+color: white;
+text-align: center;
+margin-top: 20px;
+}
+
+.fraseProposito{
+text-align: center;
+color: white;
+width:800px;
+font-size: 20px;
+margin-left: 300px;
+
+}
+
+.sobre{
+text-align: center;
+width: 60%;
+color: white;
+margin-left: 255px;
+line-height: 30px;
+margin-top: 50px;
+}
+
+.textoSobre{
+position: relative;
+margin-left: 50px;
+padding-bottom: 50px;
+text-align: center;
+}
+
+.habilidadesTecnicas{
+margin-top: -150px;
+
+}
+
+.tituloTecnico{
+  background:rgb(250, 249, 249);
+  border-radius: 4px;
+  margin-right: 20px;
+  margin-left: 20px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.coitanerLogosFront, .habilidadesTecnicas{
+  background:rgb(250, 249, 249);
+  border-radius: 4px;
+  margin-right: 20px;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+
+.logoFront {
+  width: 40px;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-left: 12%;
+  margin-top: 15px;
+}
+
+.logo {
+  width: 40px;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-left: 12%;
+  margin-top: 15px;
+}
+
+.tituloBack, .tituloFront{
+text-align: center;
+margin-top:10px;
+font-size: 15px;
+}
+
+.RedesSociais{
+  background:rgb(250, 249, 249);
+  border-radius: 4px;
+  margin-right: 20px;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+
+.redesSocias {
+  width: 40px;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-left: 12%;
+  margin-top: 15px;
+}
