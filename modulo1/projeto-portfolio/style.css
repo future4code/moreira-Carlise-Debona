@@ -7,7 +7,6 @@
   margin: 0;
   padding: 0;
   font-family:'Courier New', Courier, monospace;
-
 }
 
 body {
@@ -26,8 +25,7 @@ body {
 .containerMenu, .menu {
   display: inline-block;
   font-weight: bold;
-  display: inline-block;
-	padding: 10px 20px;
+  padding: 5px;
 	color: #FFF0F5;
 	font-size: 17px;
 	text-decoration: none;
@@ -42,8 +40,8 @@ header {
   width: 100%;
   height: 100%;
   overflow: hidden;
-
 }
+
  .planoFundo {
   position: absolute;
   top: 50px;
@@ -68,30 +66,25 @@ header {
   width: 100%;
   color:white;
   font-size: 50px;
-  animation: type 4s steps(60, end);
+  text-shadow: 0 0 10px #ff005b;
+  /* animation: type 4s steps(60, end);
   white-space: nowrap;
-  overflow: hidden;
+  overflow: hidden; */
 }
 
 .profissao {
   text-align:center;
   margin-top: -300;
   margin-bottom: 200px;
-font-size: 30px;
-width: 100%;
-color:white;
-animation: type 4s steps(60, end);
-white-space: nowrap;
-overflow: hidden;
-}
+  font-size: 30px;
+  color:white;
+  /* animation: type 5s steps(60, end);
+  white-space: nowrap;
+  overflow: hidden; */
+  }
 
-@keyframes type{ 
-  from { width: 0; } 
-} 
 
 .fraseProposito{
-  background: transparent;
-  display: inline;
   font-size: 30px;
   color:white;
   text-align: center;
@@ -100,24 +93,33 @@ overflow: hidden;
   text-shadow: 0.2em 0.5em 0.1em #C71585,
   -0.3em 0.1em 0.1em #00FA9A,
   0.4em -0.3em 0.1em #00BFFF;
+  animation: type 4s steps(60, end);
+  white-space: nowrap;
+  overflow: hidden;
 } 
-  
-.tituloPerfil, .tituloformacaoAcademica{
+
+@keyframes type{ 
+  from { width: 0; } 
+} 
+
+
+.tituloPerfil, .tituloFormacaoAcademica{
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 30px; 
 }
 
-.tituloformacaoAcademica{
+.tituloFormacaoAcademica{
   margin-left: 100px;
   display:block; 
-  margin-top: 60px;
+  margin-top: 60px; 
 }
 
 .sobre, .formacaoAcademica{
   display: inline-block;
   width:750px;
   margin-top: 520px;
+  animation-name: slideInLeft;
 }
 
 .sobre{
@@ -151,6 +153,7 @@ overflow: hidden;
   margin-left: 100px;
   margin-right:100px;
   margin-bottom: 40px;
+  box-sizing: inherit
 }
 
 .tituloTecnico{
@@ -188,7 +191,6 @@ overflow: hidden;
 }
 
 .tituloPortfolio{
-  margin-left: 100px;
   display:block; 
   margin-top: 30px;
   font-size: 30px;
@@ -196,45 +198,55 @@ overflow: hidden;
   text-align: center;
 }
 
-.fundoGaleria {
-background-color: #FFF0F5;
-display: block;
-padding-top: 20px;
-
+.frasePortfolio{
+  margin-top: 30px;
+  text-align: center;
 }
 
+.fundoGaleria {
+  background-color: #FFF0F5;
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
 
 .galeria {
+  display: block;
   background: #FFF0F5;
   max-width: 60em;
-  padding: 1.5em;
-  margin: 1em auto;
   list-style: none;
   text-align: center;
+  margin-top: 30px;
+  padding-left: 200px;
  }
 
-.galeria li {
-  text-align: center;
+.projeto  {
   display: inline-block;
   vertical-align: bottom;
   width: 20%;
   margin: 2%;
-  background:  #FFF0F5;
+  background-color: #C71585;
   border-radius: 5px;
-  box-shadow: 1px 2px 5px #4F4F4F;
+  /* box-shadow: 1px 1px 5px #4F4F4F; */
+  box-shadow: 1px 2px 6px #C71585;
+  text-align: center;
+  color: white;
+  padding-bottom: 20px;
 }
 
 .galeria a {
   display: block;
+  text-align: center;
 }
 
-.galeria img {
+.fotoGaleria {
   max-width: 100%;
   display: block;
-  margin: 0 auto;
+  margin-top: -5px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
- 
+  text-align: center;
+  max-width: 100%;
 }
 
 .galeria .legenda {
@@ -244,36 +256,43 @@ padding-top: 20px;
   text-align: center;
 }
 
-.grupo:before,
-.grupo:after {
-    content: " ";
-    display: table;
+.rodape{
+  background: black;
+  bottom: 0;
+  z-index:100;
+  width: 100%;
+  display: block;
+  margin-top: 50px;
+
 }
 
-.grupo:after {
-    clear: both;
+.textoContato{
+  list-style: none;
+  color: #FFF0F5;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-size: 12px;
+  text-align: center;
 }
 
-.RedesSociais{
-  border-radius: 4px;
-  margin-right: 20px;
-  margin-left: 20px;
-  border-radius: 5px;
+.textoRodape {
+  text-align: center;
+  text-align: center;
+  color: #FFF0F5;
+  font-size: 12px;
+  padding: 20px;
 }
 
-/* .rodape{
-display:block;
-background: black;
-color: white;
-bottom: 0;
-z-index:100;
-width: 100%;
+.linkGithub, .linkLinkedin, .linkWhatsapp, a{
+  text-decoration: none;
+  display: inline-block;
+  color: #FFF0F5;
+  margin-bottom: 15px;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 5px;
 }
 
-.iconesRedesSociais {
-  width: 40px;
-  padding: 10px;
-  margin-bottom: 20px;
-  margin-left: 12%;
-  margin-top: 15px;
-} 
+.linkRedes {
+  text-align: center;
+}
