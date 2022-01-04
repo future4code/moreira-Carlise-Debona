@@ -1,0 +1,105 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: mediumvioletred;
+  display:flex;
+  justify-content: space-between;
+  height: 40px;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+.iconeBolo{
+  width: 20px;
+  height: 20px;
+  padding-right: 10px;
+}
+
+.iconeMenu{
+  width: 20px;
+  height: 20px;
+  padding: 0px 10px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 0px 10px;
+}
+
+main {
+  display:flex;
+
+}
+
+.navMenu{
+  background-color: #f2d0e0; 
+  width: 300px;
+  text-decoration: none;
+}
+
+.menu{
+  text-decoration: none;
+  font-size: 14px;
+  color: black;
+  
+}
+
+.listaMenu{
+  list-style: none;
+}
+
+.iconeMaior{
+  margin-top: 10px;
+  float: right;
+  width: 20px;
+  height: 20px;
+  padding: 0px 10px;
+}
+
+.navGaleria {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: left;
+  flex-grow: 1px;
+  align-content: space-around;
+  margin-top: 30px;
+}
+
+.fotosGaleria {
+  margin-bottom: 30px;
+  max-width: 250px;
+  box-shadow: 2px 2px 3px;
+  margin-left: 35px;
+}
+
+.boloDecorado {
+  max-width: 250px;
+}
+
+.nomeDoBolo {
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 23px;
+}
+
+.textoBolo {
+  margin-top: 10px;
+  padding-bottom: 10px; 
+  text-align: center;
+}
+
+footer {
+  display:flex;
+  background-color: mediumvioletred; 
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-size: 12px;
+  height: 40px;
+}
+
