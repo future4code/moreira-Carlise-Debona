@@ -57,3 +57,56 @@ footer {
   color: white;
   font-weight: bold;
 }
+
+@media screen and (min-device-width : 375px) and (max-device-width : 667px) {
+main, .galeria, .foto, .textoMidia {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-content: center;
+}
+
+.campoBusca{
+  border: 0 none;
+  padding: 5px 5px;
+  outline: 0;
+  margin-left: 10px;
+}
+
+header {
+  background-color: orange;
+  display:flex;
+  justify-content: space-between;
+  height: 70px;
+  align-items: center;
+  padding: 0px 20px;
+  
+}
+
+main {
+  background-color: white;
+  column-gap: 10px;
+  row-gap: 10px;
+  gap: 10px;
+  max-width: 50vh;
+  
+}
+.galeria { 
+  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+
+footer {
+  background-color:dimgray;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+
+}
+

@@ -48,3 +48,59 @@ footer {
   color: white;
   font-weight: bold;
 }
+
+@media screen and (min-device-width : 375px) and (max-device-width : 667px) {
+
+  header {
+    background-color: orange;
+    display:flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+    padding: 0px 20px;
+  }
+
+  .campoBusca {
+    border: 0 none;
+    padding: 5px 5px;
+    outline: 0;
+    margin-left: 10px;
+  }
+
+  main {
+    background-color: white;
+    column-gap: 10px;
+    row-gap: 10px;
+    gap: 10px;
+    max-width: 50vh;
+}
+
+h3 {
+  padding: 40px 20px;
+
+}
+
+.video{
+  width: 100%;
+  height: 300px;
+  padding: 0px 5px;
+  margin-left: 20px;
+  margin-top: 20px;
+  
+  
+ 
+}
+
+
+footer {
+  background-color:dimgray;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  margin-top: 100px;
+  
+}
+}
