@@ -1,0 +1,298 @@
+/** 
+  *
+  *  ESTILOS GERAIS 
+  *
+  **/
+* {
+  margin: 0;
+  padding: 0;
+  font-family:'Courier New', Courier, monospace;
+}
+
+body {
+  padding-top: 100px;
+}
+
+.containerMenu{
+  text-align: center;
+  width: 100%;
+  background:black;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.containerMenu, .menu {
+  display: inline-block;
+  font-weight: bold;
+  padding: 5px;
+	color: #FFF0F5;
+	font-size: 17px;
+	text-decoration: none;
+  margin-right: 20px;
+}
+
+.menu:hover {
+color: 	#FF1493;
+}
+
+header {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+ .planoFundo {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  display: block;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.containerFrases{
+  text-align: center;
+  position: absolute;
+  display: block;
+  top: 500px;
+  display: block;
+  width: 100%;
+}
+
+.nomeNoHead {
+  text-align: center;
+  margin-top: -320px;
+  width: 100%;
+  color:white;
+  font-size: 50px;
+  text-shadow: 0 0 10px #ff005b;
+  /* animation: type 4s steps(60, end);
+  white-space: nowrap;
+  overflow: hidden; */
+}
+
+.profissao {
+  text-align:center;
+  margin-top: -300;
+  margin-bottom: 200px;
+  font-size: 30px;
+  color:white;
+  /* animation: type 5s steps(60, end);
+  white-space: nowrap;
+  overflow: hidden; */
+  }
+
+
+.fraseProposito{
+  font-size: 30px;
+  color:white;
+  text-align: center;
+  width: 100%;
+  font-weight: bold; 
+  text-shadow: 0.2em 0.5em 0.1em #C71585,
+  -0.3em 0.1em 0.1em #00FA9A,
+  0.4em -0.3em 0.1em #00BFFF;
+  animation: type 4s steps(60, end);
+  white-space: nowrap;
+  overflow: hidden;
+} 
+
+@keyframes type{ 
+  from { width: 0; } 
+} 
+
+
+.tituloPerfil, .tituloFormacaoAcademica{
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 30px; 
+}
+
+.tituloFormacaoAcademica{
+  margin-left: 100px;
+  display:block; 
+  margin-top: 60px; 
+}
+
+.sobre, .formacaoAcademica{
+  display: inline-block;
+  width:750px;
+  margin-top: 520px;
+  animation-name: slideInLeft;
+}
+
+.sobre{
+  text-align: justify;
+  margin-top:550px;
+  width: 30%;
+  line-height: 30px;
+  font-size: 12px;
+  margin-left: 100px;
+  vertical-align:top;
+  padding-top: 25px;
+}
+
+.cursos{
+  list-style: none;
+  font-size: 12px;
+  color: black;
+  font-weight: normal;
+  line-height: 30px;
+  margin-left: 100px;
+  text-align: justify;
+  margin-right: 45px;
+}
+
+.habilidadesTecnicas{
+  text-align: center;
+  display: block;
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px #4F4F4F;
+  line-height: 20px;
+  margin-left: 100px;
+  margin-right:100px;
+  margin-bottom: 40px;
+  box-sizing: inherit
+}
+
+.tituloTecnico{
+  font-weight: bold;
+  padding-block-start: 3%;
+  margin-top: 50px;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.tituloBack, .tituloFront{
+  margin-top:20px;
+  font-size: 16px;
+}
+
+.containerLogosFront{
+  border-bottom: 1px solid;
+  border-color: #DCDCDC;
+  margin-left: 100px;
+  margin-right:100px;
+}
+
+.logoFront {
+  padding: 5px 70px;
+  width: 40px;
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+
+.logo {
+  padding: 5px 70px;
+  width: 40px;
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+
+.tituloPortfolio{
+  display:block; 
+  margin-top: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.frasePortfolio{
+  margin-top: 30px;
+  text-align: center;
+}
+
+.fundoGaleria {
+  background-color: #FFF0F5;
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.galeria {
+  display: block;
+  background: #FFF0F5;
+  max-width: 60em;
+  list-style: none;
+  text-align: center;
+  margin-top: 30px;
+  padding-left: 200px;
+ }
+
+.projeto  {
+  display: inline-block;
+  vertical-align: bottom;
+  width: 20%;
+  margin: 2%;
+  background-color: #C71585;
+  border-radius: 5px;
+  /* box-shadow: 1px 1px 5px #4F4F4F; */
+  box-shadow: 1px 2px 6px #C71585;
+  text-align: center;
+  color: white;
+  padding-bottom: 20px;
+}
+
+.galeria a {
+  display: block;
+  text-align: center;
+}
+
+.fotoGaleria {
+  max-width: 100%;
+  display: block;
+  margin-top: -5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
+  max-width: 100%;
+}
+
+.galeria .legenda {
+  background: #333;
+  color: #FFF;
+  padding: 0.2em;
+  text-align: center;
+}
+
+.rodape{
+  background: black;
+  bottom: 0;
+  z-index:100;
+  width: 100%;
+  display: block;
+  margin-top: 50px;
+
+}
+
+.textoContato{
+  list-style: none;
+  color: #FFF0F5;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.textoRodape {
+  text-align: center;
+  text-align: center;
+  color: #FFF0F5;
+  font-size: 12px;
+  padding: 20px;
+}
+
+.linkGithub, .linkLinkedin, .linkWhatsapp, a{
+  text-decoration: none;
+  display: inline-block;
+  color: #FFF0F5;
+  margin-bottom: 15px;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.linkRedes {
+  text-align: center;
+}
