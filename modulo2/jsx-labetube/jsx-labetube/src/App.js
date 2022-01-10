@@ -9,7 +9,6 @@ function App() {
     alert("O vídeo está sendo reproduzido")
 }
 
-
   return (
     <div className="App">
       <header>
