@@ -31,13 +31,13 @@ function App() {
       <div className="page-section-container">
         <h2>Experiências profissionais</h2>
         <CardPequeno
-          imagem="https://cdn-icons.flaticon.com/png/512/3178/premium/3178283.png?token=exp=1641938608~hmac=997a915460cba3c9ba5b166bd0d44ffb" 
+          imagem="https://cdn-icons.flaticon.com/png/512/3178/premium/3178283.png" 
           nome="Email:  " 
           email="carlise@gmail.com"
         />
         
         <CardPequeno 
-          imagem="https://cdn-icons.flaticon.com/png/512/3838/premium/3838364.png?token=exp=1641938661~hmac=1b2607a7dfa61a45ffdd21247cd67617" 
+          imagem="https://cdn-icons.flaticon.com/png/512/3838/premium/3838364.png" 
           nome="Endereço: " 
           endereco="Av. Carlise"
         />

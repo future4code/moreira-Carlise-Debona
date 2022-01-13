@@ -12,11 +12,11 @@ export const Container = styled.div`
   height: 200px;
 `;
 
-// export const img = styled.img`
-//   width: 50px;
-//   margin-right: 10px;
-//   border-radius: 50%;
-// `;
+export const Img = styled.img`
+  width: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+`;
 
 export const Titulo = styled.h4 `
   margin-bottom: 15px;
@@ -40,7 +40,8 @@ export const ContainerCard2 = styled.div`
 function CardGrande(props) {
     return (
         <Container className="bigcard-container">
-            <img src={ props.imagem } width='50px' margin-right= '10px' border-radius= '50%'/>
+            <Img src={ props.imagem } //width='50px' margin-right= '10px' border-radius= '50%'
+            />
             <ContainerCard2 >
                 <Titulo>{ props.nome }</Titulo>
                 <P>{ props.descricao }</P>
