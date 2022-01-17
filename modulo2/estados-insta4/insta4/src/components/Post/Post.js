@@ -19,6 +19,7 @@ const PostHeader = styled.div`
   display: flex;
   align-items: center;
   padding-left: 10px;
+  
 `
 
 const PostFooter = styled.div`
@@ -27,6 +28,7 @@ const PostFooter = styled.div`
   align-items: center;
   padding: 0 10px;
   justify-content: space-between;
+  
 `
 
 const UserPhoto = styled.img`
