@@ -1,15 +1,56 @@
 {
 	"info": {
-		"_postman_id": "40671df6-e43f-4c6e-8d3a-b640c1710d96",
-		"name": "Labefy",
+		"_postman_id": "33a80130-f95b-456c-868a-f1d5b665d43d",
+		"name": "New Collection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Labefy",
+			"name": "createPlaylist",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "carlise-debona-moreira",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "carlise-debona-moreira",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "carlise-debona-moreira",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				}
 			},
 			"response": []
 		}
