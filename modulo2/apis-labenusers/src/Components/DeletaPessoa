@@ -1,22 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 import axios from "axios";
-import UserDetail from "./UserDetail";
+import UserDetail from "./PaginaLista";
 
-const DeleteButton = styled.span`
-  color: red;
+const ExcluirDoCadastro = styled.span`
+  color: grey;
   cursor: pointer;
 `;
 
 const axiosConfig = {
   headers: {
-    Authorization: "severo"
+    Authorization: "carlise-debona-moreira"
   }
 };
 
-class Users extends React.Component {
+class Pessoa extends React.Component {
   state = {
-    usersList: [],
+    listaDePessoas: [],
     currentPage: "usersList",
     userId: "",
     name: ""
@@ -97,11 +97,11 @@ class Users extends React.Component {
                     <span onClick={() => this.changePage(user.id)}>
                       {user.name}
                     </span>
-                    <DeleteButton
+                    <ExcluirDoCadastro
                       onClick={() => this.handleUserDeletion(user.id)}
                     >
-                      X
-                    </DeleteButton>
+                      Deletar
+                    </ExcluirDoCadastro>
                   </li>
                 );
               })}
@@ -124,4 +124,4 @@ class Users extends React.Component {
   }
 }
 
-export default Users;
+export default Pessoa;

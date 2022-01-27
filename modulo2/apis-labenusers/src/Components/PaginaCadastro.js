@@ -12,6 +12,13 @@ export default class Cadastro extends React.Component {
     
   };
 
+  createUser = () => {
+    const axiosConfig = {
+      headers: {
+      Authorization: carlise-debona-moreira
+      }
+    };
+
   createUserName = event => {
     const novoCadastroName = event.target.value;
 
@@ -24,12 +31,7 @@ export default class Cadastro extends React.Component {
     this.setState({ email: novoCastroEmail });
   };
 
-  createUser = () => {
-    const axiosConfig = {
-      headers: {
-      Authorization: carlise-debona-moreira
-      }
-    };
+  
 
     const body = 
     {
@@ -39,16 +41,19 @@ export default class Cadastro extends React.Component {
 
     axios.post(
         "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
-        body,
-        axiosConfig
-      )
+        body,axiosConfig)
+
       .then(() => {
         alert(`Usuário ${this.state.name} Acesso criado com sucesso!`);
-        this.setState({ name: "", email: "" });
+        this.setState({ 
+          name: "", 
+          email: "" });
       })
-      .catch(error => {
+
+
+      .catch(erro => {
         alert("Erro tente novamente!");
-        console.log(error);
+        console.log(erro);
       });
   };
 
@@ -57,21 +62,22 @@ export default class Cadastro extends React.Component {
 
     <div>
       <h1>Castrar Usuário</h1>
-      <input>
+      <input
         placeholder="Digite seu nome completo"
         type="text"
         value={this.state.name}
         onChange={this.createUserName}
-      </input>
+      />
       
       <input
         placeholder="E-mail"
         type="email"
         value={this.state.email}
         onChange={this.createUserEmail}
-          />
+      />
 
-      <button onClick={this.}>Adicionar</button>
+      <button onClick={this.createUser}>Adicionar</button>
+      <button onClick={this.props.irLista}>Voltar para Lista de Castro</button>
     </div>
 
   )};

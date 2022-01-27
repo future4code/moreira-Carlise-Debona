@@ -1,26 +1,26 @@
 
 import React from "react";
-import SignUpPage from "./components/PaginaCadastro";
-import Users from "./components/PaginaLista";
+import PaginaCadastro from "./components/PaginaCadastro";
+import PaginaLista from "./components/PaginaLista";
 
 export default class App extends React.Component {
-  state = {
-    currentPage: "signUp"
+    state = {
+    telaPrincipal: "Lista"
   };
 
-  changePage = () => {
-    if (this.state.currentPage === "signUp") {
-      this.setState({ currentPage: "users" });
+  escolherPagina = () => {
+    if (this.state.telaPrincipal === "Cadastro") {
+      this.setState({ telaPrincipal: "Cadastro" });
     } else {
-      this.setState({ currentPage: "signUp" });
+      this.setState({ telaPrincipal: "Lista" });
     }
   };
 
   render() {
     return (
       <div>
-        <button onClick={this.changePage}>Trocar de tela</button>
-        {this.state.currentPage === "signUp" ? <SignUpPage /> : <Users />}
+        <button onClick={this.escolherPagina}>Ia para outra Pagina</button>
+        {this.state.telaPrincipal === "Lista" ? <PaginaCadastro /> : <PaginaLista />}
       </div>
     );
   }
