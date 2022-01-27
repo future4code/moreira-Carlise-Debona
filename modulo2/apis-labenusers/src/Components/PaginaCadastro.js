@@ -53,13 +53,6 @@ export default class Cadastro extends React.Component {
   };
 
   Render() {
-    const renderCadastro = this.state. map(()=>)
-    
-    
-    
-    
-    
-    
     return (
 
     <div>
@@ -67,15 +60,15 @@ export default class Cadastro extends React.Component {
       <input>
         placeholder="Digite seu nome completo"
         type="text"
-        value={this.state.}
-        onChange={this.}
+        value={this.state.name}
+        onChange={this.createUserName}
       </input>
       
       <input
         placeholder="E-mail"
         type="email"
-        value={this.state.}
-        onChange={this.}
+        value={this.state.email}
+        onChange={this.createUserEmail}
           />
 
       <button onClick={this.}>Adicionar</button>
