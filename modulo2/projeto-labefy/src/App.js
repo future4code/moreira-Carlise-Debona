@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+
 import './App.css';
-import CriarPlaylists from './components/CriarPlaylists/CriarPlaylists';
+import CriarPlaylists from './components/CriarPlaylistsPage/CriarPlaylists'
 
 function App() {
   return (

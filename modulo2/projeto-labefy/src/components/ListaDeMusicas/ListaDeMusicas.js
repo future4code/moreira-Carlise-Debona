@@ -1,40 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
 class CriarPlaylists extends React.Component {
   state = {
-    lista: [
-    {nome:""}
-
-  ],
-    valorInputNome: '',
-};
-
-  criarLista = () => { 
-    const listaPlaylist = this.state.lista
-    const novaListaPlaylist = [...this.state.lista, listaPlaylist];
-    this.setState({lista: novaListaPlaylist, valorInputNome: '', })
+ 
+    valorInputNome:""
 
   };
 
   onChangevalorInputNome = (event) => {
     this.setState({ valorInputNome: event.target.value });
   };
- 
+
+  onClickCriar = ( ) => {
+    console.log("nome", this.state.valorInputNome)
+    this.setState({valorInputNome: ""})
+  }
  
   render() {
-    const listaDeMusica = this.state.lista.map((nome, index) => {
-
-      return (
-        <input key={index}
-        nomeLista = {nome.nomeLista}
-      /> 
-      )
-      });
-
-
-    return (
+    
+   return (
       <div>
         <p>Crie sua Playlist com suas músicas favoritas!</p>
         <input 
@@ -42,10 +27,8 @@ class CriarPlaylists extends React.Component {
           onChange= {this.onChangevalorInputNome}
           placeholder= {"Digite um nome"}
         />
-        
-        <button>Criar</button>
-        <div>{listaDeMusica}</div>
-
+        <button onClick={this.onClickCriar}>Criar</button>
+        <p>Nome: {this.state.valorInputNome}</p>
       </div>
     )
   }
