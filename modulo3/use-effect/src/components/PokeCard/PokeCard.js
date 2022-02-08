@@ -16,9 +16,11 @@ export default function PokeCard(props)  {
         console.log(err);
       });
   };
-useEffect (()=>{
-  pegaPokemon(props.pokemon)
-  pegaPokemon()},[props.pokeName])
+
+    useEffect (()=>{
+      setPokemon(pokemon)
+      pegaPokemon((props.pokemon),[props.pokemon])
+    },[pokemon])
 
       return (
       <div>
