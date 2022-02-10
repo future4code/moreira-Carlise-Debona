@@ -19,8 +19,7 @@ export default function PokeCard(props)  {
 
     useEffect (()=>{
       setPokemon(pokemon)
-      pegaPokemon((props.pokemon),[props.pokemon])
-    },[pokemon])
+      pegaPokemon((props.pokemon),[props.pokemon])},[pokemon])
 
       return (
       <div>
