@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
-import {Img, P, AreaFooter, Botao, Idade, Perfil, Fundo} from './styled';
+import {Img, ContainerBotao, DivBotao, FotoFundo, Infos, DivIdade, DivNome, P, AreaFooter, Botao, DivPerfil, Perfil, Fundo, Div} from './styled';
 import {BiHeartCircle} from 'react-icons/bi'
 import {AiOutlineCloseCircle} from 'react-icons/ai'
 
@@ -33,21 +33,30 @@ export default function  GetPerfil() {
           });
       };
       return(
+        <div>
         <Fundo>
+       
+              <FotoFundo src={profile.photo} alt="Foto do Perfil"/>
               <Img src={profile.photo} alt="Foto do Perfil"/>
-              <P>{profile.name}, {profile.age} </P>
-              <Perfil>{profile.bio}</Perfil>
-             
-              
-              
-          <AreaFooter>
-              <Botao onClick={()=> getProfile()}> 
-                <AiOutlineCloseCircle color="#DC143C" fontSize="3em"/>
-              </Botao>
-              <Botao onClick={()=> chooseProfileLike()}>
-                <BiHeartCircle color="#DC143C" fontSize="3em"/>
-              </Botao>
-          </AreaFooter>
+          <Infos>
+            <DivPerfil>
+                <DivNome>{profile.name},</DivNome>
+                <DivIdade>{profile.age}</DivIdade>
+            </DivPerfil>   
+                <Perfil>{profile.bio}</Perfil>
+          </Infos>
         </Fundo>
+          <ContainerBotao>
+            <DivBotao>
+                <Botao onClick={()=> getProfile()}> 
+                  <AiOutlineCloseCircle display="block" color="#DC143C" fontSize="3em"/>
+                </Botao>
+                <Botao onClick={()=> chooseProfileLike()}>
+                  <BiHeartCircle display="block" color="#DC143C" fontSize="3em"/>
+                </Botao>
+              </DivBotao>
+            </ContainerBotao>
+      </div>   
+        
       );
 }

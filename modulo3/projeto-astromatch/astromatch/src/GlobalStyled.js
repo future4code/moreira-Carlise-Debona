@@ -1,10 +1,25 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyled = createGlobalStyle `
-  * {
-    font-family: 'Montserrat', sans-serif;
-  }  
-  body {
+
+body {
+  margin: 0;
+  background-color: #D0D0D0;
+  font-family: Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+`
+
+
+
+
+
+/* 
+
+`  body {
     display: block;
     margin-left:35%;
     margin-right:35%;
@@ -24,4 +39,4 @@ export const GlobalStyled = createGlobalStyle `
    
     
   }
-`
+` */
