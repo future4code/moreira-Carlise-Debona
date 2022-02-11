@@ -92,12 +92,6 @@ export const Perfil = styled.p`
 
 export const Fundo = styled.div`
   
-    /* padding: 20px 20px 0px;
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 0%;
-    -webkit-box-pack: end;
-    justify-content: flex-end; */
   top: 20px;
   display: flex;
 	position: relative;
