@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../../components/HeaderAll';
 import axios from "axios";
 import {BsFillTrashFill} from 'react-icons/bs';
-import {Botao, Foto, Nome} from './styled';
+import {Botao, Scroll, DivLista, DivBotao, Foto, Nome} from './styled';
 
 export default function ListaContatos() {
 
@@ -34,8 +34,11 @@ export default function ListaContatos() {
     const listaLike = matches.map(like=>{
         return (
           <div key={like.id}>
+            <DivLista>
             <Foto src={like.photo}/>
-            <Nome>{like.name}</Nome>           
+            <Nome>{like.name},</Nome>
+            <Nome>{like.age}</Nome>           
+            </DivLista>
           </div>
         )
     });
@@ -43,8 +46,12 @@ export default function ListaContatos() {
         return (
             <div>
               <Header/>
+              <Scroll>
               {listaLike}
+              </Scroll>
+             <DivBotao>
               <Botao onClick={()=>{resetLista()}}><BsFillTrashFill color="black" fontSize="1.6em"/></Botao>
+             </DivBotao>
             </div>
         );
 }

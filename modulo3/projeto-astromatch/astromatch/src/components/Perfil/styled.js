@@ -6,11 +6,6 @@ export const Img = styled.img`
     z-index: 1;
     position: relative;
     top:10px;
-    
-    /* width: 100%;
-    
-    border-radius: 1em;
-    max-height: 65vh;  */
 `
 
 export const Botao = styled.div `
