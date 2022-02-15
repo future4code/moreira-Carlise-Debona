@@ -4,12 +4,15 @@ import MainHome from '../../components/MainHome';
 import {Container} from './styled'
 
 
+
+
 class Home extends Component {
     render() {
         return (
             <Container>
                 <Header/>
                 <MainHome/>
+                
             </Container>
         );
     }

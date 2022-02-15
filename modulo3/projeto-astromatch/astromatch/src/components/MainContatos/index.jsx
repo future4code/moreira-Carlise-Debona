@@ -4,6 +4,7 @@ import axios from "axios";
 import {BsFillTrashFill} from 'react-icons/bs';
 import {Botao, Scroll, DivLista, DivBotao, Foto, Nome} from './styled';
 
+
 export default function ListaContatos() {
 
   const [matches, setMatches] = useState([]);
@@ -39,6 +40,7 @@ export default function ListaContatos() {
             <Nome>{like.name},</Nome>
             <Nome>{like.age}</Nome>           
             </DivLista>
+            
           </div>
         )
     });

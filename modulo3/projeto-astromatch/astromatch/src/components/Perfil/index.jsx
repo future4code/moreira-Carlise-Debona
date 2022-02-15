@@ -5,6 +5,7 @@ import {Img, ContainerBotao, DivBotao, FotoFundo, Infos, DivIdade, DivNome, P, A
 import {BiHeartCircle} from 'react-icons/bi'
 import {AiOutlineCloseCircle} from 'react-icons/ai'
 
+
 export default function  GetPerfil() {
   const [profile, setProfile] = useState([]);
    const [match, setMatch] = useState(false);

@@ -83,7 +83,4 @@ export const DivHome = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-
-
-
 `

@@ -75,8 +75,6 @@ export const DivBotao =styled.div`
   
 `
 
-
-
 export const Perfil = styled.p`
     display: block;
     margin-block-start: 1em;
