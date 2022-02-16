@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
 import { useNavigate} from "react-router-dom";
-
+import React, { useState, useEffect } from 'react';
 
 
 
 export default function Form() {
+    const[listaTrip, setListaTrip] = useState([]);
+
+    
+
+
+
   const routes = useNavigate()
 
-  const goToListPage = () => {
+  const goToAplication = () => {
     routes("/tripsList")
   }
 
-  const goToLoginPage = () => {
-    routes("/login")
+  const goToHome = () => {
+    routes("/tripsList")
   }
 
         return (
@@ -23,8 +29,8 @@ export default function Form() {
                 Passeio relaxante, ecoturismo e muita mais...
               </h3>
                 
-               <button>Ver Viagem</button> 
-               <button>Área ADM</button>
+               <button onClick={() => goToHome()} >Voltar</button> 
+               {/* <button onClick={() => goToCreateTrip()} >Entrar</button> */}
                <p>os melhores pacotes de viagens você encontra aqui  na labex aproveite!</p>
                <div>
 

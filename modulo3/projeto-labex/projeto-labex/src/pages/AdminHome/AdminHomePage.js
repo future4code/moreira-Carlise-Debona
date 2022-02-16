@@ -14,7 +14,7 @@ export default function HomeAdm() {
   }
 
   const goToCreateTrip = () => {
-    routes("adminTripsCreate")
+    routes("/adminTripsCreate")
   }
 
   const goToHome = () => {

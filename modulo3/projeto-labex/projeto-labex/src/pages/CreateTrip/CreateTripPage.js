@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import { useNavigate} from "react-router-dom";
 
 export default function CreateTrip() {
-  // const routes = useNavigate()
+  const routes = useNavigate()
 
-  // const goToListPage = () => {
-  //   routes("/tripsList")
-  // }
+  const goToListPage = () => {
+    routes("/adminTripsList")
+  }
 
-  // const goToLoginPage = () => {
-  //   routes("/login")
-  // }
+  const goToLoginPage = () => {
+    routes("/login")
+  }
 
         return (
             <div>

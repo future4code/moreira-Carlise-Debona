@@ -1,40 +1,50 @@
 import React, { Component } from 'react';
 import { useNavigate} from "react-router-dom";
-
-
+import {Div, Home, Button, ButtonVoltar, Nav, RedesSociais} from './styled';
+import { FaFacebookF } from 'react-icons/fa'
+import { BsInstagram, BsTwitter, BsYoutube } from 'react-icons/bs'
+import {BsFillArrowLeftCircleFill} from 'react-icons/bs';
 
 
 export default function ListTrip() {
   const routes = useNavigate()
 
-  const goToHomeAdm = () => {
-    routes("/adminTripsList")
+  const goToForm = () => {
+    routes("/tripsApplication")
   }
 
-  const goToLoginPage = () => {
-    routes("/login")
+  const goToHome = () => {
+    routes("/")
   }
 
-        return (
+    return (
+      <Home>
+        <header>
+          <Nav>
             <div>
               <p>Logo</p>
-              <p>Logo</p>
-              <p>Logo</p>
-
-              <h3>Aventuras, mochilão Cultural gastronômica, 
-                Passeio relaxante, ecoturismo e muita mais...
-              </h3>
-                
-               <button>Ver Viagem</button> 
-               <button>Área ADM</button>
-               <p>os melhores pacotes de viagens você encontra aqui  na labex aproveite!</p>
-               <div>
-
-               </div>
-              
             </div>
-        );
-    }
+              <ButtonVoltar onClick={() => goToHome()}>
+                  <BsFillArrowLeftCircleFill className="icone"/>
+              </ButtonVoltar> 
+              <Button onClick={() => goToForm()}>Inscreva-se</Button>
+          </Nav>
+        </header>
+        <div>
+        <h3>Lista de Viagens</h3>
+        </div>
+
+        <Div>                
+          <RedesSociais>
+            <FaFacebookF className="icone" />
+            <BsInstagram className="icone" />
+            <BsTwitter className="icone" />
+            <BsYoutube className="icone" />
+            </RedesSociais>
+        </Div>
+      </Home>
+  );
+}
 
 
 
