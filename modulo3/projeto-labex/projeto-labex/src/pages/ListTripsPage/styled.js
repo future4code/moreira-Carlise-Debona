@@ -42,7 +42,7 @@ export const Nav= styled.nav`
   flex-wrap: nowrap;
   flex-direction: row;
   align-content: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 60px;
@@ -66,24 +66,25 @@ export const Button =styled.button`
   text-align: center;
   color: white;
   cursor: pointer;
-  margin-left: 50px;
   background-color: #3E86F5;
   box-shadow: 0 0 40px 40px transparent inset, 0 0 0 0 white;
   -webkit-transition: all 150ms ease-in-out;
   transition: transform 0.9s;
     :hover {
-     box-shadow: 0 0 10px 0 white inset, 0 0 10px 4px white;
+     box-shadow: 0 0 14px 0 white inset, 0 0 4px 2px white;
     }
     :active{
       background-color: white;
       color: #3E86F5;
-      box-shadow: 0 0 10px 0 white inset, 0 0 10px 4px white;
+      box-shadow: 0 0 4px 0 white inset, 0 0 4px 2px white;
       
     }
 `
 
 export const ButtonVoltar =styled.button`
+  position: relative;
   border: none;
+  right: 50px;
   background-color: transparent;
   color: white;
   border-radius: 30px;
@@ -96,6 +97,11 @@ export const ButtonVoltar =styled.button`
   transition: transform 0.9s;
     :hover{
       background-color: transparent;
-      box-shadow: 0 0 10px 0 white inset, 0 0 10px 4px white;
+      box-shadow: 0 0 4px 0 white inset, 0 0 4px 2px white;
+      height: 20px;
     }
+`
+export const Img= styled.img`
+ width: 10%;
+ 
 `

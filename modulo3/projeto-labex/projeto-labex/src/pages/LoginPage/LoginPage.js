@@ -1,44 +1,81 @@
-import React, { Component } from 'react';
-import { useNavigate} from "react-router-dom";
-
-
+import React, { useState } from 'react';
+import {useNavigate} from "react-router-dom";
+import {Home, Img, ImgLogo, Button, DivInput, Input, Div, DivButton, DivLogo} from './styled';
+import axios from 'axios';
 
 
 export default function Login() {
-  const routes = useNavigate()
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const navigate=useNavigate();
 
-  const goToHomeAdm = () => {
-    routes("/adminTripsList")
+
+  const onSubmitLogin = () => {
+    const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/:carlise-debona-moreira/login'
+    const headers = {"Content-Type":"application/json"}
+    const body = {
+        "email": email,
+        "password": senha,
+    }
+
+    axios.post(url, body, {headers})
+    .then(res => {
+        localStorage.setItem("token", res.data.token);
+        navigate("/adminTripsList")
+    })
+    .catch(error => {
+        console.log(error.response);
+        alert("Digite seu email e senha")
+    })
   }
+
+  const onChangeEmail = (event) => {
+    setEmail(event.target.value);
+  }
+
+  const onChangeSenha = (event) => {
+    setSenha(event.target.value);
+  }
+
+  const routes = useNavigate()
 
   const goToHome = () => {
     routes("/")
   }
 
-        return (
-            <div>
-              <p>Logo</p>
+    return (
+    <Home>
+        <Img src="https://i.postimg.cc/5Nx5dB1g/Papel-de-Parede-Azul-Montanha-Fotoc-ntrico-Religioso-Espiritual-11.png"/>
+        <div>
+          <Div>
 
-              <h3>Aventuras, mochilão Cultural gastronômica, 
-                Passeio relaxante, ecoturismo e muita mais...
-              </h3>
-              <h3>Aventuras, mochilão Cultural gastronômica, 
-                Passeio relaxante, ecoturismo e muita mais...
-              </h3>
-              <h3>Aventuras, mochilão Cultural gastronômica, 
-                Passeio relaxante, ecoturismo e muita mais...
-              </h3>
-                
-               <button onClick={() => goToHomeAdm()}>Entrar</button> 
-               <button onClick={() => goToHome()}>Voltar</button>
-               <p>os melhores pacotes de viagens você encontra aqui  na labex aproveite!</p>
-               <div>
-
-               </div>
-              
-            </div>
-        );
-    }
+              <DivInput>
+                <DivLogo>
+                  <ImgLogo src="https://i.postimg.cc/VvJfwHX8/Logo-Est-tica-4.png"/>
+                  <h3 className="h3">Login</h3>
+                </DivLogo>
+                  <Input
+                  value={email}
+                  placeholder="email"
+                  onChange={onChangeEmail}
+                  type="email"
+                  />
+                  <Input
+                  value={senha}
+                  placeholder="senha"
+                  onChange={onChangeSenha}
+                  type="password"
+                  />
+              </DivInput>
+              <DivButton>
+                  <Button onClick={onSubmitLogin}>Entrar</Button> 
+                  <Button onClick={() => goToHome()}>Voltar</Button>
+              </DivButton>  
+          </Div>
+        </div>
+    </Home>
+  );
+}
 
 
 

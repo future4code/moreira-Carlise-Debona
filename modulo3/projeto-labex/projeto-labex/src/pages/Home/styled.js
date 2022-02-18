@@ -3,16 +3,19 @@ import styled from 'styled-components'
 
 export const H3= styled.h3`
   position: relative;
-  top: 150px;
+  top: 40px;
   color:white;
   text-align:center;
-  font-size: 2.5em;
-  padding-left: 7em;
-  padding-right: 7em;
+  font-size: 1.8em;
+  padding-left: 15em;
+  padding-right: 15em;
 `
 
+export const Img= styled.img`
+ width: 13%;
+`
 export const Home = styled.div`
-  background-image: url("https://i.postimg.cc/g2jFxyvj/Papel-de-Parede-Azul-Montanha-Fotoc-ntrico-Religioso-Espiritual-1.png"); 
+  background-image: url("https://i.postimg.cc/J45NCVFC/Papel-de-Parede-Azul-Montanha-Fotoc-ntrico-Religioso-Espiritual.png"); 
   background-repeat: no-repeat;
   position: relative;
   width: 100vw; 
@@ -25,12 +28,14 @@ export const Home = styled.div`
   flex-wrap: nowrap;
   justify-content: space-evenly;
   align-items: stretch;
+  
 `
 
 export const Button = styled.button`
   position: relative;
   border-color: white;
   border-radius: 10em;
+  border: 1px solid;
   padding: 1em;
   padding-left: 3em;
   padding-right: 3em;
@@ -68,7 +73,7 @@ export const DivButton =styled.div`
     justify-content: center;
     align-items: center;
     position: relative;
-    top: 150px;
+    top: 100px;
 `
 export const Div =styled.div`
     display: flex;
@@ -89,8 +94,7 @@ export const DivP =styled.div`
     color: white;
     font-size: 1.2em;
     position: relative;
-    top: 100px;
-    font-weight: bold;
+    top: 130px;
 `
 
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate} from "react-router-dom";
-import {H3, Div, DivP, Home, DivButton, Button, RedesSociais} from './styled';
+import {H3, Div, Img, DivP, Home, DivButton, Button, RedesSociais} from './styled';
 import { FaFacebookF } from 'react-icons/fa'
 import { BsInstagram, BsTwitter, BsYoutube } from 'react-icons/bs'
 
@@ -21,7 +21,7 @@ export default function HomePage(){
 
     <Home>
       
-              <p>Logo</p>
+      <Img src="https://i.postimg.cc/VvJfwHX8/Logo-Est-tica-4.png"/>
 
               <H3>Aventuras, mochilão Cultural gastronômica, 
                 Passeio relaxante, ecoturismo e muita mais...
@@ -31,7 +31,7 @@ export default function HomePage(){
                 <Button onClick={() => goToLoginPage()}>Área Adm</Button>
               </DivButton>
               <DivP>
-                <p>Os melhores pacotes de viagens você encontra aqui  na labex aproveite!</p>
+                <p>Os melhores pacotes de viagens você encontra aqui  na Labex aproveite!</p>
               </DivP>
               <Div>                
                 <RedesSociais>

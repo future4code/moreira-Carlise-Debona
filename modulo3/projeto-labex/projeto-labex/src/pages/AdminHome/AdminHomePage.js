@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { useNavigate} from "react-router-dom";
-
-
-
-
+import {Div, Home, Img, Button, ButtonVoltar, Nav, ButtonCriar, RedesSociais} from './styled';
+import { FaFacebookF } from 'react-icons/fa'
+import { BsInstagram, BsTwitter, BsYoutube } from 'react-icons/bs'
+import {BsFillArrowLeftCircleFill} from 'react-icons/bs';
+import {BiLogIn} from 'react-icons/bi';
+import {MdOutlineAddLocationAlt} from 'react-icons/md';
 
 
 export default function HomeAdm() {
@@ -21,25 +23,36 @@ export default function HomeAdm() {
     routes("/")
   }
 
-        return (
-            <div>
-              <p>Logo</p>
-
-              <h3>Aventuras, mochilão Cultural gastronômica, 
-                Passeio relaxante, ecoturismo e muita mais...
-              </h3>
+    return (
+      <Home>
+        <header>
+          <Nav>
+            <ButtonVoltar onClick={() => goToHome()}>
+              <BsFillArrowLeftCircleFill className="icone"/>
+            </ButtonVoltar>
+            
+            <Img src="https://i.postimg.cc/ryJV083Z/Logo-Est-tica-5.png"/>
+            <Div>
+              <ButtonCriar onClick={() => goToCreateTrip()}><MdOutlineAddLocationAlt className="icone"/>Criar Viagem</ButtonCriar> 
+              <div><Button onClick={() => goToLogin()}><BiLogIn className="icone"/>Logout</Button></div>     
+            </Div>       
+          </Nav>
+        </header>
                 
-               <button onClick={() => goToCreateTrip()}>Criar Viagem</button> 
-               <button onClick={() => goToLogin()}>Logout</button>
-               <button onClick={() => goToHome()}>Voltar</button>
-               <p>os melhores pacotes de viagens você encontra aqui  na labex aproveite!</p>
-               <div>
-
-               </div>
               
-            </div>
-        );
-    }
+              
+        <Div>                
+          <RedesSociais>
+            <FaFacebookF className="icone" />
+            <BsInstagram className="icone" />
+            <BsTwitter className="icone" />
+            <BsYoutube className="icone" />
+            </RedesSociais>
+        </Div>
+              
+      </Home>
+    );
+}
 
 
 
