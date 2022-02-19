@@ -24,11 +24,11 @@ export const Div =styled.div`
     align-items: center;
 `
 
-export const RedesSociais= styled.div`
+export const SocialNetworks= styled.div`
   display: flex;
   flex-direction: column;
 
-    .icone{
+    .icons{
       flex: 1;
       margin: 0.5em;
       color:white;
@@ -51,7 +51,7 @@ export const Nav= styled.nav`
   padding: 1em;
  
 
-  .icone{
+  .icon{
     font-size:1.5em;
   }
 `
@@ -83,7 +83,7 @@ export const Button =styled.button`
     }
 `
 
-export const ButtonVoltar =styled.button`
+export const ButtonBack =styled.button`
   position: relative;
   border: none;
   right: 50px;
@@ -108,7 +108,7 @@ export const Img= styled.img`
  
 `
 
-export const ButtonCriar =styled.button`
+export const ButtonCreate =styled.button`
   position: relative;
   display: flex;
   right: 40px;
@@ -134,4 +134,61 @@ export const ButtonCriar =styled.button`
       color: black;
       box-shadow: 0 0 4px 0  inset, 0 0 4px 2px #3E86F5;
     }
+`
+
+export const DivList= styled.div`
+  border:solid 1px #3E86F5;
+  padding:10px;
+  margin-left: 20px;
+  margin-top: 20px;
+  border-radius: 30px;
+  font-size: 12px;  
+`
+
+export const DivListTrip= styled.div`
+  position: relative;
+  top: 20%;
+  overflow-y: scroll;
+  width: 40%;
+  border:solid 1px #F8F8FF;
+  height: 470px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+`
+
+
+export const ContainerList= styled.div`
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  width: 80%;
+  margin: -80px;
+  padding-bottom: 10px;
+`
+
+export const H3= styled.h3`
+  position: relative;
+  top: 18%;
+`
+
+export const ButtonReset = styled.div `
+    border: 1px solid transparent;
+    background-color: transparent;
+    color: transparent;
+    transition: 0.2s ease;
+    align-self: center; 
+    font-size: 0.8em;
+    margin-left: 0.2em;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.5s;
+        :hover{
+        background-color: transparent;
+        color:transparent;
+        transform: scale(1.5);
+      }
+      :active{
+        background-color: transparent;
+      
+      }
 `

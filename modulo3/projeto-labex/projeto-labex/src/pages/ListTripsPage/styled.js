@@ -14,6 +14,7 @@ export const Home = styled.div`
   flex-wrap: nowrap;
   justify-content: space-evenly;
   align-items: stretch;
+  
 `
 export const Div =styled.div`
     display: flex;
@@ -22,6 +23,7 @@ export const Div =styled.div`
     align-content: center;
     justify-content: space-between;
     align-items: center;
+    
 `
 
 export const RedesSociais= styled.div`
@@ -104,4 +106,39 @@ export const ButtonVoltar =styled.button`
 export const Img= styled.img`
  width: 10%;
  
+`
+
+export const DivList= styled.div`
+  border:solid 1px #3E86F5;
+  padding:10px;
+  margin-left: 20px;
+  margin-top: 20px;
+  border-radius: 30px;
+  font-size: 12px;  
+`
+
+export const DivListTrip= styled.div`
+  position: relative;
+  top: 20%;
+  overflow-y: scroll;
+  width: 40%;
+  border:solid 1px #F8F8FF;
+  height: 470px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+`
+
+
+export const ContainerList= styled.div`
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  width: 80%;
+  margin: -80px;
+  padding-bottom: 10px;
+`
+
+export const H3= styled.h3`
+  position: relative;
+  top: 18%;
 `

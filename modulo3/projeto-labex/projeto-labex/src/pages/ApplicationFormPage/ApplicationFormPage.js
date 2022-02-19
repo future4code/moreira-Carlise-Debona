@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { useNavigate} from "react-router-dom";
-import {Div, Input, Home, Img, Button, ButtonVoltar, Nav, RedesSociais, DivImg, Foto, DivFrase} from './styled';
+import {Div, Input, DivForm, Home, Form, Img, Button, Select, ButtonBack, Nav, RedesSociais, DivImg, Foto, Pharase} from './styled';
 import { FaFacebookF } from 'react-icons/fa'
 import { BsInstagram, BsTwitter, BsYoutube } from 'react-icons/bs'
 import {BsFillArrowLeftCircleFill} from 'react-icons/bs';
@@ -8,7 +8,7 @@ import useForm from '../../hooks/useForm'
 import { useState } from "react";
 import useRequestData from '../../hooks/useRequestData';
 
-export default function Form() {
+export default function FormAplication() {
   const [id, setTripId] = useState("");
   const [trips] = useRequestData("https://us-central1-labenu-apis.cloudfunctions.net/labeX/:carlise-debona-moreira/trips", {})
 
@@ -45,21 +45,22 @@ export default function Form() {
       <Home>
         <header>
           <Nav>
-            <ButtonVoltar onClick={() => goToHome()}>
+            <ButtonBack onClick={() => goToHome()}>
               <BsFillArrowLeftCircleFill className="icone"/>
-            </ButtonVoltar>
+            </ButtonBack>
               <Img src="https://i.postimg.cc/VvJfwHX8/Logo-Est-tica-4.png"/>
           </Nav>
         </header>
-        <div>
+        <Div>
+        <DivForm>
           <h3>Inscreva-se para uma viagem</h3>
-          <form onSubmit={cadastrar}>
-            <select  
+          <Form onSubmit={cadastrar}>
+            <Select  
             defaultValue="" 
             onChange={onChangeTripId}>
               <option value="" disabled>Escolha uma viagem</option>
               {OpcoesTrip}
-            </select>
+            </Select>
             <Input
               name={"name"}
               value={form.name}
@@ -96,7 +97,7 @@ export default function Form() {
               required
               title={"A profissão deve ter no mínimo 10 caracteres"}
             />
-            <select
+            <Select
               name={"country"}
               value={form.country}
               placeholder="País"
@@ -105,20 +106,20 @@ export default function Form() {
             >
           <option value={""} disabled>Escolha um País</option>
 
-          </select>
-          </form>
-        </div>
+          </Select>
+          </Form>
+        </DivForm>
         
-        <Div>
-          <DivFrase>
+        
+          <Pharase>
             <h3>Vem conosco e saiba tudo sobre como viver essa experiência incrível!</h3>
-          </DivFrase>
+          </Pharase>
           <DivImg>
             <Foto src="https://i.postimg.cc/DfMwGLpw/Hero-Content.png"/>
           </DivImg>
         </Div>        
                
-               {/* <button onClick={() => goToCreateTrip()} >Entrar</button> */}
+
                
         <div>                
           <RedesSociais>

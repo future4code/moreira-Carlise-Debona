@@ -57,6 +57,7 @@ export const Nav= styled.nav`
 
 export const Button =styled.button`
   position: relative;
+  top: 20px;
   border:none;
   border-radius: 10em;
   padding: 0.5em;
@@ -81,7 +82,7 @@ export const Button =styled.button`
     }
 `
 
-export const ButtonVoltar =styled.button`
+export const ButtonBack =styled.button`
   position: relative;
   border: none;
   right: 50px;
@@ -117,7 +118,7 @@ export const Foto= styled.img`
  top: 120px;
 `
 
-export const DivFrase= styled.div`
+export const Pharase= styled.div`
  width: 15%;
  position: relative;
  top: 100px;
@@ -125,11 +126,55 @@ export const DivFrase= styled.div`
 `
 
 export const Input= styled.input`
-  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
   height: 50px; 
   border-radius: 30px;
-  border: none;
+  border: 1px solid #3E86F5;
   outline: 0;
   font-size: 15px;
   padding:10px;
+  width: 100%;
 `
+
+export const DivForm = styled.div`
+  display:flex;
+  flex-direction: column;
+  width: 30%;
+  align-items: center;
+  position: relative;
+  top: 60px;
+  justify-content: center;
+  align-content: center;
+  
+`
+
+export const Form = styled.form`
+  display:flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-around;
+  width: 100%;
+`
+
+export const Select = styled.select`
+  margin-top: 20px;
+  border: 1px solid #3E86F5;
+  height: 50px; 
+  border-radius: 30px;
+  outline: 0;
+  font-size: 15px;
+  padding:10px;
+  cursor: pointer;
+  width: 100%;
+`
+export const Option = styled.option`
+  border: 1px solid #3E86F5;
+  border-radius: 30px;
+  background-color: white;
+  width: 100%;
+`
+
