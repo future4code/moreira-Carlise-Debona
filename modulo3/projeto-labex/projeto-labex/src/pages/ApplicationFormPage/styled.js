@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Home = styled.div`
-  background-image: url("https://i.postimg.cc/J0KSCNyH/Caixa-De-Pergunta-Post-1.png");
+  background-image: url("https://i.postimg.cc/ry5t25v9/Blue-Minimalist-Facts-You-Didn-t-Know-About-Space-Youtube-Thumbnail-4.png");
   background-repeat: no-repeat;
   position: relative;
   width: 100vw; 
@@ -14,6 +14,7 @@ export const Home = styled.div`
   flex-wrap: nowrap;
   justify-content: space-evenly;
   align-items: stretch;
+  background-color: black;
 `
 export const Div =styled.div`
     display: flex;
@@ -31,7 +32,7 @@ export const RedesSociais= styled.div`
     .icone{
       flex: 1;
       margin: 0.5em;
-      color:#3E86F5;
+      color:white;
       font-size: 1em;
     }
 `
@@ -57,6 +58,9 @@ export const Nav= styled.nav`
 
 export const Button =styled.button`
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   top: 20px;
   border:none;
   border-radius: 10em;
@@ -108,21 +112,27 @@ export const Img= styled.img`
 `
 
 export const DivImg= styled.div`
-  width: 40%;
+  width: 35%;
  
 `
 
 export const Foto= styled.img`
- width: 90%;
+ width: 100%;
  position: relative;
  top: 120px;
+
 `
 
 export const Pharase= styled.div`
- width: 15%;
+ width: 20%;
  position: relative;
  top: 100px;
  left: 150px;
+ color: white;
+ background-color: black;
+ opacity: 50%;
+ padding:30px;
+border-radius: 20px;
 `
 
 export const Input= styled.input`
@@ -131,7 +141,7 @@ export const Input= styled.input`
   margin-top: 20px;
   height: 50px; 
   border-radius: 30px;
-  border: 1px solid #3E86F5;
+  border: none;
   outline: 0;
   font-size: 15px;
   padding:10px;
@@ -147,6 +157,7 @@ export const DivForm = styled.div`
   top: 60px;
   justify-content: center;
   align-content: center;
+  color: white;
   
 `
 
@@ -162,7 +173,7 @@ export const Form = styled.form`
 
 export const Select = styled.select`
   margin-top: 20px;
-  border: 1px solid #3E86F5;
+  border: none;
   height: 50px; 
   border-radius: 30px;
   outline: 0;

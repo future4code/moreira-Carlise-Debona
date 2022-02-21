@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Home = styled.div`
-  background-image: url("https://i.postimg.cc/mDL3fS9b/fundo.png"); 
+  background-image: url("https://i.postimg.cc/C1Dfc8Gd/Black-Blue-Universe-Desktop-Wallpaper-2.png"); 
   background-repeat: no-repeat;
   position: relative;
   width: 100vw; 

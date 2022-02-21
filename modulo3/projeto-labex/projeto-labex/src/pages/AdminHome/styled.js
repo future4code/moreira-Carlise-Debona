@@ -137,23 +137,29 @@ export const ButtonCreate =styled.button`
 `
 
 export const DivList= styled.div`
-  border:solid 1px #3E86F5;
+  background-color:white;
+  border:solid 1px white;
   padding:10px;
   margin-left: 20px;
   margin-top: 20px;
   border-radius: 30px;
   font-size: 12px;  
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
 `
 
 export const DivListTrip= styled.div`
   position: relative;
   top: 20%;
   overflow-y: scroll;
-  width: 40%;
+  width: 30%;
   border:solid 1px #F8F8FF;
   height: 470px;
-  padding-right: 10px;
+  padding-right: 15px;
   padding-bottom: 10px;
+  color:black;
 `
 
 
@@ -161,7 +167,7 @@ export const ContainerList= styled.div`
   display: flex;
   flex-direction:column;
   align-items: center;
-  width: 80%;
+  width: 100%;
   margin: -80px;
   padding-bottom: 10px;
 `
@@ -169,6 +175,7 @@ export const ContainerList= styled.div`
 export const H3= styled.h3`
   position: relative;
   top: 18%;
+  color: white;
 `
 
 export const ButtonReset = styled.div `
@@ -191,4 +198,13 @@ export const ButtonReset = styled.div `
         background-color: transparent;
       
       }
+`
+
+export const DivName = styled.div`
+  display: flex;
+
+`
+export const PName = styled.div`
+  padding-left: 10px;
+
 `

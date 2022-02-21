@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-export const useProtectedPage = () => {
+export const useProtectPage = () => {
   const navigate = useNavigate()
 
   useEffect(()=>{

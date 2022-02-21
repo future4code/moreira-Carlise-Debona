@@ -13,6 +13,7 @@ export const Home = styled.div`
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
+  
 `
 
 export const Img= styled.img`

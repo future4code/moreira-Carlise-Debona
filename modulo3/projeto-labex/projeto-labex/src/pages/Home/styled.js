@@ -3,19 +3,18 @@ import styled from 'styled-components'
 
 export const H3= styled.h3`
   position: relative;
-  top: 40px;
   color:white;
   text-align:center;
-  font-size: 1.8em;
-  padding-left: 15em;
-  padding-right: 15em;
+  font-size: 1.9em;
+  padding-left: 10em;
+  padding-right: 10em;
 `
 
 export const Img= styled.img`
  width: 13%;
 `
 export const Home = styled.div`
-  background-image: url("https://i.postimg.cc/J45NCVFC/Papel-de-Parede-Azul-Montanha-Fotoc-ntrico-Religioso-Espiritual.png"); 
+  background-image: url("https://i.postimg.cc/TPhwGjM7/Blue-Minimalist-Facts-You-Didn-t-Know-About-Space-Youtube-Thumbnail-2.png"); 
   background-repeat: no-repeat;
   position: relative;
   width: 100vw; 
@@ -28,7 +27,7 @@ export const Home = styled.div`
   flex-wrap: nowrap;
   justify-content: space-evenly;
   align-items: stretch;
-  
+  background-color: black;
 `
 
 export const Button = styled.button`
@@ -37,26 +36,28 @@ export const Button = styled.button`
   border-radius: 10em;
   border: 1px solid;
   padding: 1em;
-  padding-left: 3em;
-  padding-right: 3em;
+  padding-left: 2em;
+  padding-right: 2em;
   font-size:1em;
   font-weight: bold;
   text-align: center;
   color: white;
   cursor: pointer;
-  margin: 80px;
+  margin: 20px;
   background-color: transparent;
   box-shadow: 0 0 40px 40px transparent inset, 0 0 0 0 white;
   -webkit-transition: all 150ms ease-in-out;
   transition: all 150ms ease-in-out;
     :hover {
      box-shadow: 0 0 10px 0 white inset, 0 0 10px 4px white;
+     
     }
 `
 
 export const RedesSociais= styled.div`
   display: flex;
   flex-direction: column;
+  padding-bottom: 20px;
 
     .icone{
       flex: 1;
@@ -73,7 +74,7 @@ export const DivButton =styled.div`
     justify-content: center;
     align-items: center;
     position: relative;
-    top: 100px;
+    top: 60px;
 `
 export const Div =styled.div`
     display: flex;
@@ -94,7 +95,13 @@ export const DivP =styled.div`
     color: white;
     font-size: 1.2em;
     position: relative;
-    top: 130px;
+    top: 180px;
+    background-color: black;
+    margin-left: 350px;
+    margin-right: 350px;
+    padding: 0.5em;
+    opacity : 50%;
+    border-radius: 50px;
 `
 
 

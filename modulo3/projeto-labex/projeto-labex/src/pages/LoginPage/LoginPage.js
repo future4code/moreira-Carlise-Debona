@@ -45,13 +45,13 @@ export default function Login() {
 
     return (
     <Home>
-        <Img src="https://i.postimg.cc/5Nx5dB1g/Papel-de-Parede-Azul-Montanha-Fotoc-ntrico-Religioso-Espiritual-11.png"/>
+        <Img src="https://i.postimg.cc/mkkrTZN7/Post-Facebook-Promo-o-Pacote-de-Turismo-Capad-cia-2.png"/>
         <div>
           <Div>
 
               <DivInput>
                 <DivLogo>
-                  <ImgLogo src="https://i.postimg.cc/VvJfwHX8/Logo-Est-tica-4.png"/>
+                  <ImgLogo src="https://i.postimg.cc/D0VBZZ5T/Logo-Est-tica-6.png"/>
                   <h3 className="h3">Login</h3>
                 </DivLogo>
                   <Input
