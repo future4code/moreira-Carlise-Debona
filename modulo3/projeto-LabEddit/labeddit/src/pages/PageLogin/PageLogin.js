@@ -5,44 +5,80 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 import useForm from '../../hooks/useForm';
 import {BASE_URL} from '../../constants/urls';
+import Anima from '../../img/comunica.gif';
+import {goToHomeFeed} from '../../Router/Coordinator'
+
 
 export default function Login() {
-  //const [email, setEmail] = useState("");
-  //const [senha, setSenha] = useState("");
-  const navigate=useNavigate();
 
-  const { form, onChange } = useForm({ email: "", password: "" })
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
+  const navigate= useNavigate();
+
+  const {form, onChange, clearFields}= useForm({ email: "", password: "" })
+
+  // const oneChangeEmail = (e) => {
+  //   const newEmail = e.target.value;
+  //   setEmail(newEmail);
+  // }
+
+  // const oneChangePassword = (e) => {
+  //   const newPassword = e.target.value;
+  //   setPassword(newPassword);
+  // }
+
+  const submitForm = ((e)=>{
+    e.preventDefault()
+    console.log("Formulário enviado:", form)
+    onSubmitLogin()
+    
+  })
+
+   //const token = localStorage.getItem("token")
+
+  // const logout = () =>{
+  //   localStorage.removeItem("token")
+  // }
+
+//   const onSubmitForm = (event) => {
+//     event.preventDefault();
+//     clearFields();
+// }
+  
+  
+  
   const onSubmitLogin = () => {
+    //e.preventDefault()
     const url = `${BASE_URL}/users/login`
     const headers = {"Content-Type":"application/json"}
-    
+    const body = form
 
-    axios.post(url, form, headers)
+    axios.post(url, body, headers)
     .then(res => {
         localStorage.setItem("token", res.data.token);
+        //alert("Login autorizado")
         navigate("/feed")
+        clearFields()
     })
     .catch(error => {
+        //alert("Algo está errado, tente novamente!")
         console.log(error.response);
         
     })
   }
 
- 
-
-  const goToRegister = () => {
-    navigate("/cadastro")
-  }
 
     return (
     <Home>
-          <Div>
-          <form onClick={onSubmitLogin}>
+
+        <img src={Anima}/>
+
+          <form onClick={submitForm}>
               <DivInput>
                 <DivLogo>
-                  <ImgLogo src="https://i.postimg.cc/D0VBZZ5T/Logo-Est-tica-6.png"/>
-                  <h3 className="h3">Login</h3>
+                  <ImgLogo src="https://i.postimg.cc/Hs57M3nz/Logo-Est-tica-3.png"/>
+                  <h2 className="h3">Login</h2>
                 </DivLogo>
                 
                   <Input
@@ -66,11 +102,12 @@ export default function Login() {
                   />
               </DivInput>
               <DivButton>
-                  <Button type="submit"> Entrar </Button> 
+                  <Button type={"submit"}> Entrar </Button> 
+                  
               </DivButton> 
               </form> 
               <p> Primeira vez no LabEddit? <Link to="/cadastro">CADASTRAR-SE</Link></p>
-          </Div>
+        
         </Home>
   );
 }

@@ -1,12 +1,15 @@
 import React from "react";
-
-
+import Header from '../../components/Headers'
+import {Home} from './styled';
 
 export default function Feedd(){
 
 
   return (
-      <p> eu sou o feed</p>
+      <Home>
+        <Header/>
+        <p> eu sou o feed</p>
+      </Home>
 
 
   )

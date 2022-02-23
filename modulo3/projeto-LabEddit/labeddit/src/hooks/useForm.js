@@ -8,11 +8,11 @@ export const useForm = (initialState) => {
     setForm({ ...form, [name]: value });
   };
 
-  const cleanFields = () => {
+  const clearFields = () => {
     setForm(initialState);
   };
 
-  return { form, onChange, cleanFields };
+  return { form, onChange, clearFields };
 };
 
 export default useForm;

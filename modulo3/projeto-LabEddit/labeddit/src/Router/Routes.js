@@ -14,13 +14,13 @@ export default function Router() {
   return (
       <BrowserRouter>
           <Routes>
-              <Route exact path="/" element={<PageLogin/>} />
-              <Route exact path="/cadastro" element={<PageRegister/>} />
               <Route exact path="/feed" element={<PageFeed/>} />
-              <Route exact path="/adicionar" element={<PageAdd/>} />
+              <Route exact path="/cadastro" element={<PageRegister/>} />
+              <Route exact path="/" element={<PageLogin/>} />
               <Route exact path="/comentarios/:id" element={<PagePost/>} />
-              
+              <Route path='*' element={<PageErro />} />
           </Routes>
       </BrowserRouter>
   )
 }
+

@@ -1,14 +1,17 @@
-import {useEffect} from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLayoutEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { goToHomeFeed } from "../Router/Coordinator";
 
-export const usePrivateRoute = () => {
-    const navigate = useNavigate()
+const useUnprotectedPage = () => {
+    const history = useNavigate()
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const token = localStorage.getItem("token")
-
-        if(token === null) {
-            navigate('/')
+        if (token) {
+            goToHomeFeed(history)
         }
-    }, [navigate])
+    }, [history])
+
 }
+
+export default useUnprotectedPage

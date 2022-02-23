@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Home = styled.div`
-  background-color:#3E86F5;
+  background-color:#DCDCDC;
   background-repeat: no-repeat;
   position: relative;
   width: 100vw; 
@@ -12,15 +12,11 @@ export const Home = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: center;
+  align-items:center;
   
 `
 
-export const Img= styled.img`
- width: 50%;
- margin: 0;
- border-radius: 0px 60px 60px 0px;
-`
 export const ImgLogo= styled.img`
  width: 50%;
 `
@@ -31,61 +27,54 @@ export const DivLogo= styled.div`
   align-items: center;
     .h3{
       padding-top:50px;
-      color: white;
+      color: black;
     }
 `
-
-export const Div= styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  position: relative;
-  width: 50vw;
-  justify-content: flex-end;
-  align-items: stretch;
-  height: 100vh;
-  padding-left: 8em;
-  padding-right: 8em;
-  padding-bottom: 8em;
- `
 
 export const DivInput= styled.div`
   display: flex;
   flex-direction: column;
+  align-content: center;
+  align-items: center;
  `
 
 export const DivButton= styled.div`
 display: flex;
-flex-direction: row;
+flex-direction: column;
 justify-content: center;
+align-items: center;
+color: black;
+
 `
 
 export const Input= styled.input`
   margin-top: 20px;
-  height: 50px; 
+  height: 20px; 
   border-radius: 30px;
-  border: none;
+  border: 1px solid black;
   outline: 0;
   font-size: 15px;
   padding:10px;
+  width: 70%;
+
 `
 
 export const Button = styled.button`
   position: relative;
   border-color: white;
   border-radius: 10em;
-  border: 1px solid;
+  border: none;
   margin: 20px; 
-  padding: 1em;
+  padding: 0.5em;
   padding-left: 2em;
   padding-right: 2em;
   font-size:1em;
   font-weight: bold;
   text-align: center;
-  color: white;
+  color: black;
   cursor: pointer;
   margin-top: 50px;
-  background-color: transparent;
+  background-color: #D5F50B;
   box-shadow: 0 0 40px 40px transparent inset, 0 0 0 0 white;
   -webkit-transition: all 150ms ease-in-out;
   transition: all 150ms ease-in-out;
