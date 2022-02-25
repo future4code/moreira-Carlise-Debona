@@ -28,6 +28,7 @@ export const Nav= styled.nav`
 
 export const Button =styled.button`
   position: relative;
+
   display: flex;
   align-items: center;
   border:none;

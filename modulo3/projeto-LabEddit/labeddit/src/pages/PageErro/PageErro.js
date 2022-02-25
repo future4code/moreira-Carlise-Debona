@@ -11,12 +11,11 @@ export default function Erro(){
 
 
   return (
-    <Home>
-    <ButtonBack onClick={()=>goToHome(navigate)}> Voltar </ButtonBack>
-
-      
-
-    </Home>
+    <div>
+      <Home>
+        <ButtonBack onClick={()=>goToHome(navigate)}> Voltar </ButtonBack>
+      </Home>
+    </div>
   )
 
 }

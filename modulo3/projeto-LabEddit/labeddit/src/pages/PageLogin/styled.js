@@ -12,13 +12,24 @@ export const Home = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items:center;
+
+    .DivForm{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 100px;
+      border: solid 1px grey;
+      border-radius: 15px;
+      box-shadow: 5px 5px 5px grey;
+    }
   
 `
 
 export const ImgLogo= styled.img`
  width: 50%;
+ margin-top: 10px;
 `
 
 export const DivLogo= styled.div`

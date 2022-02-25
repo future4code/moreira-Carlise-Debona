@@ -1,25 +1,31 @@
 import { useState, useEffect } from "react"
-import { BASE_URL } from '../constants/urls'
 import axios from "axios"
 
-const useRequestData = (endpoint, initialState) => {
-    const [data, setData] = useState(initialState)
-
-    const getData = () => {
-        axios.get(`${BASE_URL}${endpoint}`, {
-            headers: {
-                auth: localStorage.getItem("token")
-            }
-        })
-        .then((res) => setData(res.data))
-        .catch((err) => alert(err.response.data.message))
-    }
+const useRequestData = (initialData, url)=>{
+    const [data, setData] = useState(initialData)
+    // const [login, setLogin] = useState(false);
+    // const [error, setError] = useState("");
 
     useEffect(() => {
-        getData()
-    }, [endpoint])
-
-    return [data, getData]
+      // setLogin(true);
+      //const headers = {Authorization: localStorage.getItem("token"),};
+      axios
+        .get(url, {
+          headers: {
+            Authorization: localStorage.getItem("token")
+        }
+      })
+        .then((response) => {
+          
+          setData(response.data);
+        })
+        .catch((error) => {
+          // setLogin(false);
+          console.log(error)
+        });
+    }, [url]);
+    
+    return (data);
 }
 
 export default useRequestData

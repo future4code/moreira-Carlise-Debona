@@ -10,14 +10,13 @@ import {BASE_URL} from '../../constants/urls';
 
 export default function Register(){
 
-  //const [registerId, setRegisterId] = useState([]);
   
   const navigate= useNavigate();
 
   const { form, onChange, cleanFields } = useForm({ username:"", email: "", password: ""})
 
   const goToHome = () => {
-    navigate("/login")
+    navigate("/")
   }
 
 
@@ -38,7 +37,7 @@ export default function Register(){
        console.log(res.data)
         alert("Cadastro realizado")
         cleanFields()
-        navigate("/") 
+        navigate("/feed") 
     })
     .catch((error) => {
         // alert("Algo deu errado, tente novamente!")
@@ -47,10 +46,6 @@ export default function Register(){
     })
   }
 
-//   const clearInput = () => {
-//     cleanFields()
-//     setRegisterId("")
-// }
     return (
     <Home>
           <form onClick={submitForm}>

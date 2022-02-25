@@ -1,17 +1,16 @@
-import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { goToHomeFeed } from "../Router/Coordinator";
+import { goToHomeFeed, goToHome } from "../Router/Coordinator";
 
-const useUnprotectedPage = () => {
-    const history = useNavigate()
+export default function useProtectedPage() {
+    const navigate = useNavigate()
 
-    useLayoutEffect(() => {
-        const token = localStorage.getItem("token")
-        if (token) {
-            goToHomeFeed(history)
-        }
-    }, [history])
+    useEffect(()=>{
+      const token = localStorage.getItem("token")
+         if (token === null){
+          goToHome(navigate)
+      }
+    },[navigate])
 
 }
 
-export default useUnprotectedPage

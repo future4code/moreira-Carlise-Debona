@@ -7,7 +7,7 @@ export const goToRegister =(navigate) => {
 }
 
 export const goToHomeFeed =(navigate) => {
-  navigate.push("/feed")
+  navigate.push(`/feed/${id}`)
 }
 
 export const goToPost =(navigate, id) => {

@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 import useForm from '../../hooks/useForm';
 import {BASE_URL} from '../../constants/urls';
 import Anima from '../../img/comunica.gif';
-import {goToHomeFeed} from '../../Router/Coordinator'
+
 
 
 export default function Login() {
@@ -18,15 +18,6 @@ export default function Login() {
 
   const {form, onChange, clearFields}= useForm({ email: "", password: "" })
 
-  // const oneChangeEmail = (e) => {
-  //   const newEmail = e.target.value;
-  //   setEmail(newEmail);
-  // }
-
-  // const oneChangePassword = (e) => {
-  //   const newPassword = e.target.value;
-  //   setPassword(newPassword);
-  // }
 
   const submitForm = ((e)=>{
     e.preventDefault()
@@ -34,36 +25,25 @@ export default function Login() {
     onSubmitLogin()
     
   })
-
-   //const token = localStorage.getItem("token")
-
-  // const logout = () =>{
-  //   localStorage.removeItem("token")
-  // }
-
-//   const onSubmitForm = (event) => {
-//     event.preventDefault();
-//     clearFields();
-// }
-  
   
   
   const onSubmitLogin = () => {
-    //e.preventDefault()
+    
     const url = `${BASE_URL}/users/login`
     const headers = {"Content-Type":"application/json"}
     const body = form
 
     axios.post(url, body, headers)
-    .then(res => {
+    .then((res) => {
         localStorage.setItem("token", res.data.token);
         //alert("Login autorizado")
-        navigate("/feed")
         clearFields()
+        navigate("/feed/:id")
+        
     })
-    .catch(error => {
+    .catch((error) => {
         //alert("Algo está errado, tente novamente!")
-        console.log(error.response);
+        console.log(error.res);
         
     })
   }
@@ -71,9 +51,9 @@ export default function Login() {
 
     return (
     <Home>
-
+      
         <img src={Anima}/>
-
+        <div className="DivForm">
           <form onClick={submitForm}>
               <DivInput>
                 <DivLogo>
@@ -104,10 +84,11 @@ export default function Login() {
               <DivButton>
                   <Button type={"submit"}> Entrar </Button> 
                   
-              </DivButton> 
+              </DivButton>
+              
               </form> 
-              <p> Primeira vez no LabEddit? <Link to="/cadastro">CADASTRAR-SE</Link></p>
-        
+              <p> Primeira vez no LabEddit? <Link to="/cadastro">CADASTRAR-SE</Link></p></div>
+              
         </Home>
   );
 }
