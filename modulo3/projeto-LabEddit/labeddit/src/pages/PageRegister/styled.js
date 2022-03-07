@@ -56,7 +56,7 @@ export const DivInput= styled.div`
 
 export const DivButton= styled.div`
 display: flex;
-flex-direction: column;
+flex-direction: row;
 justify-content: center;
 align-items: center;
 color: black;

@@ -28,7 +28,6 @@ export const Nav= styled.nav`
 
 export const Button =styled.button`
   position: relative;
-
   display: flex;
   align-items: center;
   border:none;
@@ -60,10 +59,10 @@ export const Img= styled.img`
  margin-right: 70%;
 `
 
-export const ButtonCreate =styled.button`
+export const ButtonBack =styled.button`
   position: relative;
   display: flex;
-  right: 40px;
+  right: 20px;
   align-items: center;
   border:none;
   border-radius: 10em;

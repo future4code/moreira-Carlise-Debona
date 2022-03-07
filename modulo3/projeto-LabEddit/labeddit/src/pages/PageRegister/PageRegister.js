@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import {useNavigate} from "react-router-dom";
 import {Home, ButtonBack, ImgLogo, Img, Nav, Button, DivInput, Input, Div, DivButton, DivLogo} from './styled';
 import axios from 'axios';
@@ -18,8 +18,6 @@ export default function Register(){
   const goToHome = () => {
     navigate("/")
   }
-
-
 
     const submitForm = (e) => {
     e.preventDefault();
@@ -40,7 +38,7 @@ export default function Register(){
         navigate("/feed") 
     })
     .catch((error) => {
-        // alert("Algo deu errado, tente novamente!")
+       
         console.log(error.res);
         
     })
@@ -81,15 +79,12 @@ export default function Register(){
                   title={"A senha deve conter no mínimo 8 caracteres"}
                   />
               </DivInput>
-              <Button type="submit"> Criar </Button> 
-              </form>
               <DivButton>
-                  
-                  <ButtonBack onClick={()=>goToHome(navigate)}> Voltar </ButtonBack> 
-              </DivButton> 
+                <Button type="submit"> Criar </Button> 
+                <ButtonBack onClick={()=>goToHome(navigate)}> Voltar </ButtonBack>
+              </DivButton>  
+              </form>
               
-              
-        
         </Home>
 
 

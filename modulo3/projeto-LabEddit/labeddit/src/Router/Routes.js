@@ -17,7 +17,7 @@ export default function Router() {
               <Route exact path="/feed/:id" element={<PageFeed/>} />
               <Route exact path="/cadastro" element={<PageRegister/>} />
               <Route exact path="/" element={<PageLogin/>} />
-              <Route exact path="/comentarios/:id" element={<PagePost/>} />
+              <Route exact path="/detalhes/:id" element={<PagePost/>} />
               <Route path='*' element={<PageErro />} />
           </Routes>
       </BrowserRouter>

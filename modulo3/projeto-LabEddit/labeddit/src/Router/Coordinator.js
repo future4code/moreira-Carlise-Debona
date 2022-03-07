@@ -1,19 +1,19 @@
 export const goToLogin =(navigate) => {
-  navigate.push("/")
+  navigate("/")
 }
 
 export const goToRegister =(navigate) => {
-  navigate.push("/cadastro")
+  navigate("/cadastro")
 }
 
-export const goToHomeFeed =(navigate) => {
-  navigate.push(`/feed/${id}`)
+export const goToHomeFeed =(navigate, id) => {
+  navigate(`/feed/:${id}`)
 }
 
 export const goToPost =(navigate, id) => {
-  navigate.push(`/comentarios/${id}`)
+  navigate(`/detalhes/${id}`)
 }
 
 export const goToAdd =(navigate) => {
-  navigate.push("/adicionar")
+  navigate("/adicionar")
 }
