@@ -1,0 +1,21 @@
+import React from "react";
+import { ButtonBack, Home } from "../PageRegister/styled";
+import{useNavigate} from 'react-router-dom';
+
+export default function Erro(){
+
+  const navigate= useNavigate();
+  const goToHome = () => {
+    navigate("/login")
+  }
+
+
+  return (
+    <div>
+      <Home>
+        <ButtonBack onClick={()=>goToHome(navigate)}> Voltar </ButtonBack>
+      </Home>
+    </div>
+  )
+
+}
