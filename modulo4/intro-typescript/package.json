@@ -1,0 +1,19 @@
+{
+  "name": "intro-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node ./build/index.js",
+    "dois": "tsc && node ./build/index2.js",
+    "tres": "tsc && node ./build/index3.js",
+    "quatro": "tsc && node ./build/index4.js",
+    "cinco": "tsc && node ./build/index5.js"
+  },
+  "author": "carlise debona",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.6.2"
+  }
+}
