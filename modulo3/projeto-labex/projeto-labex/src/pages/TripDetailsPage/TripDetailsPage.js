@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom"
 
-import {Div, DivS, ContainerDetails, ButtonReset, Home, PName, Img, DivListTrip,DivName, DivList, ContainerList, H3, ButtonBack, Nav, ButtonCreate, SocialNetworks, ButtonLogout} from './styled';
+import {DivS, ContainerDetails, ButtonReset, Home, Div, Img, DivListTrip,DivName, DivList, ContainerList, H3, ButtonBack, Nav, ButtonCreate, SocialNetworks, ButtonLogout} from './styled';
 import { FaFacebookF } from 'react-icons/fa'
 import { BsInstagram, BsTwitter, BsYoutube, BsWhatsapp, BsFillArrowLeftCircleFill} from 'react-icons/bs'
 import axios from "axios";
@@ -11,57 +11,7 @@ import {BsFillPersonXFill} from 'react-icons/bs';
 
 
 export default function TripDetailsPage() {
-  const [ id, setId ] = useState(localStorage.getItem('id'));
-    const [candidateTrip, setCandidateTrip] = useState([])
-    const [approvedCandidate, setApproved] = useState([])
-    const [ tripDetails, setTripDetails ] = useState({});
-    
-    
-    
-    useEffect(() => {getCandidate()}, []);
   
-    const getCandidate = ()=>{
-        const url= `https://us-central1-labenu-apis.cloudfunctions.net/labeX/:carlise-debona-moreira/trip/${id}`
-        const headers = { auth: localStorage.getItem("token")}
-      axios.get(url, {headers})
-      .then((res)=>{
-        setTripDetails(res.data.trip);
-        setCandidateTrip(res.data.candidates)
-        setApproved(res.data.approved)
-        console.log(res.data)
-      })
-      .catch((err)=>{console.log(err.data)});
-    }
-      const putApprovedCandidate =(candidateId)=> {
-        const url= `https://us-central1-labenu-apis.cloudfunctions.net/labeX/:carlise-debona-moreira/trips/:${id}/candidates/:${candidateId}/decide`
-        const headers = { auth: localStorage.getItem("token")}
-        const body = {"approve": true}
-      axios.put(url, body, {headers})
-      .then((res)=>{
-        alert("Cadiato Aprovado")
-        getCandidate()
-        console.log(res.data)
-      })
-      .catch((err)=>{
-        alert("Erro, candidato reprovado tente novamente!")
-        console.log(err.res)});
-      };
-  
-      const putDisaPproveCandidate =(disaPproveCandidateId)=> {
-        const url= `https://us-central1-labenu-apis.cloudfunctions.net/labeX/:carlise-debona-moreira/trips/:${id}/candidates/:${disaPproveCandidateId}/decide`
-        const headers = { auth: localStorage.getItem("token")}
-        const body = {"approve": false}
-      axios.put(url, body, {headers})
-      .then((res)=>{
-        alert("Cadiato Reprovado")
-        getCandidate()
-        console.log(res.data)
-      })
-      .catch((err)=>{
-        alert("Erro, candidato reprovado tente novamente!")
-        console.log(err.res)});
-      };
-
       const routes = useNavigate();
 
       const goToHomeAdm = () => {
@@ -72,6 +22,76 @@ export default function TripDetailsPage() {
         routes("/login")
       };
       
+  const [ id, setId ] = useState(localStorage.getItem('id'));
+  const [ tripDetails, setTripDetails ] = useState({});
+  const [candidateTrip, setCandidateTrip] = useState([])
+  const [approvedCandidate, setApproved] = useState()
+
+  useEffect(() => {getCandidate()}, []);
+
+const getCandidate = () => {
+  const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/:carlise-debona-moreira/trip/${id}`
+  axios
+    .get(`${url}`, {
+      headers: {
+        auth: localStorage.getItem('token')
+      }
+    })
+    .then((res) => {
+      setTripDetails(res.data.trip);
+      setCandidateTrip(res.data.trip.candidates);
+      setApproved(res.data.trip.approved);
+    })
+    .catch((err) => {
+      console.log(err.data);
+    });
+};
+
+const putApprovedCandidate = (candidateId) => {
+  const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/:carlise-debona-moreira/trips/${id}/candidates/${candidateId}/decide`
+  const body = {
+    approve: true,
+  }
+  axios.put(url, body, {
+    headers: {
+      auth: localStorage.getItem('token')
+    }
+  })
+  .then((res) => {
+    getCandidate()
+    
+  })
+  .catch((err) => {
+    alert('Candidato não foi aprovado!')
+    console.log(err.response);
+  })
+}
+
+const putDisaPproveCandidate = (reproveId) => {
+  const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/:carlise-debona-moreira/trips/${id}/candidates/${reproveId}/decide`
+  const body = {
+    approve: false
+  }
+  axios.put(url, body, {
+    headers: {
+      auth: localStorage.getItem('token')
+    }
+  })
+  .then((res) => {
+  
+    alert("Removido na viagem!")
+  
+    getCandidate()
+  })
+  .catch((err) => {
+    alert('Candidato não foi aprovado!')
+  })
+
+}
+
+
+
+
 
     return (
       <Home>
@@ -104,33 +124,39 @@ export default function TripDetailsPage() {
           </ContainerList>
 
           <ContainerList>
-            <H3>Lista de candidatos Aprovados</H3>
+            <H3>Lista de candidatos Pendentes</H3>
               <DivListTrip>
-              {approvedCandidate && approvedCandidate.length > 0 ? approvedCandidate.map((item) => {
-                return <DivList key={item.id}>
-                    <p><strong>Nome: </strong>{item.name}</p>
-                    </DivList>}) : <p>Não consta nenhum candidato</p>}
+              
+              {candidateTrip && candidateTrip.length > 0 ? candidateTrip.map((item) => {
+			        	return <DivList key={item.id}>
+					    <p><strong>Nome: </strong>{item.name}</p>
+              <p><strong>Descrição: </strong>{item.applicationText}</p>
+              <p><strong>Profissão: </strong>{item.profession}</p>
+              <p><strong>Idade: </strong>{item.age}</p>
+              <p><strong>País: </strong>{item.country}</p>
+            <Div>
+            <ButtonReset onClick={()=>{putApprovedCandidate(item.id)}}><FaUserPlus color="#3E86F5" fontSize="1.6em"/></ButtonReset>
+            
+            <ButtonReset onClick={()=>{putDisaPproveCandidate(item.id)}}><BsFillPersonXFill color="red" fontSize="1.6em"/></ButtonReset>
+            </Div>
+            </DivList>}) : <p>Não tem candidatos pendente</p>}
+              
               </DivListTrip>
             </ContainerList>
 
             <ContainerList>
-            <H3>Lista de candidatos Pendentes</H3>
+            <H3>Lista de candidatos Aprovados</H3>
               <DivListTrip>
-                  {candidateTrip && candidateTrip.length > 0 ? candidateTrip.map((candidate) => {
-                    return <DivList key={candidate.id}>
-                      <p><strong>Nome: </strong>{candidate.name}</p>
-                      <p><strong>Descrição: </strong>{candidate.applicationText}</p>
-                      <p><strong>Profissão: </strong>{candidate.profession}</p>
-                      <p><strong>Idade: </strong>{candidate.age}</p>
-                      <p><strong>País: </strong>{candidate.country}</p>
-                    <ButtonReset onClick={()=>{putApprovedCandidate(candidate.id)}}><FaUserPlus color="black" fontSize="1.6em"/></ButtonReset>
-                    <ButtonReset onClick={()=>{putDisaPproveCandidate(candidate.id)}}><BsFillPersonXFill color="black" fontSize="1.6em"/></ButtonReset>             
-                </DivList>}) : <p>Não consta nenhum candidato</p>}
-              </DivListTrip>
+                {approvedCandidate && approvedCandidate.length > 0 ? approvedCandidate.map((item) => {
+                  return <DivList key={item.id}>
+                <p><strong>Nome: </strong>{item.name}</p>
+                <p><strong>Idade: </strong>{item.age}</p>
+                <p><strong>País: </strong>{item.country}</p>
+              </DivList>}) : <p>Não tem candidatos pendente</p>}
+            </DivListTrip>
         </ContainerList>
         </ContainerDetails>
         
-
         <DivS>                
           <SocialNetworks>
             <BsWhatsapp className="icons"/>
