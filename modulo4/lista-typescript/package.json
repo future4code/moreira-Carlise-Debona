@@ -13,7 +13,10 @@
     "filme": "tsc && node ./build/index3.js",
     "colaborador": "tsc && node ./build/index4.js",
     "email": "tsc && node ./build/index5.js",
-    "contas": "tsc && node ./build/index6.js"
+    "contas": "tsc && node ./build/index6.js",
+    "ordena": "tsc && node ./build/index7.js",
+    "rg": "tsc && node ./build/index8.js",
+    "palavra": "tsc && node ./build/index9.js"
   },
   "keywords": [],
   "author": "",
