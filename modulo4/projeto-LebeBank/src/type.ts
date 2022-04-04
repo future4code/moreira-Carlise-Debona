@@ -2,9 +2,9 @@
 export type Account ={
   name: string,
   CPF: string, 
-  dateOfBirth: Date,
+  dateOfBirth: Date | string,
   balance: number,
-  statement: []
+  statement: Transaction[]
 }
 
 
@@ -12,5 +12,5 @@ export type Account ={
 export type Transaction ={
   description: string,
   value: number,  
-  date: Date
+  date: Date | string
 }
