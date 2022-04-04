@@ -35,7 +35,7 @@ app.get("/balance",(req: Request, res: Response)=>{
   //const token = req.headers.authorization
   try{
    let numberCPF = req.query.CPF as string;
-
+    console.log(numberCPF);
     if(typeof numberCPF !== "string" || numberCPF.length !== 14){
       throw new Error("O CPF precisa ter o formato string 000.000.000-00 com 11 dígitos")
     }
