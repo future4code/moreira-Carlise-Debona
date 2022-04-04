@@ -4,7 +4,7 @@ import { Account } from "./type";
 export const accounts: Account[] = [
   { name: "Carlise Debona",
     CPF: "123.456.789-12",
-    dateOfBirth: new Date(14/11/1989),
+    dateOfBirth: "14/11/1989",
     balance: 10000,
     statement: [
     {
@@ -16,7 +16,7 @@ export const accounts: Account[] = [
   },
 
   { name: " Gustavo Debona",
-    CPF: "012.345.678.-32",
+    CPF: "012.345.678-32",
     dateOfBirth: "13/11/1989",
     balance: 5000,
     statement: [

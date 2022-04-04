@@ -29,6 +29,28 @@ app.get("/users",(req: Request, res: Response)=>{
   }
 })
 
+//Ver saldo da conta.
+app.get("/balance",(req: Request, res: Response)=>{
+  let errorCode: number = 400;
+  //const token = req.headers.authorization
+  try{
+   let numberCPF = req.query.CPF as string;
+
+    if(typeof numberCPF !== "string" || numberCPF.length !== 14){
+      throw new Error("O CPF precisa ter o formato string 000.000.000-00 com 11 dígitos")
+    }
+
+    if(numberCPF){
+      const checkAccount = accounts.find(item => item.CPF === numberCPF);
+      const allBalance = checkAccount?.balance;
+      res.status(200).send({"Saldo Total":allBalance});
+    }
+    throw new Error("Não foi possível encontrar essa conta")
+  } catch(error: any){
+    res.status(errorCode).send({message: error.message})
+  }
+})
+
 app.post("/users", (req: Request, res: Response)=>{
   //const usuario = req.headers.authorization
   let errorCode: number = 400;
