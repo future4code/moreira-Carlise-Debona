@@ -3,6 +3,7 @@ import knex from "knex";
 import cors from "cors";
 import dotenv from "dotenv";
 import { AddressInfo } from "net";
+import { AnyARecord } from "dns";
 
 
 dotenv.config();
@@ -66,52 +67,54 @@ app.use(cors());
 
 //b)
 
-const searchActor = async (name: any): Promise<any> => {
-  const result = await connection.raw(`
-    SELECT * FROM Actor WHERE name = "${name}"
-  `)
-  return result
-}
+// const searchActor = async (name: any): Promise<any> => {
+//   const result = await connection.raw(`
+//     SELECT * FROM Actor WHERE name = "${name}"
+//   `)
+//   return result
+// }
 
 //Busca pelo nome da pessoa.
-app.get('/actor/name', async(req, res) => {
-      try {
-          const name = req.query.name
-          console.log(name)
-          console.log(await searchActor(name))
-          const nameActor = await searchActor(name)
-          console.log(nameActor[0])
-          res.send(nameActor[0][0])
-      }
-      catch(error) {
-         console.log("error.message");
-         res.status(500).send("Unexpected error")
-      }
-      })
+// app.get('/actor/name', async(req, res) => {
+//       try {
+//           const name = req.query.name
+//           console.log(name)
+//           console.log(await searchActor(name))
+//           const nameActor = await searchActor(name)
+//           console.log(nameActor[0])
+//           res.send(nameActor[0][0])
+//       }
+//       catch(error) {
+//          console.log("error.message");
+//          res.status(500).send("Unexpected error")
+//       }
+//       })
 
-//c)
+// //c)
 //Pega os gender
-// const countActors = async (gender: string): Promise<any> => {
-//   const result = await connection.raw(`
-//     SELECT COUNT(*) as count FROM Actor WHERE gender = "${gender}"
-//   `);
-//   const count = result[0][0].count;
-//   return count;
-// };
+const countActors = async (gender: any): Promise<any> => {
+  const result = await connection.raw(`
+    SELECT COUNT(*) as count FROM Actor WHERE gender = "${gender}"
+  `);
+  const count = result[0][0].count;
+  return count;
+};
 
-// app.get("/actor/:gender", async (req: Request, res: Response) => {
-//   try {
-//     const gender = req.params.gender
+app.get("/actor/gender", async (req: Request, res: Response) => {
+  try {
+    const gender = req.query.gender;
+    console.log("aqui",gender)
 
-//     console.log(await countActors(gender));
+           const nameActor = await countActors(gender)
+            console.log("oi",nameActor)
 
-//     res.end()
-//     console.log(gender)
-//   } catch (error: any) {
-// 		console.log(error.message)
-//     res.status(500).send("Unexpected error")
-//   }
-// }); 
+             res.send(nameActor[0])
+
+  } catch (error: any) {
+		console.log(error.message)
+    res.status(500).send("Unexpected error")
+  }
+}); 
 
 //Exercício 2
 
