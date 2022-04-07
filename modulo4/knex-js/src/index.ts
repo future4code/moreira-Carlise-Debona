@@ -22,50 +22,51 @@ const app: Express = express();
 app.use(express.json());
 app.use(cors());
 
-// Esse arquivo seria o index.ts
+//Esse arquivo seria o index.ts
 
-const getActorById = async (id: string): Promise<any> => {
-  const result = await connection.raw(`
-    SELECT * FROM Actor WHERE id = '${id}'
-  `)
+// const getActorById = async (id: string): Promise<any> => {
+//   const result = await connection.raw(`
+//     SELECT * FROM Actor WHERE id = '${id}'
+//   `)
 
-	return result[0][0]
-};
-
-
-// Assim a chamada funciona fora dos endpoints com .then()/.catch
-getActorById("001")
-	.then(result => {
-		console.log(result)
-	})
-	.catch(err => {
-		console.log(err)
-	});
-
-// Assim a chamada funciona fora dos endpoints com await
-(async () => {
-  console.log(await getActorById("001") )
-})();
+// 	return result[0][0]
+// };
 
 
-// Ou então podemos chamá-la dentro de um endpoint
-app.get("/actor/:id", async (req: Request, res: Response) => {
-  try {
-    const id = req.params.id
+// //Assim a chamada funciona fora dos endpoints com .then()/.catch
+// getActorById("001")
+// 	.then(result => {
+// 		console.log(result)
+// 	})
+// 	.catch(err => {
+// 		console.log(err)
+// 	});
 
-    console.log(await getActorById(id));
+// //Assim a chamada funciona fora dos endpoints com await
+// (async () => {
+//   console.log(await getActorById("001") )
+// })();
 
-    res.end()
-  } catch (error) {
-		//console.log(error.message)
-    res.status(500).send("Unexpected error")
-  }
-}); // bata no http://localhost:3003/users/001 e veja o que acontece no terminal
+
+//Ou então podemos chamá-la dentro de um endpoint
+// app.get("/actor/:id", async (req: Request, res: Response) => {
+//   try {
+//     const id = req.params.id
+
+//     console.log(await getActorById(id));
+
+//     res.end()
+//   } catch (error) {
+// 		//console.log(error.message)
+//     res.status(500).send("Unexpected error")
+//   }
+// }); 
+// bata no http://localhost:3003/users/001 e veja o que acontece no terminal
 
 
 //b)
 
-const searchActor = async (name: string): Promise<any> => {
+const searchActor = async (name: any): Promise<any> => {
   const result = await connection.raw(`
     SELECT * FROM Actor WHERE name = "${name}"
   `)
@@ -73,13 +74,14 @@ const searchActor = async (name: string): Promise<any> => {
 }
 
 //Busca pelo nome da pessoa.
-app.get('/actor/:name', async(req, res) => {
+app.get('/actor/name', async(req, res) => {
       try {
-          const name = req.params.name
-  
+          const name = req.query.name
+          console.log(name)
           console.log(await searchActor(name))
-  
-          res.end()
+          const nameActor = await searchActor(name)
+          console.log(nameActor[0])
+          res.send(nameActor[0][0])
       }
       catch(error) {
          console.log("error.message");
@@ -89,27 +91,27 @@ app.get('/actor/:name', async(req, res) => {
 
 //c)
 //Pega os gender
-const countActors = async (gender: string): Promise<any> => {
-  const result = await connection.raw(`
-    SELECT COUNT(*) as count FROM Actor WHERE gender = "${gender}"
-  `);
-  const count = result[0][0].count;
-  return count;
-};
+// const countActors = async (gender: string): Promise<any> => {
+//   const result = await connection.raw(`
+//     SELECT COUNT(*) as count FROM Actor WHERE gender = "${gender}"
+//   `);
+//   const count = result[0][0].count;
+//   return count;
+// };
 
-app.get("/users/:gender", async (req: Request, res: Response) => {
-  try {
-    const gender = req.params.gender
+// app.get("/actor/:gender", async (req: Request, res: Response) => {
+//   try {
+//     const gender = req.params.gender
 
-    console.log(await countActors(gender));
+//     console.log(await countActors(gender));
 
-    res.end()
-    console.log(gender)
-  } catch (error: any) {
-		console.log(error.message)
-    res.status(500).send("Unexpected error")
-  }
-}); 
+//     res.end()
+//     console.log(gender)
+//   } catch (error: any) {
+// 		console.log(error.message)
+//     res.status(500).send("Unexpected error")
+//   }
+// }); 
 
 //Exercício 2
 
@@ -195,35 +197,35 @@ const avgSalary = async (gender: string): Promise<any> => {
 
 //Exercício 3 para
 
-app.get("/actor/:id", async (req: Request, res: Response) => {
-  try {
-    const id = req.params.id;
-    const actor = await getActorById(id);
+// app.get("/actor/:id", async (req: Request, res: Response) => {
+//   try {
+//     const id = req.params.id;
+//     const actor = await getActorById(id);
 
-    res.status(200).send(actor)
-  } catch (err: any) {
-    res.status(400).send({
-      message: err.message,
-    });
-  }
-});
+//     res.status(200).send(actor)
+//   } catch (err: any) {
+//     res.status(400).send({
+//       message: err.message,
+//     });
+//   }
+// });
 
 //a)
 
 
 //b)
-app.get("/actor", async (req: Request, res: Response) => {
-  try {
-    const count = await countActors(req.query.gender as string);
-    res.status(200).send({
-      quantity: count,
-    });
-  } catch (err: any) {
-    res.status(400).send({
-      message: err.message,
-    });
-  }
-});
+// app.get("/actor", async (req: Request, res: Response) => {
+//   try {
+//     const count = await countActors(req.query.gender as string);
+//     res.status(200).send({
+//       quantity: count,
+//     });
+//   } catch (err: any) {
+//     res.status(400).send({
+//       message: err.message,
+//     });
+//   }
+// });
 
 //Exercício 4
 
@@ -234,7 +236,7 @@ app.post("/actor", async (req: Request, res: Response) => {
       req.body.name,
       req.body.salary,
       new Date(req.body.dateOfBirth),
-      req.body.salary
+      req.body.gender
     );
 
     res.status(200).send();
