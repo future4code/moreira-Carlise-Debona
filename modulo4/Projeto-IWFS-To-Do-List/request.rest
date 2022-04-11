@@ -11,3 +11,16 @@ Content-Type: application/json
 ################################
 GET http://localhost:3003/users/id001
 Content-Type: application/json
+
+################################
+PUT http://localhost:3003/users/edit/004
+Content-Type: application/json
+
+{
+    "id": "004",
+    "name": "Juliana Almeida",
+    "nickname": "Juju",
+    "email": "juju@gmail.com"
+}
+
+################################

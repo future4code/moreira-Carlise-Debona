@@ -73,8 +73,9 @@ app.post("/users", async (req: Request, res: Response) : Promise<void> => {
   }
 });
 
-//Busca usuário
+/////////////////////////////////////////////////////////////////
 
+//Busca usuário por id
 const getUserById = async (id: string): Promise<any> => {
   const result = await connection.raw(`
     SELECT id, nickname FROM Users WHERE id = '${id}'
@@ -82,11 +83,10 @@ const getUserById = async (id: string): Promise<any> => {
 	return result[0][0]
 };
 
+//Mostra id e apelido do usuário
 app.get("/users/:id", async (req: Request, res: Response) => {
   try {
-    const id = req.params.id
-    
-    console.log(await getUserById(id));
+    const id: string = req.params.id
     const userId = (await getUserById(id))
 
     res.status(200).send(userId)
@@ -94,6 +94,46 @@ app.get("/users/:id", async (req: Request, res: Response) => {
       res.status(500).send(error.message)
     }
 }); 
+
+/////////////////////////////////////////////////////////////////
+
+//Recebe os dados e atualiza
+const updateUser = async (
+  id: string, 
+  name: string, 
+  nickname: string, 
+  email: string
+  ): Promise<any> => {
+  await connection("Users")
+    .update({
+      name: name,
+      nickname: nickname,
+      email: email
+    })
+    .where("id", id);
+};
+
+//Altera os dados do usuário
+app.put("/users/edit/:id" , async (req: Request, res: Response) =>{
+  try{ 
+    await updateUser(
+      req.body.id, 
+      req.body.name,
+      req.body.nickname,
+      req.body.email,
+      );
+
+      res.status(200).send({
+        message: "Alterado com sucesso",
+      });
+    } catch (error: any) {
+      res.status(400).send({
+        message: error.message,
+      });
+    }
+  });
+
+
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
