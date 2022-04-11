@@ -182,7 +182,7 @@ const createTask = async (
     .into("ListTask");
 };
 
-//Criar Tarefa
+//Criar Tarefa e adicionar no banco de dados
 app.post("/task", async (req: Request, res: Response) : Promise<void> => {
   try {
       const title: string = req.body.title
@@ -235,6 +235,28 @@ app.post("/task", async (req: Request, res: Response) : Promise<void> => {
 });
 
 /////////////////////////////////////////////////////////////////
+
+//Busca tarefa por id
+const getTaskById = async (id: string): Promise<any> => {
+  const result = await connection.raw(`
+    SELECT * FROM ListTask WHERE id = '${id}'
+  `)
+	return result[0][0]
+};
+
+//Mostra tarefa pelo id
+app.get("/task/:id", async (req: Request, res: Response) => {
+  try {
+    const id: string = req.params.id
+    const taskId = (await getTaskById(id))
+    console.log(taskId)
+
+    res.status(200).send(taskId)
+
+  } catch (error: any) {
+      res.status(500).send(error.message)
+    }
+}); 
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
