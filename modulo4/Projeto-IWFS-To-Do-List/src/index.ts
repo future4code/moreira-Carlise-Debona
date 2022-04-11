@@ -21,15 +21,16 @@ export const connection = knex({
   }
 });
 
+
+//Criar usuário
 const createUser = async (
-  id: string,
   name: string,
-  nickname: number,
+  nickname: string,
   email: string
 ): Promise<void> => {
   await connection
     .insert({
-      id: id,
+      id: Date.now().toString(),
       name: name,
       nickname: nickname,
       email: email,
@@ -37,25 +38,62 @@ const createUser = async (
     .into("Users");
 };
 
-//Criar usuário
-app.post("/users", async (req: Request, res: Response) => {
+//Adiciona Usuário
+app.post("/users", async (req: Request, res: Response) : Promise<void> => {
+  
   try {
-    await createUser(
-      req.body.id,
-      req.body.name,
-      req.body.nickname,
-      req.body.email
-    );
+    const name: string = req.body.name;
+    const nickname: string = req.body.nickname;
+    const email: string = req.body.email;
 
-    res.status(201).send();
-  } catch (err: any) {
-    res.status(400).send({
-      message: err.message,
-    });
+    if(!name || !nickname || !email){
+      throw new Error("Todos os dados precisam ser preenchidos!")
+    }
+
+    await createUser(
+      name,
+      nickname,
+      email
+      );
+
+    res.status(201).send("Conta criada com sucesso!");
+  } catch (error: any) {
+    switch(error.message){
+      case "conta não encontrada":
+      res.status(404).send(error.message)
+      break 
+      case "usuário já existente":
+      res.status(409).send(error.message)
+      break
+      case "Todos os dados precisam ser preenchidos!":
+          res.status(422).send(error.message)      
+      default:
+      res.status(500).send("algo deu errado")
+    }
   }
 });
 
+//Busca usuário
 
+const getUserById = async (id: string): Promise<any> => {
+  const result = await connection.raw(`
+    SELECT id, nickname FROM Users WHERE id = '${id}'
+  `)
+	return result[0][0]
+};
+
+app.get("/users/:id", async (req: Request, res: Response) => {
+  try {
+    const id = req.params.id
+    
+    console.log(await getUserById(id));
+    const userId = (await getUserById(id))
+
+    res.status(200).send(userId)
+  } catch (error: any) {
+      res.status(500).send(error.message)
+    }
+}); 
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {

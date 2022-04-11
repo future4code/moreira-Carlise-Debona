@@ -1,2 +1,13 @@
 POST http://localhost:3003/users
 Content-Type: application/json
+
+{
+    "id": "004",
+    "name": "Juliana Debona",
+    "nickname": "Juju",
+    "email": "juju@gmail.com"
+}
+
+################################
+GET http://localhost:3003/users/id001
+Content-Type: application/json
