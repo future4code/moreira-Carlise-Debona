@@ -2,25 +2,45 @@ POST http://localhost:3003/users
 Content-Type: application/json
 
 {
-    "id": "004",
-    "name": "Juliana Debona",
-    "nickname": "Juju",
-    "email": "juju@gmail.com"
+    "name": "Gustavo Debona",
+    "nickname": "Gu",
+    "email": "gudebona@gmail.com"
 }
 
 ################################
-GET http://localhost:3003/users/id001
+GET http://localhost:3003/users/1649696450515
 Content-Type: application/json
 
 ################################
-PUT http://localhost:3003/users/edit/004
+
+GET http://localhost:3003/users/all
+Content-Type: application/json
+
+################################
+
+PUT http://localhost:3003/users/edit/1649696450515
+Content-Type: application/json
+
+{ 
+    
+    "name": "Gustavo Debona",
+    "nickname": "Gu",
+    "email": "gustavod@gmail.com"
+}
+
+################################
+
+POST http://localhost:3003/task
 Content-Type: application/json
 
 {
-    "id": "004",
-    "name": "Juliana Almeida",
-    "nickname": "Juju",
-    "email": "juju@gmail.com"
+    
+    "title": "Criar banco dos alunos",
+    "description": "Devemos criar o banco dos alunos para o módulo do backend",
+    "limitDate": "14/11/2020",
+    "status": "done",
+    "creatorUserId": "1649696450515",
+    "creatorUserNickname": "Gu"
 }
 
 ################################

@@ -38,7 +38,7 @@ const createUser = async (
     .into("Users");
 };
 
-//Adiciona Usuário
+//Cria Usuário
 app.post("/users", async (req: Request, res: Response) : Promise<void> => {
   
   try {
@@ -95,11 +95,34 @@ app.get("/users/:id", async (req: Request, res: Response) => {
     }
 }); 
 
+//Busca todos usuários
+const getUsers = async (): Promise<any> => {
+  const users: any = [];
+  const result = await connection.raw(`
+    SELECT id, nickname FROM Users
+  `)
+  
+	return result[0][0]
+};
+
+//Mostra id e apelido do usuário
+app.get("/users/all", async (req: Request, res: Response) => {
+  try {
+    const allUsers = (await getUsers())
+    console.log(await getUsers())
+    res.status(200).send(allUsers)
+    console.log(allUsers)
+
+  } catch (error: any) {
+      res.status(500).send(error.message)
+    }
+});
+
 /////////////////////////////////////////////////////////////////
 
 //Recebe os dados e atualiza
 const updateUser = async (
-  id: string, 
+  id: string,
   name: string, 
   nickname: string, 
   email: string
@@ -117,7 +140,7 @@ const updateUser = async (
 app.put("/users/edit/:id" , async (req: Request, res: Response) =>{
   try{ 
     await updateUser(
-      req.body.id, 
+      req.params.id, 
       req.body.name,
       req.body.nickname,
       req.body.email,
@@ -133,7 +156,85 @@ app.put("/users/edit/:id" , async (req: Request, res: Response) =>{
     }
   });
 
+/////////////////////////////////////////////////////////////////
 
+//Criar tarefa
+const createTask = async (
+
+  title: string,
+  description: string,
+  limitDate: string,
+  status: string,
+  creatorUserId: string,
+  creatorUserNickname: string,
+
+): Promise<void> => {
+  await connection
+    .insert({
+      id: Date.now().toString(),
+      title: title,
+      description: description,
+      limitDate: limitDate.split("/").reverse().join("-"),
+      status: status,
+      creatorUserId: creatorUserId,
+      creatorUserNickname: creatorUserNickname
+    })
+    .into("ListTask");
+};
+
+//Criar Tarefa
+app.post("/task", async (req: Request, res: Response) : Promise<void> => {
+  try {
+      const title: string = req.body.title
+      const description: string = req.body.description 
+      const limitDate = req.body.limitDate
+      const status: string = req.body.status
+      const creatorUserId: string = req.body.creatorUserId 
+      const creatorUserNickname: string = req.body.creatorUserNickname
+
+  if(
+      !title || 
+      !description || 
+      !limitDate || 
+      !status ||
+      !creatorUserId ||
+      !creatorUserNickname
+      ){
+      throw new Error("Todos os dados precisam ser preenchidos!")
+      }
+
+    if(typeof limitDate !== "string"){
+      throw new Error("A data está num formato inválido, precisa ser uma string da seguinte forma dd/mm/yy")
+    }
+
+    await createTask(
+      title,
+      description,
+      limitDate,
+      status,
+      creatorUserId,
+      creatorUserNickname
+      );
+
+    res.status(201).send("Tarefa criada com sucesso!");
+    
+  } catch (error: any) {
+    switch(error.message){
+      case "Tarefa não encontrada":
+        res.status(404).send(error.message)
+      break
+      case "A data está num formato inválido, precisa ser uma string da seguinte forma dd/mm/yy":
+        res.status(406).send(error.message)
+      break 
+      case "Todos os dados precisam ser preenchidos!":
+        res.status(422).send(error.message)      
+      default:
+        res.status(500).send("Algo deu errado")
+    }
+  }
+});
+
+/////////////////////////////////////////////////////////////////
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
