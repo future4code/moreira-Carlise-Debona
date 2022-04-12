@@ -95,28 +95,6 @@ app.get("/users/:id", async (req: Request, res: Response) => {
     }
 }); 
 
-//Busca todos usuários
-const getUsers = async (): Promise<any> => {
-  const users: any = [];
-  const result = await connection.raw(`
-    SELECT id, nickname FROM Users
-  `)
-  
-	return result[0][0]
-};
-
-//Mostra id e apelido do usuário
-app.get("/users/all", async (req: Request, res: Response) => {
-  try {
-    const allUsers = (await getUsers())
-    console.log(await getUsers())
-    res.status(200).send(allUsers)
-    console.log(allUsers)
-
-  } catch (error: any) {
-      res.status(500).send(error.message)
-    }
-});
 
 /////////////////////////////////////////////////////////////////
 
@@ -249,7 +227,6 @@ app.get("/task/:id", async (req: Request, res: Response) => {
   try {
     const id: string = req.params.id
     const taskId = (await getTaskById(id))
-    console.log(taskId)
 
     res.status(200).send(taskId)
 
@@ -258,11 +235,110 @@ app.get("/task/:id", async (req: Request, res: Response) => {
     }
 }); 
 
+/////////////////////////////////////////////////////////////////////////////////
+
+//Desafio 6 Pegar todos os usuário
+
+//Busca todos usuários
+const getAllUsers = async(): Promise<any[]> => {
+  const result = await connection.raw(`
+    SELECT id, nickname FROM Users
+  `)
+  
+	return result
+};
+
+//Mostra id e apelido do usuário
+app.get("/users", async (req: Request, res: Response) => {
+
+  try {
+    let allUsers: any = (await getAllUsers())
+    
+
+    if(allUsers.length === 0){
+      allUsers = []
+    }
+    
+    res.status(200).send({users: allUsers})
+    
+  } catch (error: any) {
+      res.status(500).send(error.message)
+    }
+});
+
+//////////////////////////////////////////////////////////////
+
+//Desafio 8 Pegar todos os usuário
+//Busca usuário por query
+const searchUser = async (nickname: string): Promise<any> => {
+  const result = await connection.raw(`
+    SELECT id, nickname FROM Users WHERE nickname = '${nickname}'
+  `)
+	return result[0][0]
+};
+
+//Mostra id e apelido do usuário por quary
+app.get("/users", async (req: Request, res: Response) => {
+  const query = req.query.query as string;
+  try {
+    if (!query) {
+      throw new Error("Sua query não foi enviada.");
+    }
+
+    let search = (await searchUser(query));
+
+    if (search.length === 0) {
+      search = [];
+    }
+
+    res.status(200).send({users: search})
+  } catch (error: any) {
+      res.status(500).send(error.message)
+    }
+}); 
+
+/////////////////////////////////////////////////////////////////////
+
+
+//Deletar
+
+const deleteUser = async (id: string): Promise<any> => {
+  const result = await connection.raw(`
+    DELETE FROM Users WHERE id = '${id}'
+  `)
+  result[0]
+}; 
+
+//Deleta usuário
+app.delete("/users/:id", async (req: Request, res: Response) : Promise<any> => {
+  try {
+    const userId: string = req.params.id
+
+
+    if (!userId ) {
+      throw new Error("Id não existe.");
+    }
+    console.log(userId)
+   
+
+    await deleteUser(userId);
+
+    res.status(200).send("Excluído")
+  } catch (err: any) {
+    res.status(412).send({
+      message: err.message,
+    });
+  }
+});
+
+/////////////////////////////////////////////////////////////////
+
+
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
-       const address = server.address() as AddressInfo;
-       console.log(`Server is running in http://localhost: ${address.port}`);
+      const address = server.address() as AddressInfo;
+      console.log(`Server is running in http://localhost: ${address.port}`);
     } else {
-       console.error(`Failure upon starting server.`);
+      console.error(`Failure upon starting server.`);
     }
 });
