@@ -10,4 +10,4 @@ app.get("/recipes", getAllRecipes);
 app.get("/user", getAllUsers);
 app.get("/user/name", getUserName);
 app.get("/user/:type", getUserType);
-app.get("/user/order", getOrder);
+app.get("/user/order/:filter", getOrder);
