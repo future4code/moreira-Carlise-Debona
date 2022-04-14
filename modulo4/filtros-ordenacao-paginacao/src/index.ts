@@ -1,6 +1,6 @@
 import { app } from "./app"
 
-import { createAdress }  from './endpoints/createAdress';
+import { createAdress }  from './endepoints/createAdress';
 
 
 app.post('/create', createAdress);
