@@ -12,3 +12,8 @@ Content-Type: application/json
     "estado": "RS"
 }
 ###
+
+GET https://viacep.com.br/ws/90680570/json/
+Content-Type: application/json
+
+###
