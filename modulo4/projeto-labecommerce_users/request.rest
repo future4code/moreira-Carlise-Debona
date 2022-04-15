@@ -3,8 +3,12 @@ Content-Type: application/json
 
 {
     
-    "name": "Caca" ,
-    "email": "caca@gmail.com",
-    "password": "caca123"
+    "name": "Gustavo Lume" ,
+    "email": "gulume@gmail.com",
+    "password": "5687p3e"
 }
+###
+
+GET http://localhost:3003/users
+Content-Type: application/json
 ###
