@@ -2,44 +2,45 @@
 import { Request, Response } from "express";
 import  connection  from "../Data/connections";
 
-//Criar usuário
-const labecommerce_users = async (
+//Create Products
+const labecommerce_products = async (
   name: string,
-  email: string,
-  password: string
+  price: number,
+  image_url: string
 ): Promise<void> => {
- 
+  
   await connection
     .insert({
       id: Date.now().toString(),
       name: name,
-      email: email,
-      password: password
+      price: price,
+      image_url: image_url
     })
-    .into("labecommerce_users");
+    .into("labecommerce_products");
 };
 
 
-//Cadastro de usuário
-export const createUsers = async (req: Request, res: Response): Promise<void> => {
+//Register Products
+export const createProducts = async (req: Request, res: Response): Promise<void> => {
   try{
           
     const name: string = req.body.name;
-    const email: string = req.body.email;
-    const password: string = req.body.password;
-    
-     if(
+    const price: number = req.body.price;
+    const image_url: string = req.body.image_url
+
+
+    if(
       !name || 
-      !email || 
-      !password
+      !price || 
+      !image_url
       ){
         res.statusCode = 422
       throw new Error("Fill in all fields!")
     }
-    await labecommerce_users(
+    await labecommerce_products(
       name,
-      email,
-      password
+      price,
+      image_url
     );
    
     res.status(201).send("Create Sucess!")

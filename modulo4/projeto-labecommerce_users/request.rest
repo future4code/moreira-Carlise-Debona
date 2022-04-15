@@ -1,3 +1,4 @@
+//Create users
 POST http://localhost:3003/users
 Content-Type: application/json
 
@@ -9,6 +10,23 @@ Content-Type: application/json
 }
 ###
 
+//Search users
 GET http://localhost:3003/users
+Content-Type: application/json
+###
+
+//Create products
+POST http://localhost:3003/products
+Content-Type: application/json
+
+{
+    "name": "Mac Book" ,
+    "price": 8900,
+    "image_url": "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ"
+}
+###
+
+//Search products
+GET http://localhost:3003/products
 Content-Type: application/json
 ###
