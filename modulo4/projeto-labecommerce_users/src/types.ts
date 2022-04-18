@@ -19,3 +19,11 @@ export type purchase = {
   quantity: number,
   total_price: number
 };
+
+export type HistoryPurchase = {
+  id:string,
+  user_id:string,
+  product_id:string,
+  quantity:number,
+  total_price:number
+} 

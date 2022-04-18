@@ -31,6 +31,7 @@ GET http://localhost:3003/products
 Content-Type: application/json
 ###
 
+//Purchase record
 POST http://localhost:3003/purchases
 Content-Type: application/json
 
@@ -42,3 +43,7 @@ Content-Type: application/json
 }
 ###
 
+//User Purchases 
+GET http://localhost:3003/users/1649983170045/purchases
+Content-Type: application/json
+###

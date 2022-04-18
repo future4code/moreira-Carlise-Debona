@@ -4,7 +4,7 @@ import  connection  from "../Data/connections";
 
 
 
-export const getAllAUsers = async (req: Request, res: Response): Promise<void> => {
+export const getAllUsers = async (req: Request, res: Response): Promise<void> => {
   try{
     const result = await connection.raw(`
     SELECT * FROM labecommerce_users
