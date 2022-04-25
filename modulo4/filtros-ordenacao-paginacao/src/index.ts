@@ -1,3 +1,11 @@
+
+import { app } from "./app"
+
+import { createAdress }  from './endepoints/createAdress';
+
+
+app.post('/create', createAdress);
+
 import { app } from "./app";
 import { getAllRecipes } from "./endpoints/getAllRecipes";
 import { getAllUsers } from "./endpoints/getAllUsers";
@@ -11,3 +19,4 @@ app.get("/user", getAllUsers);
 app.get("/user/name", getUserName);
 app.get("/user/:type", getUserType);
 app.get("/user/order/:filter", getOrder);
+

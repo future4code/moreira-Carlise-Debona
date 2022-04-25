@@ -1,3 +1,24 @@
+servicos-backend
+POST http://localhost:3003/create
+Content-Type: application/json
+
+{
+    
+    "cep": 90680570 ,
+    "logradouro": "Aparicio Borges",
+    "numero": 1010,
+    "complemento": "atp 302",
+    "bairro": "Lume",
+    "cidade": "Roca Sales",
+    "estado": "RS"
+}
+###
+
+GET https://viacep.com.br/ws/90680570/json/
+Content-Type: application/json
+
+###
+=======
 GET http://localhost:3003/user
 Content-Type: application/json
 
@@ -21,3 +42,4 @@ Content-Type: application/json
 
 
 /user/order
+

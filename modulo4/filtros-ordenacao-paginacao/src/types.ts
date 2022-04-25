@@ -1,3 +1,10 @@
+
+export type Address ={
+  state:string,
+  city:string,
+  district:string,
+  street:string
+
 export type recipe = {
    id: string
    title: string
@@ -12,4 +19,5 @@ export type user = {
    email: string
    password: string
    recipes?: recipe[]
+
 }
