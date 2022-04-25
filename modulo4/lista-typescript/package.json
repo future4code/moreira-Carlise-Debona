@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "typescript": "^4.6.3"
+  },
+  "name": "lista-typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node ./build/index.js",
+    "tipo": "tsc && node ./build/index2.js",
+    "filme": "tsc && node ./build/index3.js",
+    "colaborador": "tsc && node ./build/index4.js",
+    "email": "tsc && node ./build/index5.js",
+    "contas": "tsc && node ./build/index6.js",
+    "ordena": "tsc && node ./build/index7.js",
+    "rg": "tsc && node ./build/index8.js",
+    "palavra": "tsc && node ./build/index9.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,3 +1,4 @@
+servicos-backend
 POST http://localhost:3003/create
 Content-Type: application/json
 
@@ -17,3 +18,28 @@ GET https://viacep.com.br/ws/90680570/json/
 Content-Type: application/json
 
 ###
+=======
+GET http://localhost:3003/user
+Content-Type: application/json
+
+####
+
+GET http://localhost:3003/user/name?name=Aline
+Content-Type: application/json
+
+####
+
+
+GET http://localhost:3003/user/CX
+Content-Type: application/json
+
+####
+
+GET http://localhost:3003/user/order/name
+Content-Type: application/json
+
+####
+
+
+/user/order
+
