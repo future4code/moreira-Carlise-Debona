@@ -3,8 +3,23 @@ POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-    "email": "carlisegd@gmail.com",
-    "password": "123456"
+    "email": "caaa@gmail.com",
+    "password": "123589753"
 }
 
+###
+
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email": "cazinha@gmail.com",
+    "password": "123589753"
+}
+
+###
+
+GET http://localhost:3003/user/profile
+Content-Type: application/json
+Authorization: 
 ###

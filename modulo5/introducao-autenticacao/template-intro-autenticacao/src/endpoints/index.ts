@@ -18,12 +18,15 @@ try{
     }
 
     const id = generateId();
+    console.log(id);
 
     await createUser(id, email, password)
 
     const token = generateToken({
         id,
     })
+
+    console.log(token);
 
     res.status(200).send({ 
         token 
