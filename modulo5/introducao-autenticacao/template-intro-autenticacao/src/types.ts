@@ -6,4 +6,5 @@ export type user = {
 
 export type authenticationData = {
   id: string;
+  role: string;
 };

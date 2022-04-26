@@ -3,8 +3,11 @@ POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-    "email": "caaa@gmail.com",
-    "password": "123589753"
+    "email": "bbeeeeltranno@gmail.com",
+    "password": "abc123defgh",
+    "role" : "ADMIN"
+    
+
 }
 
 ###
@@ -13,13 +16,16 @@ POST http://localhost:3003/user/login
 Content-Type: application/json
 
 {
-    "email": "cazinha@gmail.com",
-    "password": "123589753"
+    "email": "bbeeeeltranno@gmail.com",
+    "password": "abc123defgh",
+    "role" : "ADMIN"
+    
+    
 }
 
 ###
 
 GET http://localhost:3003/user/profile
 Content-Type: application/json
-Authorization: 
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZiMDNiODE4LTg2MmEtNDJlMS05ODZhLWM5YWQ2MjZhMWJmZCIsImlhdCI6MTY1MDk5ODgzOCwiZXhwIjoxNjUwOTk4ODk4fQ.lBtAPqo90VzU-vl9CBLMlyDtszlqt9mHEEzyMs3M-Mg
 ###
