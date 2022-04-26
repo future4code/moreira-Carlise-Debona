@@ -1,0 +1,49 @@
+//Create users
+POST http://localhost:3003/users
+Content-Type: application/json
+
+{
+    
+    "name": "Gustavo Lume" ,
+    "email": "gulume@gmail.com",
+    "password": "5687p3e"
+}
+###
+
+//Search users
+GET http://localhost:3003/users
+Content-Type: application/json
+###
+
+//Create products
+POST http://localhost:3003/products
+Content-Type: application/json
+
+{
+    "name": "Geladeira / Refrigerador Brastemp Inverse Frost Free 2 Portas BRE80 573 Litros Evox" ,
+    "price": 5619,
+    "image_url": "https://images-shoptime.b2w.io/produtos/01/00/item/124738/3/124738331SZ.jpg"
+}
+###
+
+//Search products
+GET http://localhost:3003/products
+Content-Type: application/json
+###
+
+//Purchase record
+POST http://localhost:3003/purchases
+Content-Type: application/json
+
+{
+    "user_id": "1649983170045" ,
+    "product_id": "1649997577119",
+    "quantity": 2,
+    "total_price": 5619
+}
+###
+
+//User Purchases 
+GET http://localhost:3003/users/1649983170045/purchases
+Content-Type: application/json
+###
