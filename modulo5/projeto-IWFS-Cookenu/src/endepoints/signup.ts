@@ -1,6 +1,6 @@
 
 import { Request, Response } from "express";
-import {HashManager} from '../services/hashManager';
+import {HashManager} from '../services/HashManager';
 import { IdGenerator } from '../services/IdGenerator';
 import { User } from '../entities/User';
 import { UserDatabase } from '../data/UserDatabase';

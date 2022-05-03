@@ -1,7 +1,5 @@
 import { BaseDatabase } from "./BaseDatabase";
 
-
-
 const printError = (error: any) => { console.log(error.sqlMessage || error.message) }
 
 const createTables = () => BaseDatabase.connection.raw(`
