@@ -1,0 +1,32 @@
+//Create User 
+POST http://localhost:3003/signup 
+Content-Type: application/json
+
+{
+"name_usuario" : "Caca Silva", 
+"email" : "caca@gmail.com", 
+"password" : "123456", 
+"role" : "ADMIN"
+}
+
+### 
+
+// login 
+POST http://localhost:3003/user/login 
+Content-Type: application/json
+
+{
+"email" : "caca@gmail.com", 
+"password" : "123456"
+}
+
+### 
+
+// delete
+DELETE http://localhost:3003/user/
+Content-Type: application/json
+
+{
+"email" : "caca@gmail.com", 
+"password" : "123456"
+}
