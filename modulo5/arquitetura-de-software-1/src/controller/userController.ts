@@ -7,10 +7,10 @@ import { User } from "../types/types";
 export class UserController {
   public signup = async (req: Request, res: Response): Promise<void> => {
       try {
-        const { name_usuario, email, password,role} = req.body;
+        const { id, name_usuario, email, password,role} = req.body;
 
         const token = await new UserBusiness().createUser(
-          new User( name_usuario, email, password, role)
+          new User( id, name_usuario, email, password, role)
         );
 
         res.status(200).send({ message:'User create',token });

@@ -1,3 +1,4 @@
+import { Request, Response } from "express";
 import {HashManager} from '../services/HashManager';
 import { IdGenerator } from '../services/idGenerator';
 import { User } from '../types/types';
@@ -28,7 +29,7 @@ export class UserBusiness {
     const hashPassword = await hashManager.hash(user.password)
 
     const userDatabase = new UserDatabase();
-    const newUser = new User(id, user.name_usuario, user.email, user.hashPassword, user.role)
+    const newUser = new User(id, user.name_usuario, user.email, hashPassword, user.role)
     await userDatabase.createUser(newUser)
 
     const token = new Authenticator().generate({ id, role });
