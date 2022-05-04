@@ -3,8 +3,8 @@ POST http://localhost:3003/signup
 Content-Type: application/json
 
 {
-"name" : "Caca Silva", 
-"email" : "caca@gmail.com", 
+"name_usuario" : "Rosa Silva", 
+"email" : "rosa@gmail.com", 
 "password" : "123456789", 
 "role" : "ADMIN"
 }
@@ -14,19 +14,22 @@ Content-Type: application/json
 // login 
 POST http://localhost:3003/user/login 
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU2OTRhODA5LTUzZDEtNDQyMS1hOWZmLTJjYTlmZTM1MjZmOCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MTY4MzUwNiwiZXhwIjoxNjUxNzQ5NTA2fQ.ccX1pdh1gENx3ysHbBPp_Isydg6yIc7249q9HAuymcc
 
 {
-"email" : "caca@gmail.com", 
+"email" : "rosa@gmail.com", 
 "password" : "123456"
 }
 
 ### 
 
 // delete
-DELETE http://localhost:3003/user/
-Content-Type: application/json
+DELETE http://localhost:3003/user/e694a809-53d1-4421-a9ff-2ca9fe3526f8
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMzNTUzOGVlLTI0ZmMtNDRhMi05M2NlLTBmMGFiOTUwMjM3NiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MTY5NTM0MSwiZXhwIjoxNjUxNzYxMzQxfQ.Z9BBu_XYPPeBI-UWUxpnDAK6ojp6BiZlhwtA90UzEpI
+### 
 
-{
-"email" : "caca@gmail.com", 
-"password" : "123456"
-}
+// buscar todos usuário
+GET http://localhost:3003/all
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTE2OTE2NDIsImV4cCI6MTY1MTc1NzY0Mn0.co7l2COSmhPA_52B8AD7mfe5pj361RDzv9DfAG3t4Dk
+
+###

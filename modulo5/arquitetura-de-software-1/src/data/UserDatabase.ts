@@ -17,15 +17,11 @@ export class UserDatabase extends BaseDatabase {
     }
   }
 
-  public async getAllUsers(){
-    try {
-      const users =  await BaseDatabase
-      .connection('User')
-      .select()
-      return users.map((user) => User.toUserModel(user));
-      } catch(error: any){
-        throw new Error(error.sqlMessage || error.message);
-    }
+  public async getAllUsers() {
+    const users = await BaseDatabase.connection("User")
+    .select("*");
+
+    return users;
   }
 
   public async findUserByEmail(email: string){
@@ -39,17 +35,22 @@ export class UserDatabase extends BaseDatabase {
     }
   }
 
-  public async deleteUser(
-    id: string
-  ): Promise<void> {
+  public async deleteUsers(id: string){
     try {
       await BaseDatabase.connection('User')
-        .where({ id })
-				.from(User)
-				.del()
+      .del('id')
+      .where({ id })		
         
     } catch (error: any) {
       throw new Error(error.sqlMessage || error.message);
     }
+  }
+
+  public async getUserById(id: string) {
+    const user = await BaseDatabase.connection("Architecture_Users")
+      .select("id", "name", "email")
+      .where({ id });
+
+    return user[0] && User.toUserModel(user[0]);
   }
 }

@@ -1,17 +1,21 @@
 import { Request, Response } from "express";
 import { UserBusiness } from "../business/userBusiness";
 import { User } from "../types/types";
+import { usuario } from "../types/types"
 
 
 
 export class UserController {
   public signup = async (req: Request, res: Response): Promise<void> => {
       try {
-        const { id, name_usuario, email, password,role} = req.body;
+        const {name_usuario, email, password,role} = req.body;
+        const user : usuario = {
+          name_usuario: name_usuario, 
+          email: email, 
+          password: password,
+          role: role}
 
-        const token = await new UserBusiness().createUser(
-          new User( id, name_usuario, email, password, role)
-        );
+        const token = await new UserBusiness().createUser(user);
 
         res.status(200).send({ message:'User create',token });
 
@@ -39,33 +43,34 @@ export class UserController {
 
   }
 
-public getAll = async (req: Request, res: Response): Promise<void> => {
-
+  getAllUsers = async (req: Request, res: Response): Promise<void> => {
     try {
-
-      const token = req.headers.authorization!;
+      const token = req.headers.authorization as string;
       const userBusiness = new UserBusiness();
-      await userBusiness.get(token);
+      const user = await userBusiness.getAllUsers(token);
 
-      res.status(200).send(userBusiness);
-
+      res.status(200).send(user);
     } catch (error: any) {
-      res.send({ message: error.message }).status(error.status);
+      if (res.statusCode === 200) {
+        res
+          .status(500)
+          .send({ message: error.sqlMessage || "Internal server error" });
+      } else {
+        res.send({ message: error.sqlMessage || error.message });
+      }
     }
+  };
 
-  }
-
-  public deleteUser = async (req: Request, res: Response): Promise<void> => {
+  public delete = async (req: Request, res: Response): Promise<void> => {
       
     try {
-        const input = {
-            id: req.params.id,
-            token: req.headers.authorization!
-        }
+      const token: string = req.headers.authorization as string;
+      const id: string = req.params.id as string;
+      
+      const userBusiness = new UserBusiness();
+      await userBusiness.deleteUser(id, token);
 
-        const deletar = await new UserBusiness().deleteUser(input)
-
-        res.status(200).send({ message: "Usuário apagado com sucesso", deletar });
+        res.status(200).send({ message: "Usuário apagado com sucesso"});
 
     } catch (error: any) {
         res.status(400).send({ error: error.message });

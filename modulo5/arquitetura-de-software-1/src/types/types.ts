@@ -8,10 +8,19 @@ export type authenticationData = {
   role: string;
 };
 
+export type usuario = {
+  name_usuario: string,
+    email: string,
+    password: string,
+    role: USER_ROLES;
+};
+
+
+
 export class User{
   constructor(
     private id: string,
-    private name: string,
+    private name_usuario: string,
     private email: string,
     private password: string,
     private role: USER_ROLES
@@ -20,7 +29,7 @@ export class User{
     return this.id;
   }
   public getName = (): string => { 
-    return this.name;
+    return this.name_usuario;
   }
   public getEmail = (): string => { 
     return this.email;
@@ -36,7 +45,7 @@ export class User{
   static toUserModel(data: any): User {
     return new User(
       data.id, 
-      data.name, 
+      data.name_usuario,
       data.email, 
       data.password, 
       data.role
