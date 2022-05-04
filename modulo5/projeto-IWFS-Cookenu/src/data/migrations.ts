@@ -20,6 +20,13 @@ const createTables = () => BaseDatabase.connection.raw(`
         date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
       );
 
+      CREATE TABLE UserFollow (
+        followed_id varchar(255) NOT NULL,
+        follower_id varchar(255) NOT NULL,
+        FOREIGN KEY (followed_id) REFERENCES UserCookenu (id),
+        FOREIGN KEY (follower_id) REFERENCES UserCookenu (id)
+      )
+
       
 `)
 .then(() => { console.log("Tabelas criadas") })

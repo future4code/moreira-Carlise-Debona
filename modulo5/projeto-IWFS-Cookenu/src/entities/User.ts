@@ -43,3 +43,25 @@ export class User{
       );
   }
 }
+
+export class Follow{
+  constructor(
+    public followed_id: string,
+    public follower_id: string
+  
+  ){}
+  public getFollowedId = (): string => { 
+    return this.followed_id;
+  }
+  public getFollowerId= (): string => { 
+    return this.follower_id;
+  }
+ 
+
+  static toUserModel(data: any):Follow {
+    return new Follow(
+      data.followed_id, 
+      data.follower_id
+      );
+  }
+}

@@ -1,6 +1,7 @@
 import { Recipe } from "../entities/Recipe";
 import { BaseDatabase } from "./BaseDatabase";
 import { User } from "../entities/User";
+import { Follow } from "../entities/User";
 
 export class UserDatabase extends BaseDatabase {
 
@@ -42,6 +43,7 @@ export class UserDatabase extends BaseDatabase {
       throw new Error(error.sqlMessage || error.message);
     }
   }
+
   public async getUsers(id: string): Promise<User>{
     try {
       const users: any =  await BaseDatabase
@@ -69,6 +71,55 @@ export class UserDatabase extends BaseDatabase {
         throw new Error(error.sqlMessage || error.message);
     }
   }
-  
+
+  public async checkId(followerId: string, followedId: string): Promise<any> {
+    try {
+      const userConnection = await BaseDatabase.connection("UserFollow")
+        .select("*")
+        .where({ follower_id: followerId })
+        .andWhere({ followed_id: followedId });
+
+      return userConnection;
+    } catch (error: any) {
+      throw new Error(error.sqlMessage || error.message);
+    }
+  }
+
+  public async follower(followed_id: string, follower_id: string){
+    try{
+      await BaseDatabase.connection("UserFollow")
+      .insert({
+        followed_id: follower_id,
+        follower_id: followed_id
+      })
+    } catch(error: any){
+      throw new Error(error.sqlMessage || error.message)
+    }
 }
 
+public async unfollower(followerId: string, followedId: string): Promise<void> {
+  try{
+    await BaseDatabase.connection("UserFollow")
+        .delete()
+        .from('UserFollow')
+        .where({followed_id: followedId})
+        .andWhere({follower_id: followerId})
+  } catch(error: any){
+    throw new Error(error.sqlMessage || error.message)
+  }
+}
+
+public async getUsersProfile(id: string): Promise<User>{
+  try {
+    const users: any =  await BaseDatabase
+    .connection('UserCookenu')
+    .select('id', 'name', 'email', 'role')
+    .where('id', id)
+
+    return users
+    
+    } catch(error: any){
+      throw new Error(error.sqlMessage || error.message);
+  }
+  }
+}

@@ -3,8 +3,8 @@ POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-  "name" : "Alcir Lima",
-  "email" : "lima@gmail.com",
+  "name" : "Carlise Lima",
+  "email" : "caca@gmail.com",
   "password" : "123456",
   "role" : "ADMIN"
 }
@@ -16,22 +16,22 @@ Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMzZGYyNzFmLWJkYWEtNDEwNy05MGYxLTBkNDA5ZjMyNWFjZiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MTYxNzI0NSwiZXhwIjoxNjUxNjE3ODQ1fQ.sm3HVKGras5q2cmW2o77-XH4NRF0_nF4oRmLPhZf2Mk
 
 {
-"email" : "lima@gmail.com", 
+"email" : "caca@gmail.com", 
 "password" : "123456"
 }
 
 ### 
 
-//Buscar dados do perfil
+//Buscar dados do perfil usuário
 GET http://localhost:3003/user/c3df271f-bdaa-4107-90f1-0d409f325acf
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMzZGYyNzFmLWJkYWEtNDEwNy05MGYxLTBkNDA5ZjMyNWFjZiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MTYyNDk2NywiZXhwIjoxNjUxNjg0OTY3fQ.ARb47xS6kjScrFn_BTZRjWioi5AAQKr3jPxrqJeVnvk
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwYmVkZWJmLWI1OGItNDY0My04ODNiLTBmNDE2MGFlMTY2YSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MTYzNzU1MywiZXhwIjoxNjUxNjk3NTUzfQ.yAVD7hykeHYn_fU7J7v3OUoA3FxF9Jzm5bbTXTKN924
 ### 
 
 // criar receitas
 POST http://localhost:3003/user/recipe/c3df271f-bdaa-4107-90f1-0d409f325acf
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMzZGYyNzFmLWJkYWEtNDEwNy05MGYxLTBkNDA5ZjMyNWFjZiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MTYyNDk2NywiZXhwIjoxNjUxNjg0OTY3fQ.ARb47xS6kjScrFn_BTZRjWioi5AAQKr3jPxrqJeVnvk
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwYmVkZWJmLWI1OGItNDY0My04ODNiLTBmNDE2MGFlMTY2YSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MTYzNzU1MywiZXhwIjoxNjUxNjk3NTUzfQ.yAVD7hykeHYn_fU7J7v3OUoA3FxF9Jzm5bbTXTKN924
 
 {
 	"titulo": "Bolo fofo de laranja",
@@ -43,6 +43,22 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMzZGYyNzFmLWJkYWEt
 //Buscar receita por id
 GET http://localhost:3003/recipe/4ff0cc41-22dd-43cc-b193-5ec593ebae47
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMzZGYyNzFmLWJkYWEtNDEwNy05MGYxLTBkNDA5ZjMyNWFjZiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MTYyNDk2NywiZXhwIjoxNjUxNjg0OTY3fQ.ARb47xS6kjScrFn_BTZRjWioi5AAQKr3jPxrqJeVnvk
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwYmVkZWJmLWI1OGItNDY0My04ODNiLTBmNDE2MGFlMTY2YSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MTYzNzU1MywiZXhwIjoxNjUxNjk3NTUzfQ.yAVD7hykeHYn_fU7J7v3OUoA3FxF9Jzm5bbTXTKN924
 ### 
 
+// seguidores
+POST http://localhost:3003/user/seguidores
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwYmVkZWJmLWI1OGItNDY0My04ODNiLTBmNDE2MGFlMTY2YSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MTYzNzU1MywiZXhwIjoxNjUxNjk3NTUzfQ.yAVD7hykeHYn_fU7J7v3OUoA3FxF9Jzm5bbTXTKN924
+
+
+{
+	"followed_id" : "d193d0f3-b242-48be-8481-ffc79a5ec8cc"
+}
+### 
+
+//Buscar perfil
+GET http://localhost:3003/perfil
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwYmVkZWJmLWI1OGItNDY0My04ODNiLTBmNDE2MGFlMTY2YSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MTYzNzU1MywiZXhwIjoxNjUxNjk3NTUzfQ.yAVD7hykeHYn_fU7J7v3OUoA3FxF9Jzm5bbTXTKN924
+### 
