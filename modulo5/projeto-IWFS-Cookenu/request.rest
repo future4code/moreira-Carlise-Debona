@@ -3,9 +3,46 @@ POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-  "name" : "Julio Souza Lima",
-  "email" : "juliolima@gmail.com",
+  "name" : "Alcir Lima",
+  "email" : "lima@gmail.com",
   "password" : "123456",
   "role" : "ADMIN"
 }
 ### 
+
+// login 
+POST http://localhost:3003/user/login
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMzZGYyNzFmLWJkYWEtNDEwNy05MGYxLTBkNDA5ZjMyNWFjZiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MTYxNzI0NSwiZXhwIjoxNjUxNjE3ODQ1fQ.sm3HVKGras5q2cmW2o77-XH4NRF0_nF4oRmLPhZf2Mk
+
+{
+"email" : "lima@gmail.com", 
+"password" : "123456"
+}
+
+### 
+
+//Buscar dados do perfil
+GET http://localhost:3003/user/c3df271f-bdaa-4107-90f1-0d409f325acf
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMzZGYyNzFmLWJkYWEtNDEwNy05MGYxLTBkNDA5ZjMyNWFjZiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MTYyNDk2NywiZXhwIjoxNjUxNjg0OTY3fQ.ARb47xS6kjScrFn_BTZRjWioi5AAQKr3jPxrqJeVnvk
+### 
+
+// criar receitas
+POST http://localhost:3003/user/recipe/c3df271f-bdaa-4107-90f1-0d409f325acf
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMzZGYyNzFmLWJkYWEtNDEwNy05MGYxLTBkNDA5ZjMyNWFjZiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MTYyNDk2NywiZXhwIjoxNjUxNjg0OTY3fQ.ARb47xS6kjScrFn_BTZRjWioi5AAQKr3jPxrqJeVnvk
+
+{
+	"titulo": "Bolo fofo de laranja",
+	"descricao": " Ingredientes - Massa 3 ovos, 2 colheres de sopa de margarina, 1 xícara de açúcar, 2 xícaras de farinha de trigo, 1 xícara de suco de laranja, 1 colher de sopa de fermento. Ingredientes - Calda: 1 xícara de açúcar, Meia xícara de suco de laranja",
+  "modo_de_preparo" : " 1. Em uma tigela, coloque 3 ovos, 2 colheres de sopa de margarina e 1 xícara de açúcar. Misture. 2. Em seguida, acrescente 2 xícaras de farinha de trigo e misture novamente. 3. Depois, despeje 1 xícara de suco de laranja na tigela e misture novamente.     4. Por fim, adicione 1 colher de sopa de fermento e misture novamente. 5. Transfira a massa para uma forma redonda com furo. 6. Leve para assar em forno preaquecido a 180 graus Celsius por 30 minutos."
+}
+### 
+
+//Buscar receita por id
+GET http://localhost:3003/recipe/4ff0cc41-22dd-43cc-b193-5ec593ebae47
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMzZGYyNzFmLWJkYWEtNDEwNy05MGYxLTBkNDA5ZjMyNWFjZiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MTYyNDk2NywiZXhwIjoxNjUxNjg0OTY3fQ.ARb47xS6kjScrFn_BTZRjWioi5AAQKr3jPxrqJeVnvk
+### 
+

@@ -12,6 +12,14 @@ const createTables = () => BaseDatabase.connection.raw(`
         role VARCHAR(255) NOT NULL
       );
 
+      CREATE TABLE IF NOT EXISTS Recipe (
+        id VARCHAR(255) PRIMARY KEY,
+        titulo VARCHAR(255) NOT NULL,
+        descricao VARCHAR(500) NOT NULL,
+        modo_de_preparo VARCHAR(1000) NOT NULL,
+        date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+      );
+
       
 `)
 .then(() => { console.log("Tabelas criadas") })
