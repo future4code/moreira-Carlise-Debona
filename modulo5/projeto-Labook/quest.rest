@@ -3,8 +3,20 @@ POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-  "name" : "Nicoli Brasil", 
-  "email" : "nike@gmail.com", 
+  "name" : "Juana Garbin", 
+  "email" : "jujugarbin@gmail.com", 
+  "password" : "123456"
+}
+
+### 
+
+// login 
+POST http://localhost:3003/login
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ5MWY2YTMyLTFkMmQtNDZlOS05OWU5LThiZmQ5OTdkYmE1OSIsImlhdCI6MTY1MjEwMDQ2OCwiZXhwIjoxNjUyMTY2NDY4fQ.8Qf5G_SJgTgeYGvbIwZeSDR2T3n3G3kLqxBswA7XlJ4
+
+{
+  "email" : "jujugarbin@gmail.com", 
   "password" : "123456"
 }
 

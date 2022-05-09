@@ -13,6 +13,11 @@ export type SignupInputDTO = {
   password: string
 }
 
+export type LoginInputDTO = {
+  email: string
+  password: string
+}
+
 export type FindByEmailResponse = {
   id: string;
   name: string;

@@ -5,4 +5,6 @@ export default class User {
     private email: string,
     private password: string
   ) {}
+
+
 }

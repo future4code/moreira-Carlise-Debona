@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { UserBusiness } from "../userBusiness/userBusiness";
-import { SignupInputDTO } from "../types/types";
+import { LoginInputDTO, SignupInputDTO } from "../types/types";
 
 
 
@@ -26,6 +26,24 @@ export class UserController {
       } catch (error: any) {
         res.status(400).send({ error: error.message });
       }
+  }
 
+  login = async (req: Request, res: Response) => {
+
+    const {email, password } = req.body;
+
+        const input: LoginInputDTO = {
+          email, 
+          password
+        }
+  try{
+
+        const token = await this.userBusiness.login(input)
+        console.log(token)
+
+    res.status(200).send({message:'User logado com sucesso',token})
+    } catch(err: any){ 
+      res.status(400).send({message: err.message  || err.sqlMessage });
+    }
   }
 }
