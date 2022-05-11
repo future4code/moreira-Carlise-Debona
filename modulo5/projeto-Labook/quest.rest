@@ -3,8 +3,8 @@ POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-  "name" : "Juana Garbin", 
-  "email" : "jujugarbin@gmail.com", 
+  "name" : "Vivi Garbin", 
+  "email" : "vivi@gmail.com", 
   "password" : "123456"
 }
 
@@ -13,11 +13,28 @@ Content-Type: application/json
 // login 
 POST http://localhost:3003/login
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ5MWY2YTMyLTFkMmQtNDZlOS05OWU5LThiZmQ5OTdkYmE1OSIsImlhdCI6MTY1MjEwMDQ2OCwiZXhwIjoxNjUyMTY2NDY4fQ.8Qf5G_SJgTgeYGvbIwZeSDR2T3n3G3kLqxBswA7XlJ4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNiMTYxZjhhLTMzY2YtNGQxZi1hZWNmLTU4ZTQxNTgwMzI2MSIsImlhdCI6MTY1MjIzNTE3NywiZXhwIjoxNjUyMzAxMTc3fQ.YqLKV1noK6hUMf-SzDNfyhSVSPeg4sh-4be7BtBoj68
 
 {
-  "email" : "jujugarbin@gmail.com", 
+  "email" : "vivi@gmail.com", 
   "password" : "123456"
 }
 
 ### 
+
+POST http://localhost:3003/user/post
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNiMTYxZjhhLTMzY2YtNGQxZi1hZWNmLTU4ZTQxNTgwMzI2MSIsImlhdCI6MTY1MjIzNTE3NywiZXhwIjoxNjUyMzAxMTc3fQ.YqLKV1noK6hUMf-SzDNfyhSVSPeg4sh-4be7BtBoj68
+{
+  "foto":"minha foto", 
+  "descricao": "minha descrição está aqui", 
+  "tipo":"NORMAL"
+}
+
+### 
+
+GET http://localhost:3003/post/0f282bf1-2672-45fd-b579-f34fb7d2669c
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRkYTkyMmMyLWMxNDMtNDRjMi05OGFlLTUyMDNiMWQxYzIxZSIsImlhdCI6MTY1MjE5ODAxMCwiZXhwIjoxNjUyMjY0MDEwfQ.ll7D8DS0U9bT3S452v1lMTu9TKf8sYuu7G_evtIeS4A
+
+###

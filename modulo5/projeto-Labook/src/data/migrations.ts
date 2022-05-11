@@ -20,7 +20,7 @@ const createTables = () => BaseDatabase.connection.raw(`
       id_user VARCHAR(255) NOT NULL,
       foto VARCHAR(1000) NOT NULL,
       descricao VARCHAR(500) NOT NULL,
-      role VARCHAR(255) NOT NULL,
+      tipo VARCHAR(255) NOT NULL,
       date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
       FOREIGN KEY (id_user) REFERENCES UserLabook(id)
     );
