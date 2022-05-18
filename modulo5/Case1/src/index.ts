@@ -1,10 +1,10 @@
 import  app  from "./controller/app";
 
 
-// const userBusiness = new UserBusiness(new UserDatabase)
+const userBusiness = new UserBusiness(new UserDatabase)
 
-// const userController = new UserController(userBusiness);
+const userController = new UserController(userBusiness);
 
 
 
-// app.post("/user/signup", userController.signup)
+app.post("/user/signup", userController.signup)
