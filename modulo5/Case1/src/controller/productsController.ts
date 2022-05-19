@@ -1,26 +1,25 @@
 import { Request, Response } from "express";
 import { ProductsBusiness } from "../business/productsBusiness";
-import { productsInputDTO } from "../types/productsType";
+import { productInputDTO } from "../types/productsType";
 
-
-
-export class UserController{
+export class ProductsController{
   constructor(
     private productsBusiness: ProductsBusiness
     ) {}
 
-    createUser = async (req:Request, res:Response): Promise<void>=>{
+    createProducts = async (req:Request, res:Response): Promise<void>=>{
 
         try {
 
-            const {name, tags} = req.body
+            const {name, tags, id} = req.body
 
-            const input: productsInputDTO ={
+            const input: productInputDTO={
+                id,
                 name,
                 tags
             }
             
-            const products  = await this.productsBusiness.create(input) 
+            const products  = await this.productsBusiness.createProducts(input) 
 
             res.status(201).send({message:"Products create success!", products })
       

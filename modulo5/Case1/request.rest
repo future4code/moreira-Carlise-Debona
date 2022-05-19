@@ -1,8 +1,9 @@
 ###
-POST http://localhost:3003/band/signup
+POST http://localhost:3003/products/signup
 Content-Type: application/json
 
 {
-  "name": "VESTIDO MOLETOM COM CAPUZ MESCLA",
-  "tags": ["casual", "metal", "metal"]
+  "id": 8371,
+  "name": "VESTIDO TRICOT CHEVRON",
+  "tags": "[balada, neutro, delicado, festa]"
 }

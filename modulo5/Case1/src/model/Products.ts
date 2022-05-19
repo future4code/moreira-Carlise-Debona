@@ -1,8 +1,8 @@
 
-export default class Products{
+export default class ProductsTable{
     
   constructor(
-    private _id: string,
+    private _id: number,
     private _name: string,
     private _tags: []
 ){}
@@ -19,10 +19,10 @@ export default class Products{
   public set name(value: string) {
       this._name = value
   }
-  public get id(): string {
+  public get id(): number {
       return this._id
   }
-  public set id(value: string) {
+  public set id(value: number) {
       this._id = value
   }
 }

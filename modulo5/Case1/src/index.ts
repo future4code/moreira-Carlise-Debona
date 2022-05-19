@@ -1,10 +1,16 @@
 import  app  from "./controller/app";
 
+import { ProductsBusiness }from "./business/productsBusiness";
 
-const userBusiness = new UserBusiness(new UserDatabase)
+import { ProductsController  }from "./controller/productsController";
+import { ProductsData } from "./data/productsData";
 
-const userController = new UserController(userBusiness);
+const productsBusiness = new ProductsBusiness(
+    new ProductsData()
+)
 
+const productsController = new ProductsController(
+    productsBusiness
+)
 
-
-app.post("/user/signup", userController.signup)
+app.post("/products/signup", productsController.createProducts)

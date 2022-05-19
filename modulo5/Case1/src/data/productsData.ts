@@ -8,7 +8,7 @@ export class ProductsData extends BaseDatabase implements IProductsData {
   
   protected TABLE_NAME = "PRODUCTS"
 
-  insertProducts =  async (prod: Products): Promise<Products> => {
+  insertProducts =  async (prod: any): Promise<void> => {
     try{
       await this
       .connection(this.TABLE_NAME)
@@ -17,10 +17,9 @@ export class ProductsData extends BaseDatabase implements IProductsData {
         name: prod.name,
         tags: prod.tags
       })
-      return prod
+  
     } catch(error: any){
       throw new Error(error.sqlMessage || error.message)
     }
   }
-
 }

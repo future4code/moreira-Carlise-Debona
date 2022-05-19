@@ -1,10 +1,18 @@
 
 export type authenticationData = {
-  id: string    
+  id: number
 }
 
-export type productsInputDTO = {
+export type productInputDTO = {
+  id: number
   name: string
   tags: []
 }
+
+
+export type products = {
+  id: number
+  name: string
+  tags: []
+}[];
 

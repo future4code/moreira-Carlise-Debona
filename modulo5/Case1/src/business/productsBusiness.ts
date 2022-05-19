@@ -1,36 +1,27 @@
 
-import { IdGenerator } from "../services/IdGenerator";
-import { productsInputDTO } from "../types/productsType";
-import { Authenticator } from "../services/Authenticator"
+import { productInputDTO } from "../types/productsType";
 import { IProductsData } from "../model/interfaceProductsData";
 import Products from "../model/Products";
+import { products } from "./products.json";
+import { ProductsData } from "../data/productsData"
+
 
 export class ProductsBusiness{
   private productsData: IProductsData;
-  private idGenerator:IdGenerator;
-  
+
 constructor(productsDatabase: IProductsData){
   this.productsData = productsDatabase
-  this.idGenerator = new IdGenerator
-  
 }
 
-    create = async (input:productsInputDTO)=>{
+    createProducts = async (input: productInputDTO):Promise<void> =>{
 
+      const {name,tags, id} = input
 
-      const {name,tags} = input
-
-        if(!name || !tags){
+        if(!name || !tags || !id){
             throw new Error("Fill in all data")
         }
 
-        const id = this.idGenerator.generateId()
-        
-        const prod = new Products(
-          id,
-          name,
-          tags                        
-      )
-      await this.productsData.insertProducts(prod)
+      for (let i=0; i<products.length; i++) {             
+      await this.productsData.insertProducts(products.products[i])}
     }
-}
+  }
