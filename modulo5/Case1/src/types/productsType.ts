@@ -7,12 +7,11 @@ export type productInputDTO = {
   id: number
   name: string
   tags: []
-}
+};
+
+// export type productsInputDTO= {
+//  products: productInputDTO[]
+// }
 
 
-export type products = {
-  id: number
-  name: string
-  tags: []
-}[];
 

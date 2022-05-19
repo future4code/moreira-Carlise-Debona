@@ -11,17 +11,15 @@ export class ProductsController{
 
         try {
 
-            const {name, tags, id} = req.body
+            const {products} = req.body
 
-            const input: productInputDTO={
-                id,
-                name,
-                tags
-            }
+            // const input: productInputDTO[]={
+            //    products
+            // }
             
-            const products  = await this.productsBusiness.createProducts(input) 
+            const productsInput  = await this.productsBusiness.createProducts(products) 
 
-            res.status(201).send({message:"Products create success!", products })
+            res.status(201).send({message:"Products create success!", productsInput })
       
         } catch(error: any){ 
 
