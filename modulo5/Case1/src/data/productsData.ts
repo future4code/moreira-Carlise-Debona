@@ -22,4 +22,17 @@ export class ProductsData extends BaseDatabase implements IProductsData {
       throw new Error(error.sqlMessage || error.message)
     }
   }
+
+  productsById =  async (id: number): Promise<any> => {
+    try{
+      const idProdutos = await this.connection(this.TABLE_NAME)
+      .select('*')
+      .where({id})
+      console.log(idProdutos)
+      return idProdutos[0];
+  
+    } catch(error: any){
+      throw new Error(error.sqlMessage || error.message)
+    }
+  }
 }

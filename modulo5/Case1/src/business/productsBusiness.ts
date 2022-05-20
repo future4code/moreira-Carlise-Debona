@@ -1,5 +1,5 @@
 
-import { productInputDTO } from "../types/productsType";
+import { productInputDTO, searchInputDTO } from "../types/productsType";
 import { IProductsData } from "../model/interfaceProductsData";
 import Products from "../model/Products";
 import { ProductsData } from "../data/productsData"
@@ -30,4 +30,20 @@ constructor(productsDatabase: IProductsData){
 
     await this.productsData.insertProducts(product)}
   }
+
+  searchById =  async (input: searchInputDTO): Promise<any> =>{
+
+    const products = await new ProductsData().productsById(input.id)
+    console.log("pegar produto",products)
+
+
+    if(!input){
+      throw new Error("Id not exist!")
+    }
+
+    console.log(input)
+    
+    return products
+
   }
+}

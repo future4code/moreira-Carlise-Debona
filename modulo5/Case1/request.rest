@@ -132,3 +132,8 @@ Content-Type: application/json
     }
   ]
 }
+
+### 
+GET http://localhost:3003/products/7518
+Content-Type: application/json
+
