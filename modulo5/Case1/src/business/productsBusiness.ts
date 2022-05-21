@@ -12,11 +12,11 @@ constructor(productsDatabase: IProductsData){
   this.productsData = productsDatabase
 }
 
-    createProducts = async (products: productInputDTO[]):Promise<void> =>{
+    createProducts = async (products: any):Promise<void> =>{
 
       for (let i=0; i<products.length; i++) { 
         if(!products[i].id || !products[i].tags || !products[i].name){
-          throw new Error("Dados não foram enviados")
+          throw new Error("Data not sent")
         }
     }
 
@@ -31,17 +31,16 @@ constructor(productsDatabase: IProductsData){
     await this.productsData.insertProducts(product)}
   }
 
-  searchById =  async (input: searchInputDTO): Promise<any> =>{
+  searchById =  async (id: any): Promise<any> =>{
 
-    const products = await new ProductsData().productsById(input.id)
-    console.log("pegar produto",products)
+    const idProdutos = Number(id)
 
 
-    if(!input){
-      throw new Error("Id not exist!")
-    }
+    const products = await this.productsData.productsById(idProdutos)
 
-    console.log(input)
+      if(products.length === 0){
+        throw new Error("Id not exist!")
+      }
     
     return products
 

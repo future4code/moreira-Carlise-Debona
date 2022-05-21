@@ -1,5 +1,6 @@
 import { IProductsData } from "../model/interfaceProductsData";
 import  Products  from "../model/Products";
+import { productInputDTO } from "../types/productsType";
 import { BaseDatabase } from "./BaseDatabase";
 
 
@@ -23,16 +24,16 @@ export class ProductsData extends BaseDatabase implements IProductsData {
     }
   }
 
-  productsById =  async (id: number): Promise<any> => {
+  productsById =  async (id: number): Promise<productInputDTO> => {
     try{
-      const idProdutos = await this.connection(this.TABLE_NAME)
-      .select('*')
-      .where({id})
-      console.log(idProdutos)
+      const idProdutos  = await this.connection.raw(`
+      SELECT * FROM ${this.TABLE_NAME}
+      WHERE id = '${id}'`)
       return idProdutos[0];
+      
   
     } catch(error: any){
-      throw new Error(error.sqlMessage || error.message)
+      throw new Error(error.message || error.sqlMessage)
     }
   }
-}
+ }

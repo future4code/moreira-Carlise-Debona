@@ -4,7 +4,7 @@ export type authenticationData = {
 }
 
 export type productInputDTO = {
-  id: number 
+  id: number
   name: string
   tags: []
 };

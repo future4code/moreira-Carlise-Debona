@@ -134,6 +134,6 @@ Content-Type: application/json
 }
 
 ### 
-GET http://localhost:3003/products/7518
+GET http://localhost:3003/products/7516
 Content-Type: application/json
 

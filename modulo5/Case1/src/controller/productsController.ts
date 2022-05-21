@@ -41,11 +41,14 @@ export class ProductsController{
     searchById =  async (req: Request, res: Response) => {
 
       try {
-        const input: searchInputDTO  = {id: Number(req.params.id)}
+        const id =  req.params
+        
+console.log(id)
   
-        const products = await this.productsBusiness.searchById(input)
+        const products = await this.productsBusiness.searchById(id.id)
   
         res.status(200).send({products});
+        
       }catch(error: any){
         switch(error.message){
           case "Product not found!":
