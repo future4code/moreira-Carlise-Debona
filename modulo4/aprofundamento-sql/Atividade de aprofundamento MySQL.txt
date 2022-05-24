@@ -1,0 +1,352 @@
+```
+CREATE TABLE Actor (
+    id VARCHAR(255) PRIMARY KEY,
+    name VARCHAR (255) NOT NULL,
+    salary FLOAT NOT NULL,
+    birth_date DATE NOT NULL,
+    gender VARCHAR(6) NOT NULL
+);
+```
+
+```
+INSERT INTO Actor (id, name, salary, birth_date, gender)
+VALUES(
+  "001", 
+  "Tony Ramos",
+  400000,
+  "1948-08-25", 
+  "male"
+);
+```
+
+```
+INSERT INTO Actor (id, name, salary, birth_date, gender)
+VALUES(
+  "002", 
+  "Glória Pires",
+  1200000,
+  "1963-08-23", 
+  "female"
+);
+```
+
+```INSERT INTO Actor (id, name, salary, birth_date, gender)
+VALUES(
+  "003", 
+  "Juliana Paes",
+  2000000,
+  "1990-11-14", 
+  "female"
+);
+```
+
+```
+INSERT INTO Actor (id, name, salary, birth_date, gender)
+VALUES(
+  "004", 
+  "Fernanda Montenegro",
+  300000,
+  "1929-10-19", 
+  "female"
+);
+```
+
+```
+INSERT INTO Actor (id, name, salary, birth_date, gender)
+VALUES(
+  "005",
+  "Dj Alok",
+  400000,
+  "1949-04-18", 
+  "male"
+);
+```
+```
+INSERT INTO Actor (id, name, salary, birth_date, gender)
+VALUES(
+  "006", 
+  "Juliana Paes",
+  71933333,
+  "1979-03-26", 
+  "female"
+);
+```
+
+```
+CREATE TABLE Movie (
+    id VARCHAR(255) PRIMARY KEY,
+    name VARCHAR (255) NOT NULL,
+    synopsis TEXT,
+    release_of_date DATE NOT NULL,
+    evaluation FLOAT NOT NULL
+);
+```
+
+```
+INSERT INTO Movie (id, name, synopsis, release_of_date, evaluation)
+VALUES(
+"001",
+"Se Eu Fosse Você",
+"Cláudio e Helena são casados há muitos anos e enfrentam a rotina do casamento. 
+Um dia eles são atingidos por um fenômeno inexplicável e trocam de corpos",
+"2006-01-06",
+7
+);
+```
+
+```
+INSERT INTO Movie (id, name, synopsis, release_of_date, evaluation)
+VALUES(
+"002",
+"Doce de mãe",
+"Dona Picucha, uma animada senhora de 85 anos, sempre causa grandes confusões. 
+A vida dela e dos seus quatro filhos sofre uma reviravolta depois que Zaida, 
+empregada e amiga de Dona Picucha, anuncia que vai se casar e não poderá mais morar com ela",
+"2012-12-27",
+10
+);
+```
+
+```
+INSERT INTO Movie (id, name, synopsis, release_of_date, evaluation)
+VALUES(
+"003",
+"Dona Flor e Seus Dois Maridos",
+"Dona Flor é uma sedutora professora de culinária casada com Vadinho, 
+que só quer saber de farras e jogatina nas boates. A vida de abusos 
+acaba por acarretar sua morte precoce.",
+"2017-11-02",
+8
+);
+```
+
+```
+INSERT INTO Movie (id, name, synopsis, release_of_date, evaluation)
+VALUES(
+"004",
+"Dois Filhos de Franscisco",
+"Francisco é um lavrador do interior de Goiás que sonha transformar seus dois filhos, 
+Mirosmar e Emival, em uma famosa dupla sertaneja. Em meio a muitos percalços, 
+um empresário consegue fazer deles um sucesso no interior do Brasil, 
+até que um acidente interrompe a carreira da dupla. Anos mais tarde, Mirosmar 
+transforma-se em Zezé Di Camargo, mas a fama só chega quando ele se junta 
+ao irmão Welson (Luciano), o parceiro perfeito para concretizar a profecia de seu pai.",
+"2005-08-19",
+8
+);
+```
+
+```
+SELECT * FROM Actor;
+```
+
+```
+ALTER TABLE Actor ADD type VARCHAR(255) DEFAULT "NotDirector";
+```
+
+### Exercício 1
+
+__a)__
+ALTER TABLE = alterar a estrutura de uma tabela já existente nesse caso a Actor.
+DROP COLUMN = remove colunas e também você pode escolher uma
+coluna específica nesse caso irá excluir a coluba salary .
+
+
+__b)__
+ALTER TABLE = alterar a estrutura de uma tabela já existente nesse caso a Actor.
+CHANGE = serve para renomear uma coluna, nesse caso altera o nome "gender" para "sex".
+VARCHAR(6) = aceita 6 caracteres de texto (string).
+
+
+__c)__ 
+ALTER TABLE = alterar a estrutura de uma tabela já existente nesse caso a Actor.
+CHANGE = serve para renomear uma coluna, nesse caso mantem o mesmo nome "gender".
+VARCHAR(6) = aceita 255 caracteres de texto (string).
+
+
+__d) A query é:__
+```
+ALTER TABLE Actor CHANGE gender gender VARCHAR(100);
+```
+
+### Exercício 2
+__a) A query é:__
+```
+UPDATE Actor
+SET 
+	birth_date = "2001-02-08", 
+	name =  "Gina Moreira"
+WHERE id = "003";
+```
+
+__b) A query é:__
+```
+UPDATE Actor
+SET  name =  "JULIANA PAES"
+WHERE id = "003";
+```
+
+```
+UPDATE Actor
+SET  name =  "Juliana Paes"
+WHERE id = "003";
+```
+
+__c) A query é:__
+```
+UPDATE Actor
+SET 
+	birth_date = "1999-08-15", 
+	name =  "Mc Ludimila", 
+	salary = 100000, 
+	gender = "female"
+WHERE id = "005";
+```
+
+__d) A query é:__
+coluna não foi encontrada
+
+```
+UPDATE Actor
+SET nome =  "JULIANA PÃES"
+WHERE id = "020";
+```
+
+### Exercício 3
+__a) A query é:__
+```
+SET SQL_SAFE_UPDATES = 0;
+```
+
+```
+DELETE FROM Actor WHERE name = "Fernanda Montenegro";
+```
+
+__b) A query é:__
+```
+DELETE FROM Actor WHERE 
+gender = "male" AND 
+salary < 1000000;
+```
+
+### Exercício 4
+```
+SELECT COUNT(*) FROM Actor;
+```
+
+```
+SELECT COUNT(*) FROM Actor WHERE gender = "female";
+```
+
+```
+SELECT AVG(salary) FROM Actor;
+```
+
+__a) A query é:__
+```
+SELECT MAX(salary) FROM Actor;
+```
+
+__b) A query é:__
+```
+SELECT MIN(salary) FROM Actor WHERE gender = "female";
+```
+
+__c) A query é:__
+```
+SELECT COUNT(*) FROM Actor WHERE gender = "female";
+```
+
+__d) A query é:__
+```
+SELECT SUM(salary) FROM Actor;
+```
+
+### Exercício 5
+```
+SELECT * FROM Actor LIMIT 3;
+```
+
+```
+SELECT * FROM Actor ORDER BY name ASC;
+```
+
+```
+SELECT * FROM Actor ORDER BY name ASC LIMIT 4;
+```
+```
+SELECT * FROM Actor
+WHERE gender = 'female'
+ORDER BY name ASC
+LIMIT 4;
+```
+
+```
+SELECT COUNT(*), gender
+FROM Actor
+GROUP BY gender;
+```
+
+__a) A query é:__
+conta a quantidade por gender.
+
+
+__b) A query é:__
+```
+SELECT id, name FROM Actor ORDER BY name DESC;
+```
+
+__c) A query é:__
+```
+SELECT * FROM Actor ORDER BY salary;
+```
+
+__d) A query é:__
+```
+SELECT * FROM Actor ORDER BY salary DESC LIMIT 3;
+```
+
+__e) A query é:__
+```
+SELECT AVG(salary), gender FROM Actor GROUP BY gender;
+```
+
+### Exercício 6
+__a) A query é:__
+```
+SELECT * FROM Movie;
+```
+
+```
+ALTER TABLE Movie ADD playing_limit_date DATE;
+```
+
+__b) A query é:__
+```
+ALTER TABLE Movie CHANGE evaluation evaluation FLOAT;
+```
+
+__c) A query é:__
+```
+UPDATE Movie
+SET
+	playing_limit_date = "2022-12-31"
+WHERE id = "001";
+```
+
+```
+UPDATE Movie
+SET
+	playing_limit_date = "2021-01-01"
+WHERE id = "002";
+```
+
+__d) A query é:__
+```
+SET SQL_SAFE_UPDATES = 0;
+```
+
+```
+DELETE FROM Movie WHERE id = "003";
+```
+ 
