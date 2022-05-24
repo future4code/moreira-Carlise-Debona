@@ -16,7 +16,7 @@ import {IoIosEye} from 'react-icons/io'
 export default function HomeAdm() {
   const [id, setTripId] = useState("")
   const [nameTrips, setTrips] = useState([]);
-  //const [tripsData, getTripsList] = useRequestData("https://us-central1-labenu-apis.cloudfunctions.net/labeX/:carlise-debona-moreira/trips", {})
+  
 
   const getTrips = ()=>{
       axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/:carlise-debona-moreira/trips`)

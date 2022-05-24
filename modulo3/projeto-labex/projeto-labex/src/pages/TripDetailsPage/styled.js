@@ -134,9 +134,19 @@ export const H3= styled.h3`
   position: relative;
   top: 10%;
 `
+export const Div= styled.div`
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+`
 
 
 export const ButtonReset = styled.div `
+    margin-left: 10px;
     border: 1px solid transparent;
     background-color: transparent;
     color: transparent;
